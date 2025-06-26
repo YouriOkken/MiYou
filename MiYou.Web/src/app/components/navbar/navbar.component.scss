@@ -1,0 +1,141 @@
+.nav {
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    align-items: center;
+    padding: 0 2vw;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.nav .left,
+.nav .middle,
+.nav .right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.nav .left {
+    justify-content: flex-start;
+}
+
+.nav .middle {
+    justify-content: center;
+}
+
+.nav .right {
+    justify-content: flex-end;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+  font-size: clamp(14px, 1.2vw, 18px);
+    padding: 1vh 1.5vw;
+    border-radius: 0.5vh;
+    transition: background-color 0.2s, text-shadow 0.3s;
+    text-shadow: 0 0 0.4vw rgba(255, 255, 255, 0.6);
+}
+
+.nav-links a:hover {
+    text-shadow:
+        0 0 0.6vw rgba(255, 255, 255, 0.8),
+        0 0 1vw rgba(100, 200, 255, 0.7);
+}
+
+//none zorgt ervoor dat ie niet standaart zichtbaar is
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    width: 4vw;
+    gap: 0.7vw;
+}
+
+.hamburger div {
+    height: 0.4vh;
+    background-color: white;
+    border-radius: 0.2vh;
+}
+
+//mobiele menu 
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: rgba(34, 34, 34, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: absolute;
+    top: 7vh;
+    right: 2vw;
+    box-shadow: 0 0.3vh 1vh rgba(0, 0, 0, 0.7);
+    padding: 1vh 2vw;
+    border-radius: 0.5vh;
+    z-index: 10;
+    min-width: 40vw;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mobile-menu a {
+    color: white;
+    font-size: 1.5vw;
+    padding: 1vh 0;
+    text-decoration: none;
+      text-shadow: 0 0 0.4vw rgba(255, 255, 255, 0.6);
+
+}
+
+.mobile-menu a:not(:last-child) {
+    border-bottom: 0.1vh solid rgba(255, 255, 255, 0.4);
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+//responsive dat die kleiner / veranderd naar een hamburger wanneer het scherm kleiner is dan 768px
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 3vw;
+    }
+}
+
+//hele kleine schermen
+@media (max-width: 480px) {
+    .nav {
+        height: 8vh;
+    }
+
+    .hamburger {
+        width: 6vw;
+        gap: 1vw;
+    }
+
+    .hamburger div {
+        height: 0.5vh;
+    }
+
+    .mobile-menu {
+        min-width: 40vw;
+    }
+
+    .mobile-menu a {
+        font-size: 4vw;
+    }
+}
