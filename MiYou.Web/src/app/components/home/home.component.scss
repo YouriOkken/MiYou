@@ -11,6 +11,7 @@
     .left {
         align-items: center;
         flex-direction: column;
+        justify-content: center;
         text-align: left;
         gap: 1.5rem;
 
@@ -48,7 +49,7 @@
         align-items: center;
         justify-content: center;
 
-        video {
+        img {
             height: auto;
             max-height: 100%;
             max-width: 100%;
@@ -75,9 +76,9 @@
     justify-content: center;
   }
 
-  .right video {
+  .right img {
     width: 100%;
     height: auto;
-    max-width: 400px;
+    max-width: 100%;
   }
 }
