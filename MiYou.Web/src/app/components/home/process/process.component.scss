@@ -45,4 +45,11 @@
       color: #ccc;
     }
   }
+
+    .step ng-lottie {
+    width: clamp(90px, 15vw, 150px);
+    height: clamp(90px, 15vw, 150px);
+    margin: 0 auto 1rem;
+    display: block;
+  }
 }

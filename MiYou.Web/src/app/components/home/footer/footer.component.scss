@@ -4,7 +4,6 @@
   font-size: 0.9rem;
 
   .container {
-    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -17,9 +16,10 @@
     color: #aaa;
     margin-left: 1rem;
     text-decoration: none;
+    font-size: 0.9rem;
 
     &:hover {
-      color: #007bff;
+      text-shadow: 0 0 0.4vw rgba(255, 255, 255, 0.6);
     }
   }
 
@@ -33,6 +33,22 @@
 
     @media (max-width: 600px) {
       text-align: left;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    font-size: 0.8rem;
+
+    .container {
+      gap: 0.5rem;
+    }
+
+    a {
+      font-size: 0.8rem;
+      margin-left: 0.5rem;
+      white-space: nowrap;
     }
   }
 }
