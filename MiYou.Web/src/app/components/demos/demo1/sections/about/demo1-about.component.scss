@@ -1,0 +1,19 @@
+.demo1-about-section {
+  padding: 3rem 2rem;
+  text-align: center;
+
+  .container {
+    max-width: 100ch;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    line-height: 1.6;
+  }
+}
