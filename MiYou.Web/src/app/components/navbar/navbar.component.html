@@ -3,11 +3,11 @@
     <div class="nav-links">
       <a href="#">Home</a>
       <a href="#about-us">Over ons</a>
+      <a [routerLink]="['/pricing']">Prijzen en Templates</a>
     </div>
   </div>
   <div class="middle">
     <div class="nav-links">
-      <!-- <a href="#">Logo</a> -->
       <a href="#">
         <img class="logo" src="../../../assets/img/Logo_Single_Transparent.png" alt="Logo">
       </a>
@@ -20,14 +20,12 @@
     </div>
   </div>
 
-  <!-- Hamburger icoon -->
   <div class="hamburger" (click)="toggleMenu()">
     <div></div>
     <div></div>
     <div></div>
   </div>
 
-  <!-- Hamburger menu (voor mobiel) -->
   <div class="mobile-menu" [class.active]="menuOpen">
     <a href="#">Home</a>
     <a href="#about-us">Over ons</a>
