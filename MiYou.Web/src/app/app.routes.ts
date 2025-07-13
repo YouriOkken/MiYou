@@ -4,5 +4,5 @@ import { PricingAndTemplatesComponent } from './components/pricing and templates
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
-    {path: 'pricingAndTemplates', component: PricingAndTemplatesComponent}
+    {path: 'pricing', component: PricingAndTemplatesComponent}
 ];
