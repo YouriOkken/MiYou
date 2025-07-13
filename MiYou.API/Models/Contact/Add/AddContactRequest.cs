@@ -21,6 +21,6 @@ namespace MiYou.API.Models.Contact.Add
         public string Idea { get; set; }
 
         [StringLength(1000, MinimumLength = 0)] // Stringlength is iets krachtiger, en kan je min en max length meegeven
-        public string? additionalInfo { get; set; }
+        public string? AdditionalInfo { get; set; }
     }
 }

@@ -112,4 +112,16 @@ export class AppComponent {
       });
     }
   }
+
+  getErrorMessage(error: any): string {
+    if (!error?.error?.message) {
+        return "Er ging iets fout!";
+    }
+
+    if (error.error.message === "failed to fetch") {
+        return "Op dit moment kan er geen verbinding gemaakt worden met ons systeem.";
+    }
+
+    return error.error.message;
+  }
 }

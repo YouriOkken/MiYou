@@ -26,10 +26,10 @@ namespace MiYou.API.Features.Contacts.Add
             using DatabaseContext _context = _contextFactory.Create();
 
             if (await _context.Contacts.AnyAsync(c => c.Email == request.Email))
-                throw new AlreadyExistsException("Er bestaat helaas al een contact met dit email adres");
+                throw new AlreadyExistsException("Er is helaas al contact gemaakt met ons via dit email adres.");
 
-            if (string.IsNullOrWhiteSpace(request.additionalInfo))
-                request.additionalInfo = "-"; // om gelijkheid te maken, anders heeft de ene klant niks en de ander een -
+            if (string.IsNullOrWhiteSpace(request.AdditionalInfo))
+                request.AdditionalInfo = "-"; // om gelijkheid te maken, anders heeft de ene klant niks en de ander een -
 
             if (string.IsNullOrWhiteSpace(request.CompanyName))
                 request.CompanyName = "-"; // om gelijkheid te maken, anders heeft de ene klant niks en de ander een -
@@ -40,13 +40,13 @@ namespace MiYou.API.Features.Contacts.Add
                 CompanyName = request.CompanyName,
                 Email = request.Email,
                 Idea = request.Idea,
-                additionalInfo = request.additionalInfo,
+                additionalInfo = request.AdditionalInfo,
             };
 
             _context.Contacts.Add(newContact);
             await _context.SaveChangesAsync();
 
-            await _emailService.SendEmailAsync("contact@miyou.nl", "Nieuw contact", EmailTemplates.GenerateContactEmailHtml(request.Name, request.CompanyName, request.Email, request.Idea, request.additionalInfo));
+            //await _emailService.SendEmailAsync("contact@miyou.nl", "Nieuw contact", EmailTemplates.GenerateContactEmailHtml(request.Name, request.CompanyName, request.Email, request.Idea, request.additionalInfo));
         }
     }
 }
