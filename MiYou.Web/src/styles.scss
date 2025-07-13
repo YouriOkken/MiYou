@@ -5,6 +5,7 @@ body {
     height: 100%;
     width: 100%;
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -23,6 +24,10 @@ body {
     background-size: cover;
     background-attachment: fixed;
 
+    font-family: system-ui, sans-serif;
+}
+
+textarea {
     font-family: system-ui, sans-serif;
 }
 

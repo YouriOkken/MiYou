@@ -89,7 +89,7 @@
     font-size: 1.5vw;
     padding: 1vh 0;
     text-decoration: none;
-      text-shadow: 0 0 0.4vw rgba(255, 255, 255, 0.6);
+    text-shadow: 0 0 0.4vw rgba(255, 255, 255, 0.6);
 
 }
 
@@ -138,4 +138,9 @@
     .mobile-menu a {
         font-size: 4vw;
     }
+}
+
+.logo {
+    height: 150px;
+    padding-top: 10%;
 }

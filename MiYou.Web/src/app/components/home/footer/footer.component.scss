@@ -1,0 +1,54 @@
+.footer {
+  color: #aaa;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+
+  .container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  a {
+    color: #aaa;
+    margin-left: 1rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+
+    &:hover {
+      text-shadow: 0 0 0.4vw rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  .left {
+    flex: 1;
+  }
+
+  .right {
+    flex: 1;
+    text-align: right;
+
+    @media (max-width: 600px) {
+      text-align: left;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    font-size: 0.8rem;
+
+    .container {
+      gap: 0.5rem;
+    }
+
+    a {
+      font-size: 0.8rem;
+      margin-left: 0.5rem;
+      white-space: nowrap;
+    }
+  }
+}
