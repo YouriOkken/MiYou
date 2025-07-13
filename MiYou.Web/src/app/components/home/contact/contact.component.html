@@ -1,21 +1,31 @@
 <section class="contact-section">
   <h2>Contact</h2>
-  <form>
-    <div class="form-group">
-      <label for="name">Naam</label>
-      <input type="text" id="name" name="name" placeholder="Jouw naam" />
-    </div>
+<form (ngSubmit)="sendContact()" #contactForm="ngForm">
+  <div class="form-group">
+    <label for="name">Naam*</label>
+    <input type="text" id="name" name="name" placeholder="Uw volledige naam" [(ngModel)]="name" required />
+  </div>
 
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="Jouw email" />
-    </div>
+  <div class="form-group">
+    <label for="companyName">Bedrijfsnaam</label>
+    <input type="text" id="companyName" name="companyName" placeholder="Uw bedrijfsnaam" [(ngModel)]="companyName" />
+  </div>
 
-    <div class="form-group">
-      <label for="message">Bericht</label>
-      <textarea id="message" name="message" rows="4" placeholder="Jouw bericht"></textarea>
-    </div>
+  <div class="form-group">
+    <label for="email">Email*</label>
+    <input type="email" id="email" name="email" placeholder="Uw email" [(ngModel)]="email" required />
+  </div>
 
-    <button type="submit">Neem contact op</button>
-  </form>
+  <div class="form-group">
+    <label for="idea">Idee*</label>
+    <textarea id="idea" name="idea" rows="4" placeholder="Leg hier uw idee uit aan ons!" [(ngModel)]="idea" required></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="requirements">Extra toelichting</label>
+    <textarea id="requirements" name="requirements" rows="4" placeholder="Heeft u nog wat extra toelichting? Noteer het hier!" [(ngModel)]="additionalInfo"></textarea>
+  </div>
+
+  <button type="submit">Neem contact op</button>
+</form>
 </section>

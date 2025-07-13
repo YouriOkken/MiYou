@@ -1,4 +1,6 @@
 using MiYou.API.Extensions;
+using MiYou.API.Services;
+using MiYou.Shared.Utilities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +17,10 @@ builder.Services.AddMapperServices();
 builder.Services.AddContextServices();
 builder.Services.AddCustomServices();
 builder.Services.AddSignalR();
+
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
+builder.Services.AddScoped<EmailService>();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowLocalhost", policy =>

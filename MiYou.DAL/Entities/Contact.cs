@@ -8,15 +8,11 @@ namespace MiYou.DAL.Entities
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(50)]
-        public string FirstName { get; set; }
+        [MaxLength(150)]
+        public string Name { get; set; }
 
-        [MaxLength(10)]
-        public string? MiddleName { get; set; }
-
-        [Required]
         [MaxLength(50)]
-        public string LastName { get; set; }
+        public string? CompanyName { get; set; }
 
         [Required]
         [EmailAddress]
@@ -25,6 +21,9 @@ namespace MiYou.DAL.Entities
 
         [Required]
         [StringLength(1000, MinimumLength = 10)] // Stringlength is iets krachtiger, en kan je min en max length meegeven
-        public string Description { get; set; }
+        public string Idea { get; set; }
+
+        [StringLength(1000, MinimumLength = 0)] // Stringlength is iets krachtiger, en kan je min en max length meegeven
+        public string? additionalInfo { get; set; }
     }
 }
