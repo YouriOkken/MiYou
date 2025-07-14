@@ -50,7 +50,6 @@ export class ContactComponent implements OnInit {
     });
   }
 
-
   async sendContact() {
     if (this.contactForm.invalid) {
       this.contactForm.markAllAsTouched();
