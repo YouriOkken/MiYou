@@ -4,7 +4,7 @@ import { ContactService } from '../../../services/contact/contact.service';
 import { CreateContactRequest } from '../../../models/contact/create/create-contact-request.model';
 import { AnimationOptions, LottieComponent } from 'ngx-lottie';
 import { getErrorMessage } from '../../../utilities/error/error.utilities';
-import { onAnimationCreated } from '../../../utilities/animations/animation.utilities';
+import { onAnimationCreated, getAnimation, animationTypes } from '../../../utilities/animations/animation.utilities';
 
 @Component({
   selector: 'contact-component',
@@ -16,15 +16,29 @@ export class ContactComponent implements OnInit {
   contactForm!: FormGroup;
 
   isSuccess: boolean | undefined = undefined;
+  isProcessing: boolean = false;
   errorMessage: string = '';
 
   handleAnimationCreated = onAnimationCreated;
   getErrorMessage = getErrorMessage;
 
+  successAnimation: AnimationOptions;
+  loadingAnimation: AnimationOptions;
+  errorAnimation: AnimationOptions;
+
   constructor(
     private fb: FormBuilder,
     private readonly contactService: ContactService
-  ) {}
+  ) 
+  {
+    this.successAnimation = {
+      path: 'assets/animations/email_sent.json',
+      loop: true,
+      autoplay: true,
+    };
+    this.loadingAnimation = getAnimation(animationTypes.loading, true);
+    this.errorAnimation = getAnimation(animationTypes.error, false);
+  }
 
   ngOnInit() {
     this.contactForm = this.fb.group({
@@ -36,19 +50,10 @@ export class ContactComponent implements OnInit {
     });
   }
 
-  successAnimation: AnimationOptions = {
-    path: 'assets/animations/email_sent.json',
-    loop: true,
-    autoplay: true,
-  };
-
-  errorAnimation: AnimationOptions = {
-    path: 'assets/animations/failure.json',
-    loop: false,
-    autoplay: true,
-  };
 
   async sendContact() {
+    this.isProcessing = true;
+
     if (this.contactForm.invalid) {
       this.contactForm.markAllAsTouched();
       return;
@@ -66,6 +71,8 @@ export class ContactComponent implements OnInit {
       this.isSuccess = false;
       this.errorMessage = getErrorMessage(error);
     }
+
+    this.isProcessing = false;
   }
 
   resetForm() {

@@ -1,7 +1,7 @@
 <section class="contact-section">
   <h2>Contact</h2>
 
-  @if (isSuccess === undefined) {
+  @if (isSuccess === undefined && !isProcessing) {
     <form [formGroup]="contactForm" (ngSubmit)="sendContact()">
       <div class="form-group">
         <label for="name">Naam*</label>
@@ -70,6 +70,10 @@
 
       <button type="submit" [disabled]="contactForm.invalid">Versturen</button>
     </form>
+  }
+  @else if (isProcessing) {
+    <ng-lottie class="animation" [options]="loadingAnimation"></ng-lottie>
+    <p>Aan het verzenden...</p>
   }
   @else if (!isSuccess) {
     <ng-lottie class="animation" [options]="errorAnimation"></ng-lottie>
