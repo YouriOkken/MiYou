@@ -27,9 +27,10 @@
   </div>
 
   <div class="mobile-menu" [class.active]="menuOpen">
-    <a href="#">Home</a>
-    <a href="#about-us">Over ons</a>
-    <a href="#">Login</a>
-    <a href="#contact">Contact</a>
+    <a href="#" (click)="toggleMenu()">Home</a>
+    <a href="#about-us" (click)="toggleMenu()">Over ons</a>
+    <a [routerLink]="['/pricing']" (click)="toggleMenu()">Prijzen en Templates</a>
+    <a href="#" (click)="toggleMenu()">Login</a>
+    <a href="#contact" (click)="toggleMenu()">Contact</a>
   </div>
 </div>
