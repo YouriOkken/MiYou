@@ -9,7 +9,7 @@ namespace MiYou.API.Controllers
     {
         public ContactController(IServiceProvider serviceProvider) : base(serviceProvider) { }
 
-        [HttpPost("add")]
+        [HttpPost("create")]
         public async Task<IActionResult> AddContact([FromBody] AddContactRequest request)
         {
             await ProcessAsync<AddContactRequest>(request);
