@@ -52,12 +52,14 @@ export class ContactComponent implements OnInit {
 
 
   async sendContact() {
-    this.isProcessing = true;
-
     if (this.contactForm.invalid) {
       this.contactForm.markAllAsTouched();
       return;
     }
+
+    setTimeout(() => { // kleine timeout. geef Lottie de tijd om shit goed in te stellen in de DOM
+      this.isProcessing = true;
+    }, 50);
 
     const request: CreateContactRequest = {
       ...this.contactForm.value

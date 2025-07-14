@@ -1,5 +1,7 @@
 import { AnimationItem } from "lottie-web";
 import { AnimationOptions } from "ngx-lottie";
+import loadingAnimationData from '../../../assets/animations/loading.json';
+import errorAnimationData from '../../../assets/animations/failure.json';
 
 export function onAnimationCreated(animationItem: AnimationItem, speed: number): void {
     animationItem.setSpeed(speed);
@@ -14,14 +16,14 @@ export function getAnimation(type: animationTypes, loop: boolean): AnimationOpti
     switch(type) {
         case animationTypes.loading:
             return {
-                path: 'assets/animations/loading.json',
+                animationData: loadingAnimationData,
                 loop: loop,
                 autoplay: true,
             };
 
         case animationTypes.error:
             return {
-                path: 'assets/animations/failure.json',
+                animationData: errorAnimationData,
                 loop: loop,
                 autoplay: true,
             };
