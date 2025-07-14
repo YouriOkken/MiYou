@@ -12,38 +12,12 @@
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 1.5rem;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
-  color: #eee;
   position: relative;
   overflow: hidden;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: -20%;
-    left: -20%;
-    width: 160%;
-    height: 160%;
-    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.2), transparent 70%);
-    opacity: 0.25;
-    pointer-events: none;
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: -20%;
-    left: -20%;
-    width: 160%;
-    height: 160%;
-    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.2), transparent 70%);
-    opacity: 0.25;
-    pointer-events: none;
-  }
 
   h2 {
     font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 2rem;
-    color: #fff;
   }
 
   form {

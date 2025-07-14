@@ -40,7 +40,7 @@ namespace MiYou.API.Features.Contacts.Add
                 CompanyName = request.CompanyName,
                 Email = request.Email,
                 Idea = request.Idea,
-                additionalInfo = request.AdditionalInfo,
+                AdditionalInfo = request.AdditionalInfo,
             };
 
             _context.Contacts.Add(newContact);

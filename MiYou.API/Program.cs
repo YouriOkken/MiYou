@@ -16,7 +16,6 @@ builder.Services.AddProcessorServices();
 builder.Services.AddMapperServices();
 builder.Services.AddContextServices();
 builder.Services.AddCustomServices();
-builder.Services.AddSignalR();
 
 builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
 builder.Services.AddScoped<EmailService>();
