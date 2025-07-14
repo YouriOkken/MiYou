@@ -2,12 +2,12 @@
   <div class="left">
     <div class="nav-links">
       <a href="#">Home</a>
-      <a href="#">Over ons</a>
+      <a href="#about-us">Over ons</a>
+      <a [routerLink]="['/pricing']">Prijzen en Templates</a>
     </div>
   </div>
   <div class="middle">
     <div class="nav-links">
-      <!-- <a href="#">Logo</a> -->
       <a href="#">
         <img class="logo" src="../../../assets/img/Logo_Single_Transparent.png" alt="Logo">
       </a>
@@ -16,22 +16,21 @@
   <div class="right">
     <div class="nav-links">
       <a href="#">Login</a>
-      <a href="#">Contact</a>
+      <a href="#contact">Contact</a>
     </div>
   </div>
 
-  <!-- Hamburger icoon -->
   <div class="hamburger" (click)="toggleMenu()">
     <div></div>
     <div></div>
     <div></div>
   </div>
 
-  <!-- Hamburger menu (voor mobiel) -->
   <div class="mobile-menu" [class.active]="menuOpen">
-    <a href="#">Home</a>
-    <a href="#">Over ons</a>
-    <a href="#">Login</a>
-    <a href="#">Contact</a>
+    <a href="#" (click)="toggleMenu()">Home</a>
+    <a href="#about-us" (click)="toggleMenu()">Over ons</a>
+    <a [routerLink]="['/pricing']" (click)="toggleMenu()">Prijzen en Templates</a>
+    <a href="#" (click)="toggleMenu()">Login</a>
+    <a href="#contact" (click)="toggleMenu()">Contact</a>
   </div>
 </div>
