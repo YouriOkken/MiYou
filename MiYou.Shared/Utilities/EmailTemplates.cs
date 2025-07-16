@@ -179,6 +179,9 @@
 
     .email-container {{
       background-image: url('https://i.imgur.com/Q1gVLZb.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
       margin: 40px auto;
       padding: 40px;
       border: 1px solid #dddddd;
