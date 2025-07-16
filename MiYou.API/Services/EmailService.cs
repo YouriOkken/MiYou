@@ -18,7 +18,7 @@ namespace MiYou.API.Services
 
         public async Task SendEmailAsync(string to, string subject, string htmlContent)
         {
-            var email = new MimeMessage()
+            var email = new MimeMessage();
 
             email.From.Add(new MailboxAddress("MiYou", _settings.Username));
             email.To.Add(MailboxAddress.Parse(to));
