@@ -156,5 +156,83 @@
 
             return html;
         }
+
+        public static string ContactConfirmationTemplate(string name)
+        {
+            string currentYear = DateTime.Now.Year.ToString();
+            int beginYear = 2025;
+
+            return $@"
+            <!DOCTYPE html>
+            <html lang=""nl"">
+            <head>
+                <meta charset=""UTF-8"">
+                <meta name=""viewport"" content=""width=device-width, initial-scale=1"">
+                <title>Bedankt voor uw bericht</title>
+                <style>
+                    body {{
+                        font-family: system-ui, sans-serif;
+                        background-color: #f9f9f9;
+                        color: #333;
+                        padding: 30px;
+                        margin: 0;
+                    }}
+            
+                    .email-container {{
+                        background-image: url('https://i.imgur.com/Q1gVLZb.png');
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        background-attachment: fixed;
+                        margin: 40px auto;
+                        padding: 40px;
+                        border: 1px solid #dddddd;
+                        border-radius: 24px;
+                        box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
+                        text-align: center;
+                    }}
+            
+                    .logo {{
+                        text-align: center;
+                        margin-bottom: 30px;
+                    }}
+            
+                    .logo img {{
+                        max-height: 40px;
+                    }}
+            
+                    h1 {{
+                        color: white;
+                        font-size: 22px;
+                    }}
+            
+                    p {{
+                        font-size: 16px;
+                        line-height: 1.6;
+                        color: white;
+                    }}
+            
+                    .footer {{
+                        margin-top: 30px;
+                        font-size: 13px;
+                        color: #ccc;
+                        text-align: center;
+                    }}
+                </style>
+            </head>
+            <body>
+                <div class=""email-container"">
+                    <h1>We hebben uw bericht ontvangen</h1>
+                    <p>Hallo {name},</p>
+                    <p>Bedankt voor uw bericht via ons contactformulier. Wij nemen zo snel mogelijk contact met u op.</p>
+                    <p>Tot aan de rand van het universum - of gewoon uw inbox 😉!</p>
+                    <p>MiYou</p>
+            
+                    <div class=""footer"">
+                        &copy; {beginYear} MiYou - Alle rechten voorbehouden.
+                    </div>
+                </div>
+            </body>
+            </html>";
+        }
     }
 }

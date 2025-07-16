@@ -4,7 +4,8 @@ import { ContactService } from '../../../services/contact/contact.service';
 import { CreateContactRequest } from '../../../models/contact/create/create-contact-request.model';
 import { AnimationOptions, LottieComponent } from 'ngx-lottie';
 import { getErrorMessage } from '../../../utilities/error/error.utilities';
-import { onAnimationCreated, getAnimation, animationTypes } from '../../../utilities/animations/animation.utilities';
+import { onAnimationCreated, getAnimation } from '../../../utilities/animations/animation.utilities';
+import { animationTypes } from '../../../utilities/enums/animationTypes.enum';
 
 @Component({
   selector: 'contact-component',
@@ -36,8 +37,9 @@ export class ContactComponent implements OnInit {
       loop: true,
       autoplay: true,
     };
-    this.loadingAnimation = getAnimation(animationTypes.loading, true);
-    this.errorAnimation = getAnimation(animationTypes.error, false);
+    this.successAnimation = getAnimation(animationTypes.contactSend, true, true);
+    this.loadingAnimation = getAnimation(animationTypes.loading, true, true);
+    this.errorAnimation = getAnimation(animationTypes.error, false, true);
   }
 
   ngOnInit() {
@@ -61,7 +63,7 @@ export class ContactComponent implements OnInit {
     }, 50);
 
     const request: CreateContactRequest = {
-      ...this.contactForm.value
+      ...this.contactForm.value // 3 puntjes betekenen eig pak gwn alle values van contctForm en zet ze in request
     };
 
     try {
