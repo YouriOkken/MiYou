@@ -4,7 +4,8 @@ import { ContactService } from '../../../services/contact/contact.service';
 import { CreateContactRequest } from '../../../models/contact/create/create-contact-request.model';
 import { AnimationOptions, LottieComponent } from 'ngx-lottie';
 import { getErrorMessage } from '../../../utilities/error/error.utilities';
-import { onAnimationCreated, getAnimation, animationTypes } from '../../../utilities/animations/animation.utilities';
+import { onAnimationCreated, getAnimation } from '../../../utilities/animations/animation.utilities';
+import { animationTypes } from '../../../utilities/enums/animationTypes.enum';
 
 @Component({
   selector: 'contact-component',

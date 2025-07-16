@@ -47,6 +47,7 @@ namespace MiYou.API.Features.Contacts.Add
             await _context.SaveChangesAsync();
 
             await _emailService.SendEmailAsync("contact@miyou.nl", "Nieuw contact", EmailTemplates.GenerateContactEmailHtml(request.Name, request.CompanyName, request.Email, request.Idea, request.AdditionalInfo));
+            await _emailService.SendEmailAsync(request.Email, "Contact bevestiging", EmailTemplates.ContactConfirmationTemplate(request.Name));
         }
     }
 }

@@ -2,14 +2,10 @@ import { AnimationItem } from "lottie-web";
 import { AnimationOptions } from "ngx-lottie";
 import loadingAnimationData from '../../../assets/animations/loading.json';
 import errorAnimationData from '../../../assets/animations/failure.json';
+import { animationTypes } from "../enums/animationTypes.enum";
 
 export function onAnimationCreated(animationItem: AnimationItem, speed: number): void {
     animationItem.setSpeed(speed);
-}
-
-export enum animationTypes {
-    loading,
-    error
 }
 
 export function getAnimation(type: animationTypes, loop: boolean): AnimationOptions {
