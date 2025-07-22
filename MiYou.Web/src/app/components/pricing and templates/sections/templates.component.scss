@@ -1,7 +1,7 @@
 .templates-section {
     padding: 1rem 1.5rem;
     text-align: center;
-    
+
 
     h2 {
         font-size: clamp(2rem, 5vw, 3rem);
@@ -23,29 +23,13 @@
         -webkit-backdrop-filter: blur(30px) saturate(180%);
         border: 1px solid rgba(255, 255, 255, 0.3);
         border-radius: 1.25rem;
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 20px 50px rgba(160, 130, 255, 0.15);
         padding: 2rem 1.5rem;
-        flex: 1 1 250px;
-        max-width: 300px;
+        flex: 1 1 250px; // ✅ responsief flex-item
+        max-width: 300px; // ✅ begrenst de breedte
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-        position: relative;
-        overflow: hidden;
-
-        // Glare overlay
-        &::before {
-            content: "";
-            position: absolute;
-            top: -30%;
-            left: -30%;
-            width: 160%;
-            height: 160%;
-            background: radial-gradient(circle at top left,
-                    rgba(255, 255, 255, 0.3),
-                    transparent 60%);
-            opacity: 0.2;
-            pointer-events: none;
-        }
+        display: flex;
+        flex-direction: column;
 
         &:hover {
             transform: translateY(-10px);
@@ -55,26 +39,39 @@
         .template-name {
             font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
         }
 
         h3 {
             font-size: 1.5rem;
-            margin-bottom: 0.5rem;
         }
 
         p {
             font-size: 1rem;
             line-height: 1.5;
-            color: #e0e0e0;
         }
-    }
 
+        .item-list {
+            display: flex;
+            flex: 1;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            flex-direction: column;
+            padding: 1%;
+            gap: 0.5rem;
 
-    .step ng-lottie {
-        width: clamp(90px, 15vw, 150px);
-        height: clamp(90px, 15vw, 150px);
-        margin: 0 auto 1rem;
-        display: block;
+            .item {
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+
+                .checkmark{
+                    color: green;
+                }
+
+                .cross{
+                    color: red;
+                }
+            }
+
+        }
     }
 }

@@ -23,5 +23,6 @@ namespace MiYou.API.Models.Contact.Add
         [Required]
         [StringLength(1000, MinimumLength = 10)] // Stringlength is iets krachtiger, en kan je min en max length meegeven
         public string Description { get; set; }
+
     }
 }
