@@ -5,10 +5,7 @@ import { BehaviorSubject } from 'rxjs';
     providedIn: 'root'
 })
 export class CookiesService {
-    private showBannerSubject = new BehaviorSubject<boolean>(true);
-    showBanner$ = this.showBannerSubject.asObservable();
-
-    setShowBanner(value: boolean) {
-        this.showBannerSubject.next(value);
-    }
+  private showBannerSubject = new BehaviorSubject<boolean>(true);
+  showBanner$ = this.showBannerSubject.asObservable();
+  setShowBanner(v: boolean) { this.showBannerSubject.next(v); }
 }

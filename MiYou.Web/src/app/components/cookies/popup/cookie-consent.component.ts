@@ -14,85 +14,70 @@ export class CookieConsentComponent implements OnInit {
   showBanner = false;
   isBrowser: boolean;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object, private cookiesService: CookiesService) {
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private cookiesService: CookiesService
+  ) {
     this.isBrowser = isPlatformBrowser(platformId);
   }
 
-  ngOnInit(): void {
-    this.cookiesService.showBanner$.subscribe(value => {
-      this.showBanner = value;
-    })
+  ngOnInit() {
+    this.cookiesService.showBanner$.subscribe(v => this.showBanner = v);
+
     if (this.isBrowser) {
       const consent = localStorage.getItem('cookieConsent');
-      console.log('cookieConsent in localStorage:', consent);
       this.showBanner = !consent;
+      if (consent === 'all') {
+        this.loadAnalytics();
+      }
     }
   }
 
   acceptAll() {
-    debugger;
-    if (this.isBrowser) {
-      if (localStorage.getItem('cookieConsent') === "all") {
-        (window as any).gtag('consent', 'update', {
-          analytics_storage: 'granted'
-        });
-
-        (window as any).gtag('config', environment.googleAnalyticsId);
-      }
-      localStorage.setItem('cookieConsent', 'all');
-      this.loadAnalytics();
-      this.showBanner = false;
-      // window.location.reload();
-    }
+    if (!this.isBrowser) return;
+    localStorage.setItem('cookieConsent', 'all');
+    (window as any).gtag?.('consent', 'update', { analytics_storage: 'granted' });
+    this.loadAnalytics();
+    this.showBanner = false;
+    this.cookiesService.setShowBanner(false);
   }
 
   acceptNecessaryOnly() {
-    debugger;
-    if (this.isBrowser) {
-      if (localStorage.getItem('cookieConsent') === "all") {
-        this.stopAnalytics();
-      }
-      localStorage.setItem('cookieConsent', 'necessary');
-      this.showBanner = false;
-    }
+    if (!this.isBrowser) return;
+    localStorage.setItem('cookieConsent', 'necessary');
+    this.showBanner = false;
+    this.cookiesService.setShowBanner(false);
   }
 
-  stopAnalytics() {
-    if (!(window as any).gtag) return;
-
-    (window as any).gtag('consent', 
-      'update', {
-        analytic_storage: 'denied'
-      });
+  loadAnalytics() {
+    if (!this.isBrowser) return;
+  
+    if (document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
+      this.initGtag(true);  // true = config direct uitvoeren
+      return;
+    }
+  
+    const script = document.createElement('script');
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${environment.googleAnalyticsId}`;
+    script.async = true;
+    document.head.appendChild(script);
+  
+    script.onload = () => {
+      this.initGtag(true); // config pas aanroepen ná load
+    };
   }
 
-    loadAnalytics() {
-      if (!this.isBrowser) return;
-
-      // Check of script al is toegevoegd
-      if (document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
-        this.initGtag();
-        return;
-      }
-
-      const script = document.createElement('script');
-      script.src = `https://www.googletagmanager.com/gtag/js?id=${environment.googleAnalyticsId}`;
-      script.async = true;
-      document.head.appendChild(script);
-
-      script.onload = () => {
-        this.initGtag();
-      };
+  initGtag(shouldConfig = false) {
+    (window as any).dataLayer = (window as any).dataLayer || [];
+    function gtag(...args: any[]) {
+      (window as any).dataLayer.push(args);
     }
+    (window as any).gtag = gtag;
 
-    initGtag() {
-      (window as any).dataLayer = (window as any).dataLayer || [];
-      function gtag(...args: any[]) {
-        (window as any).dataLayer.push(args);
-      }
-      (window as any).gtag = gtag; // zodat gtag globaal beschikbaar is
+    gtag('js', new Date());
 
-      gtag('js', new Date());
-      gtag('config', environment.googleAnalyticsId);
+    if (shouldConfig) {
+      gtag('config', environment.googleAnalyticsId, { anonymize_ip: true });
     }
+  }
 }
