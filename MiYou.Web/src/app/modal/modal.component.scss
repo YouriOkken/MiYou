@@ -1,0 +1,163 @@
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    animation: fadeInBackdrop 0.4s ease forwards;
+    z-index: 1000;
+
+    &.closing {
+        animation: fadeOutBackdrop 0.4s ease forwards;
+    }
+}
+
+.modal-content {
+    animation: swipeUp 0.5s ease-out;
+    background: linear-gradient(to bottom right,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.03));
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    border-radius: 1.5rem;
+    width: 95%;
+    box-shadow: 0 20px 50px rgba(160, 130, 255, 0.15);
+    padding: 2rem 1.5rem;
+    flex: 1 1 250px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    &.closing {
+        animation: swipeDown 0.5s ease forwards;
+    }
+
+    .template-name {
+        font-family: 'Lora', serif;
+        font-size: 1.9rem;
+        font-weight: 700;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .item-list {
+        display: flex;
+        flex: 1;
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        flex-direction: column;
+        padding: 4%;
+        gap: 0.5rem;
+
+        .item {
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+
+            .checkmark {
+                color: lightgreen;
+            }
+
+            .cross {
+                color: red;
+            }
+        }
+    }
+
+    .price {
+        display: flex;
+        justify-content: center;
+        padding: 3%;
+        font-family: 'Lora', serif;
+        font-size: 2.1rem;
+    }
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    padding: 2rem 2rem 2.5rem;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+
+    .close-btn {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: transparent;
+        border: none;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+        line-height: 1;
+        transition: color 0.3s ease;
+        box-shadow: none;
+
+        &:hover {
+            color: #a082ff;
+        }
+    }
+
+    .modal-body {
+        flex: 1;
+        margin: 1rem 0;
+        font-size: 1rem;
+        color: #eee;
+    }
+}
+
+@keyframes fadeInBackdrop {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes swipeUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes fadeOutBackdrop {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes swipeDown {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    to {
+        opacity: 0;
+        transform: translate(-50%, 100%);
+    }
+}
