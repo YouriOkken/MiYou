@@ -1,0 +1,12 @@
+@if (showBanner) {
+    <div class="cookie-banner">
+      <p>
+        Wij gebruiken cookies om onze site goed te laten werken (essentieel) en om statistieken te verzamelen met jouw toestemming.
+      </p>
+      <div class="buttons">
+        <button (click)="acceptNecessaryOnly()">Alleen noodzakelijke cookies</button>
+        <button (click)="acceptAll()">Alles accepteren</button>
+      </div>
+      <a [routerLink]="['/cookies']">Meer info</a>
+    </div>
+}

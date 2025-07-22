@@ -31,6 +31,22 @@ textarea {
     font-family: system-ui, sans-serif;
 }
 
+.cta {
+    padding: 1rem;
+    border-radius: 0.8rem;
+    font-style: italic;
+    background: linear-gradient(to bottom right,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.03));
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+a {
+    color: rgb(94, 111, 167);
+}
+
 #particles-js {
   position: fixed;
   width: 100%;
