@@ -17,6 +17,7 @@
     <div class="nav-links">
       <a href="#">Login</a>
       <a href="#contact">Contact</a>
+      <button (click)="modalVisible = true">Hello</button>
     </div>
   </div>
 
@@ -34,3 +35,10 @@
     <a href="#contact" (click)="toggleMenu()">Contact</a>
   </div>
 </div>
+
+<miyou-modal [visible]="modalVisible" [modalTitle]="'TestTitel'">
+  <div class="form">
+    <label for="name">Naam*</label>
+    <input id="name" type="text">
+  </div>
+</miyou-modal>

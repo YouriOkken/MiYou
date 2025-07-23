@@ -1,16 +1,19 @@
 import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ModalComponent } from "../../modal/modal.component";
 
 @Component({
     selector: 'nav-component',
     templateUrl: 'navbar.component.html',
     styleUrl: "navbar.component.scss",
-    imports: [RouterModule]
+    imports: [RouterModule, ModalComponent]
 })
 
 export class NavbarComponent implements OnInit {
     menuOpen = false;
 
+    modalVisible = false;
+    
     constructor(private eRef: ElementRef) { }
 
     ngOnInit() { }
