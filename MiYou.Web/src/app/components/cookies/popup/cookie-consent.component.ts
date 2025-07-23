@@ -3,16 +3,20 @@ import { isPlatformBrowser } from '@angular/common';
 import { CookiesService } from '../../../services/cookies/cookies.service';
 import { RouterModule } from '@angular/router';
 import { environment } from '../../../../environments/environment';
+import { ModalComponent } from "../../../modal/modal.component";
+import { SwitchComponent } from "../../switch/switch.component";
 
 @Component({
   selector: 'cookie-consent-component',
   templateUrl: './cookie-consent.component.html',
   styleUrls: ['./cookie-consent.component.scss'],
-  imports: [RouterModule]
+  imports: [RouterModule, ModalComponent, SwitchComponent]
 })
 export class CookieConsentComponent implements OnInit {
   showBanner = false;
   isBrowser: boolean;
+  necessaryCookies: boolean = true;
+  AllCookies: boolean = false;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
@@ -26,10 +30,21 @@ export class CookieConsentComponent implements OnInit {
 
     if (this.isBrowser) {
       const consent = localStorage.getItem('cookieConsent');
-      this.showBanner = !consent;
+
       if (consent === 'all') {
+        this.AllCookies = true;
         this.loadAnalytics();
       }
+    }
+  }
+
+  handleSave() {
+    if (this.AllCookies) {
+      this.acceptAll();
+    } else if (this.necessaryCookies) {
+      this.acceptNecessaryOnly();
+    } else {
+      this.acceptNecessaryOnly(); // fallback
     }
   }
 

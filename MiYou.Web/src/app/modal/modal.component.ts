@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
  * dat je kunt openen en sluiten met een animatie.
  *
  * @example
- * <miyou-modal [visible]="variable" [modalTitle]="Form Titel" (close)="onClose()">Inhoud</miyou-modal>
+ * <miyou-modal [visible]="variable" [title]="Form Titel" (close)="onClose()">Inhoud</miyou-modal>
  */
 @Component({
   selector: 'miyou-modal',
@@ -16,8 +16,13 @@ import { CommonModule } from '@angular/common';
 })
 export class ModalComponent {
   @Output() close = new EventEmitter<void>();
-  @Input() modalTitle: string = "MiYou";
+  @Output() ok = new EventEmitter<void>();
+  @Input() title: string = "MiYou";
   @Input() visible: boolean = false;
+  @Input() showCloseButton: boolean = true;
+  @Input() showCloseX: boolean = true;
+  @Input() showOKButton: boolean = false;
+  @Input() OKButtonLabel: string = "Oke";
 
   isClosing = false;
   isVisible = false;
@@ -38,6 +43,15 @@ export class ModalComponent {
       this.isVisible = false;
       this.isClosing = false;
       this.close.emit(); // signaal naar parent
+    }, 500);
+  }
+
+  onOk() {
+    this.isClosing = true;
+    setTimeout(() => {
+      this.isVisible = false;
+      this.isClosing = false;
+      this.ok.emit();
     }, 500);
   }
 }
