@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router';
 
 export class NavbarComponent implements OnInit {
     menuOpen = false;
-
+    
     constructor(private eRef: ElementRef) { }
 
     ngOnInit() { }

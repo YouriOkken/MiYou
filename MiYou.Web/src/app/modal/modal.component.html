@@ -1,0 +1,14 @@
+@if (isVisible) {
+  <div class="modal-backdrop" [ngClass]="{ closing: isClosing }" (click)="onClose()"></div>
+  <div class="modal-content template" [ngClass]="{ closing: isClosing }" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+    <button class="close-btn" (click)="onClose()" aria-label="Close modal">&times;</button>
+  
+    <h2 id="modalTitle" class="modal-title">{{modalTitle}}</h2>
+    
+    <div class="modal-body">
+      <ng-content class="content"></ng-content>
+    </div>
+    
+    <button class="action-btn" (click)="onClose()">Sluiten</button>
+  </div>
+}
