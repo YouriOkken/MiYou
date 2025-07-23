@@ -32,7 +32,7 @@ export class ModalComponent {
       if (this.visible) {
         this.isVisible = true;
       } else {
-        this.onClose(); // sluit met animatie als parent visible op false zet
+        this.onClose();
       }
     }
   }
@@ -42,7 +42,7 @@ export class ModalComponent {
     setTimeout(() => {
       this.isVisible = false;
       this.isClosing = false;
-      this.close.emit(); // signaal naar parent
+      this.close.emit();
     }, 500);
   }
 
