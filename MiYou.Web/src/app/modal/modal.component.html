@@ -3,10 +3,10 @@
   <div class="modal-content template" [ngClass]="{ closing: isClosing }" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
     <button class="close-btn" (click)="onClose()" aria-label="Close modal">&times;</button>
   
-    <h2 id="modalTitle" class="template-name">{{modalTitle}}</h2>
+    <h2 id="modalTitle" class="modal-title">{{modalTitle}}</h2>
     
     <div class="modal-body">
-      <ng-content></ng-content>
+      <ng-content class="content"></ng-content>
     </div>
     
     <button class="action-btn" (click)="onClose()">Sluiten</button>
