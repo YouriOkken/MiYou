@@ -2,7 +2,6 @@
   box-sizing: border-box;
 }
 
-
 .content {
     display: flex;
     width: 100%;
@@ -60,7 +59,6 @@
   }
 }
 
-/* Tablet (601px tot 1024px) */
 @media (min-width: 601px) and (max-width: 1024px) {
   body {
     padding: 1rem 1rem;
