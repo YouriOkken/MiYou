@@ -6,7 +6,7 @@ import { AnimationOptions, LottieComponent } from 'ngx-lottie';
     selector: 'process-component',
     templateUrl: 'process.component.html',
     styleUrl: "process.component.scss",
-    imports: [LottieComponent , TranslateModule]
+    imports: [LottieComponent, TranslateModule]
 })
 
 export class ProcessComponent implements OnInit {

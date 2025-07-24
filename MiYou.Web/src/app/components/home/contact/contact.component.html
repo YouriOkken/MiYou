@@ -1,43 +1,43 @@
 <section class="contact-section" id="contact">
-  <h2>Contact</h2>
+  <h2>{{'HOME.CONTACT.title' | translate }}</h2>
 
   @if (isSuccess === undefined && !isProcessing) {
     <form [formGroup]="contactForm" (ngSubmit)="sendContact()">
       <div class="form-group">
-        <label for="name">Uw volledige naam*</label>
+        <label for="name">{{'HOME.CONTACT.fullname-label' | translate }}*</label>
         <input id="name" type="text" placeholder="Uw volledige naam" formControlName="name" />
         @if (contactForm.get('name')?.touched && contactForm.get('name')?.invalid) {
           @if (contactForm.get('name')?.errors?.['required']) {
-            <small>Naam is verplicht.</small>
+            <small>{{'HOME.CONTACT.fullname-validation-null' | translate }}</small>
           }
           @if (contactForm.get('name')?.errors?.['maxlength']) {
-            <small>Maximaal 150 tekens.</small>
+            <small>{{'HOME.CONTACT.fullname-validation-maximum' | translate }}</small>
           }
         }
       </div>
 
       <div class="form-group">
-        <label for="companyName">Bedrijfsnaam</label>
+        <label for="companyName">{{'HOME.CONTACT.company.name-label' | translate }}</label>
         <input id="companyName" type="text" placeholder="Uw bedrijfsnaam" formControlName="companyName" />
         @if (contactForm.get('companyName')?.touched && contactForm.get('companyName')?.invalid) {
           @if (contactForm.get('companyName')?.errors?.['maxlength']) {
-            <small>Maximaal 50 tekens.</small>
+            <small>{{'HOME.CONTACT.company.name-validation-maximum' | translate }}</small>
           }
         }
       </div>
 
       <div class="form-group">
-        <label for="email">Email*</label>
+        <label for="email">{{'HOME.CONTACT.email-label' | translate }}*</label>
         <input id="email" type="email" placeholder="Uw email" formControlName="email" />
         @if (contactForm.get('email')?.touched && contactForm.get('email')?.invalid) {
           @if (contactForm.get('email')?.errors?.['required']) {
-            <small>Email is verplicht.</small>
+            <small>{{'HOME.CONTACT.email-validation-null' | translate }}</small>
           }
           @if (contactForm.get('email')?.errors?.['email']) {
-            <small>Ongeldig emailadres.</small>
+            <small>{{'HOME.CONTACT.email-validation-invalid' | translate }}</small>
           }
           @if (contactForm.get('email')?.errors?.['maxlength']) {
-            <small>Maximaal 100 tekens.</small>
+            <small>{{'HOME.CONTACT.email-validation-maximum' | translate }}</small>
           }
         }
       </div>

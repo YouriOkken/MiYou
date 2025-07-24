@@ -21,6 +21,27 @@
                 "title": "Time to get to work",
                 "explanation": "We translate your ideas into a stylish, well-functioning website — exactly how you want it!"
             }
+        },
+        "CONTACT": {
+            "title": "Contact",
+            "fullname-label": "Full name",
+            "fullname-placeholder": "Your full name",
+            "fullname-validation-null": "Your full name is required.",
+            "fullname-validation-maximum": "Maximum 150 characters",
+            "company.name-label": "Company name",
+            "company.name-placeholder": "Your company name",
+            "company.name-validation-maximum": "Maximum 50 chraracters",
+            "email-label": "Email",
+            "email-placeholder": "Your Email",
+            "email-validation-null": "Your Email is required.",
+            "email-validation-invalid": "Your Email is Invalid.",
+            "email-validation-maximum": "Maximum 100 characters.",
+            "idea-label": "Idea",
+            "idea-placeholder": "Explain your idea to us here",
+            "idea-validation-null": "Your Idea required.",
+            "idea-validation-minimum": "Minimum 10 characters.",
+            "additional.explanation-label": "Additional explanation",
+            "additional.explanation-placeholder": "Got any extra thoughts?"
         }
     }
 }

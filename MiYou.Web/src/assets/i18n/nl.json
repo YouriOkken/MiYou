@@ -21,6 +21,24 @@
                 "title": "Aan de slag!",
                 "explanation": "Wij vertalen uw ideeën naar een strakke, goed werkende website — precies zoals u het wilt!"
             }
+        },
+        "CONTACT": {
+            "title": "Contact",
+            "fullname-label": "Volledige naam",
+            "fullname-placeholder": "Uw volledige naam",
+            "fullname-validation-null": "Uw volledige naam is verplicht",
+            "company.name-label": "Bedrijfsnaam",
+            "company.name-placeholder": "Uw bedrijfsnaam",
+            "email-label": "Email",
+            "email-placeholder": "Uw email",
+            "email-validation-null": "Uw Email is verplicht",
+            "email-validation-invalid": "Ongeldig emailadres",
+            "idea-label": "Idee",
+            "idea-placeholder": "Leg hier uw idee uit aan ons!",
+            "idea-validation-null": "Uw idee is verplicht.",
+            "idea-validation-minimum": "Minimaal 10 tekens.",
+            "additional.explanation-label": "Extra toelichting",
+            "additional.explanation-placeholder": "Heeft u nog wat extra toelichting?"
         }
     }
 }
