@@ -26,6 +26,8 @@
 
 .nav .right {
     justify-content: flex-end;
+    position: relative;
+
 }
 
 .nav-links {
@@ -100,6 +102,74 @@
 .mobile-menu.active {
     display: flex;
 }
+
+//language switch
+.language-switch-wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+.language-switch {
+    display: flex;
+    align-items: center;
+    padding: 1vh 1.5vw;
+    border-radius: 0.5vh;
+    transition: background-color 0.2s, text-shadow 0.3s;
+    text-shadow: 0 0 0.4vw rgba(255, 255, 255, 0.6);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.language-switch:hover {
+    text-shadow:
+        0 0 0.6vw rgba(255, 255, 255, 0.8),
+        0 0 1vw rgba(100, 200, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.language-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(34, 34, 34, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 0.5vh;
+    box-shadow: 0 0.3vh 1vh rgba(0, 0, 0, 0.7);
+    padding: 0.5vh 0.5vw;
+    z-index: 10;
+    min-width: 10vw;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.language-dropdown.active {
+    display: block;
+}
+
+.language-dropdown a {
+  display: block;
+  padding: 1vh 1.5vw;
+  font-weight: 500;
+  font-size: clamp(14px, 1.2vw, 18px);
+  text-decoration: none;
+  transition: background-color 0.2s, text-shadow 0.3s, border-radius 0.2s ease;
+  text-shadow: 0 0 0.4vw rgba(255, 255, 255, 0.6);
+  border-radius: 0;
+}
+
+.language-dropdown a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  text-shadow:
+      0 0 0.6vw rgba(255, 255, 255, 0.8),
+      0 0 1vw rgba(100, 200, 255, 0.7);
+  border-radius: 0.5vh;
+}
+
+.language-dropdown a:not(:last-child) {
+    border-bottom: 0.1vh solid rgba(255, 255, 255, 0.4);
+}
+
 
 //responsive dat die kleiner / veranderd naar een hamburger wanneer het scherm kleiner is dan 768px
 @media (max-width: 768px) {

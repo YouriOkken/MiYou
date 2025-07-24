@@ -1,20 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID, Renderer2, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FooterComponent } from "./components/footer/footer.component";
+import { isPlatformBrowser } from '@angular/common';
 
 declare const particlesJS: any;
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent, FooterComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  imports: [RouterOutlet, NavbarComponent, FooterComponent],
 })
 
 export class AppComponent {
+
+  constructor(private renderer: Renderer2,
+    @Inject(PLATFORM_ID) private platformId: Object
+
+  ) { }
+
   title(title: any) {
     throw new Error('Method not implemented.');
+  }
+
+  ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.renderer.addClass(document.body, 'ready');
+    }
   }
 
   ngAfterViewInit() {
@@ -116,13 +129,15 @@ export class AppComponent {
 
   getErrorMessage(error: any): string {
     if (!error?.error?.message) {
-        return "Er ging iets fout!";
+      return "Er ging iets fout!";
     }
 
     if (error.error.message === "failed to fetch") {
-        return "Op dit moment kan er geen verbinding gemaakt worden met ons systeem.";
+      return "Op dit moment kan er geen verbinding gemaakt worden met ons systeem.";
     }
 
     return error.error.message;
   }
+
+
 }

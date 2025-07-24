@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+/* verberg app root tot ready */
+app-root {
+  display: none;
+}
+
+body.ready app-root {
+  display: block;
+}
 
 html,
 body {

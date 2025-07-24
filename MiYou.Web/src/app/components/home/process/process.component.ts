@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { AnimationOptions, LottieComponent } from 'ngx-lottie';
 
 @Component({
     selector: 'process-component',
     templateUrl: 'process.component.html',
     styleUrl: "process.component.scss",
-    imports: [LottieComponent]
+    imports: [LottieComponent , TranslateModule]
 })
 
 export class ProcessComponent implements OnInit {

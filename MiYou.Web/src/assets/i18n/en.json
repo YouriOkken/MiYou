@@ -1,0 +1,26 @@
+{
+    "HOME": {
+        "title": "MiYou",
+        "description": "Welcome to MiYou – Where we focus on your results!",
+        "ABOUT": {
+            "title": "Who are we?",
+            "intro": "We are Milana and Youri, the faces behind MiYou. We are currently both studying Software Development at an MBO level 4 program. Our goal is to turn our passion for technology and creativity into beautiful and functional websites.",
+            "mission": "With MiYou, we focus on supporting individuals and small businesses that want to grow online. Whether you need a simpler website or something more complex, we’ll think along with you and deliver a result you can be proud of!"
+        },
+        "PROCESS": {
+            "title": "Our approach?",
+            "STEP1": {
+                "title": "Send us a message",
+                "explanation": "Fill out the contact form below and we will contact you as soon as possible!"
+            },
+            "STEP2": {
+                "title": "We schedule an appointment",
+                "explanation": "Together, we look at what you need and set a time to review everything in detail"
+            },
+            "STEP3": {
+                "title": "Time to get to work",
+                "explanation": "We translate your ideas into a stylish, well-functioning website — exactly how you want it!"
+            }
+        }
+    }
+}
