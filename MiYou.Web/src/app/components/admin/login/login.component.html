@@ -1,0 +1,19 @@
+<div class="login-container" role="region" aria-labelledby="loginTitle" aria-describedby="loginDesc">  
+  <h2 id="loginTitle" class="login-title">Inloggen</h2>
+
+  <div class="login-body">
+    <div class="content">
+        <div class="input-container">
+            <label for="email">Email</label>
+            <input type="email" id="email" [(ngModel)]="request.email">
+        </div>
+
+        <div class="input-container">
+            <label for="password">Wachtwoord</label>
+            <input type="password" id="password" [(ngModel)]="request.password">
+        </div>
+    </div>
+  </div>
+
+  <button class="action-btn">Inloggen</button>
+</div>
