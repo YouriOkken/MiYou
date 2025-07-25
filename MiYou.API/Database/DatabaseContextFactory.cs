@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using Microsoft.Extensions.Configuration;
+using MiYou.DAL;
 
-namespace MiYou.DAL.ContextFactory
+namespace MiYou.API.Database
 {
     /// <summary>
     /// Deze class is puur zodat de database gemaakt kan worden op de VPS
@@ -15,9 +15,9 @@ namespace MiYou.DAL.ContextFactory
 
             IConfigurationRoot configuration = new ConfigurationBuilder()
                 .SetBasePath(basePath)
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true) // optioneel maken!
-                .AddUserSecrets("6899bdff-49c6-43ca-9fad-91acca133cae") // secrets ondersteunen
-                .AddEnvironmentVariables() // optioneel voor productie/CI/CD
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddUserSecrets<Program>()
+                .AddEnvironmentVariables()
                 .Build();
 
             var optionsBuilder = new DbContextOptionsBuilder<DatabaseContext>();
