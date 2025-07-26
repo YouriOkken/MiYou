@@ -1,0 +1,18 @@
+<miyou-modal [visible]="showBanner" [title]="'Cookies'" [showCloseButton]=false [showOKButton]=true [OKButtonLabel]="'Opslaan'" (ok)="handleSave()" (close)="showBanner = false" >
+    <div class="cookie-banner">
+      <p>
+        Wij gebruiken cookies om onze site goed te laten werken (essentieel) en om statistieken te verzamelen met uw toestemming.
+      </p>
+      <div class="buttons">
+        <div class="switch-section">
+          <label for="necessaryCookies">Alleen noodzakelijke cookies</label>
+          <miyou-switch id="necessaryCookies" [(toggled)]="necessaryCookies" [fixed]=true></miyou-switch>
+        </div>
+        <div class="switch-section">
+          <label for="allCookies">Alle cookies</label>
+          <miyou-switch id="allCookies" [(toggled)]="AllCookies"></miyou-switch>
+        </div>
+      </div>
+      <a [routerLink]="['/cookies']">Meer info</a>
+    </div>
+</miyou-modal>
