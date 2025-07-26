@@ -1,0 +1,22 @@
+.console {
+  background-color: #222;
+  color: #eee;
+  font-family: monospace;
+  padding: 1rem;
+  border-radius: 8px;
+  max-height: 400px;
+  overflow-y: auto;
+
+  .code-block {
+    background-color: #333;
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 0.5rem 0;
+    white-space: pre-wrap;
+  }
+
+  .text-block {
+    margin: 0.3rem 0;
+    white-space: pre-wrap;
+  }
+}

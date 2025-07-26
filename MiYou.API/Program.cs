@@ -17,6 +17,8 @@ builder.Services.AddMapperServices();
 builder.Services.AddContextServices();
 builder.Services.AddCustomServices();
 
+builder.Services.AddHttpClient();
+
 builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
 builder.Services.AddScoped<EmailService>();
 
