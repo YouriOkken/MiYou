@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AiConsoleComponent } from "./console/ai-console.component";
@@ -7,14 +8,14 @@ import { AiConsoleComponent } from "./console/ai-console.component";
   selector: 'app-ai-debugger',
   templateUrl: './ai-debugger.component.html',
   styleUrls: ['./ai-debugger.component.scss'],
-  imports: [FormsModule, AiConsoleComponent]
+  imports: [FormsModule, AiConsoleComponent, CommonModule]
 })
 export class AiDebuggerComponent {
   code: string = '';
   question: string = '';
   response: string = '';
   loading: boolean = false;
-
+  @ViewChild('responseBox') responseBox!: ElementRef;
   constructor(private http: HttpClient) {}
 
   submitPrompt() {
@@ -27,9 +28,13 @@ export class AiDebuggerComponent {
     this.http.post<any>('https://localhost:5001/api/ai/code-debug', body)
       .subscribe({
         next: (res) => {
-          // res is al een object, niet een string
           this.response = res.choices?.[0]?.message?.content || 'Geen antwoord ontvangen.';
           this.loading = false;
+        
+          // Scrollen naar de response
+          setTimeout(() => {
+            this.responseBox?.nativeElement.scrollIntoView({ behavior: 'smooth' });
+          }, 0);
         },
         error: (err) => {
           console.error(err);

@@ -1,0 +1,19 @@
+<div class="console-container">
+  <header class="console-header">
+    <button (click)="copyCodeToClipboard()" [disabled]="!hasCodeblocks">
+      {{ copyMessage }}
+    </button>
+  </header>
+
+  <section class="console-content">
+    <ng-container *ngFor="let block of parsedBlocks; trackBy: trackByIndex">
+      <div class="code-block-wrapper" *ngIf="block.isCode">
+        <button class="copy-btn" (click)="copySingleBlock(block.content)">
+          {{ copyMessage }}
+        </button>
+        <pre class="code-block">{{ block.content }}</pre>
+      </div>
+      <div *ngIf="!block.isCode" class="text-block">{{ block.content }}</div>
+    </ng-container>
+  </section>
+</div>

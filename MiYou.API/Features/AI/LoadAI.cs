@@ -19,9 +19,10 @@ namespace MiYou.API.Features.AI
         
         public async Task<IActionResult> LoadAsync(AiRequest request)
         {
+            var apiKey = "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";
             var client = _clientFactory.CreateClient();
 
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "ApiKey");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
 
             var payload = new
             {

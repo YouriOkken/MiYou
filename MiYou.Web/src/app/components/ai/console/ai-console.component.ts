@@ -1,29 +1,72 @@
-// ai-console.component.ts
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-ai-console',
-  template: `
-    <div class="console">
-      <ng-container *ngFor="let block of parsedBlocks">
-        <pre *ngIf="block.isCode" class="code-block">{{ block.content }}</pre>
-        <div *ngIf="!block.isCode" class="text-block">{{ block.content }}</div>
-      </ng-container>
-    </div>
-  `,
+  templateUrl: './ai-console.component.html',
   styleUrls: ['./ai-console.component.scss'],
   imports: [CommonModule]
 })
-export class AiConsoleComponent {
+export class AiConsoleComponent implements OnChanges {
   @Input() response: string = '';
+  parsedBlocks: { isCode: boolean; content: string }[] = [];
+  copyMessage: string = '📋';
 
-  get parsedBlocks() {
-    // Split op ``` en markeer code
-    const parts = this.response.split(/```/);
+  get hasCodeBlocks(): boolean {
+    return this.parsedBlocks.some(block => block.isCode);
+  }
+
+  ngOnChanges() {
+    this.parsedBlocks = this.splitResponse(this.response);
+  }
+
+  splitResponse(text: string): { isCode: boolean; content: string }[] {
+    if (!text?.trim()) return [];
+
+    const parts = text.split(/```/);
+    if (parts.length === 1) {
+      return [{ isCode: false, content: text.trim() }];
+    }
+
     return parts.map((part, i) => ({
       isCode: i % 2 === 1,
       content: part.trim()
     }));
+  }
+
+  async copyCodeToClipboard() {
+    const allCode = this.parsedBlocks
+      .filter(block => block.isCode)
+      .map(block => block.content)
+      .join('\n\n');
+
+    try {
+      await navigator.clipboard.writeText(allCode);
+      this.copyMessage = '✅';
+    } catch (err) {
+      console.error('Kopiëren mislukt:', err);
+      this.copyMessage = '❌';
+    }
+
+    setTimeout(() => {
+      this.copyMessage = '📋';
+    }, 2000);
+  }
+
+  async copySingleBlock(content: string) {
+    try {
+      await navigator.clipboard.writeText(content);
+      console.log('Codeblok gekopieerd!');
+    } catch (err) {
+      console.error('Kopiëren mislukt:', err);
+    }
+  }
+
+  trackByIndex(index: number): number {
+    return index;
+  }
+
+  get hasCodeblocks(): boolean {
+    return this.parsedBlocks.some(block => block.isCode);
   }
 }

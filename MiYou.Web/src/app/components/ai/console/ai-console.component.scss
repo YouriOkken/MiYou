@@ -1,22 +1,90 @@
-.console {
-  background-color: #222;
-  color: #eee;
-  font-family: monospace;
-  padding: 1rem;
+.console-container {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 100%;
+  max-width: 700px;
   border-radius: 8px;
-  max-height: 400px;
-  overflow-y: auto;
+  overflow: hidden;
+  background-color: #303030;
+  color: #d4d4d4;
+  font-family: 'Consolas', monospace;
+  font-size: 14px;
+  box-shadow: 0 0 10px #0008;
+}
 
-  .code-block {
-    background-color: #333;
-    padding: 1rem;
-    border-radius: 6px;
-    margin: 0.5rem 0;
-    white-space: pre-wrap;
+.console-header {
+  background-color: #252526;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid #3c3c3c;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  button {
+    background-color: #007acc;
+    border: none;
+    color: white;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s ease;
+
+    &:hover:not(:disabled) {
+      background-color: #005a9e;
+    }
+
+    &:disabled {
+      background-color: #3c3c3c;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.console-content {
+  flex: 1;  // vult de resterende hoogte
+  overflow-y: auto;
+  padding: 1rem 1.5rem;
+  line-height: 1.4;
+  
+  .code-block-wrapper {
+    position: relative;
+    margin: 1rem 0;
+
+    .copy-btn {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: rgba(0, 122, 204, 0.8);
+      border: none;
+      color: white;
+      font-size: 12px;
+      cursor: pointer;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      transition: background-color 0.2s ease;
+      user-select: none;
+
+      &:hover {
+        background-color: #005a9e;
+      }
+    }
+
+    .code-block {
+      background-color: #1e1e1e;
+      padding: 1rem;
+      border-radius: 6px;
+      margin: 0;
+      white-space: pre-wrap;
+      box-shadow: inset 0 0 5px #000000bb;
+      overflow-x: auto;
+    }
   }
 
   .text-block {
-    margin: 0.3rem 0;
+    margin: 0.5rem 0;
     white-space: pre-wrap;
   }
 }

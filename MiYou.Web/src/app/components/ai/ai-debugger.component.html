@@ -2,19 +2,19 @@
   <h2>💡 Code Debug AI</h2>
 
   <label>Code</label>
-  <textarea [(ngModel)]="code" rows="10" placeholder="Plak hier je code..."></textarea>
+  <textarea [(ngModel)]="code" rows="10" placeholder=""></textarea>
 
-  <label>Vraag aan AI</label>
-  <input [(ngModel)]="question" placeholder="Bijv: Wat is hier mis?" />
+  <label>Vraag/context</label>
+  <input [(ngModel)]="question" placeholder="" />
 
   <button (click)="submitPrompt()" [disabled]="loading">
-    {{ loading ? 'Bezig...' : 'Verstuur naar AI' }}
+    {{ loading ? 'Bezig...' : 'Versturen' }}
   </button>
 
-  @if (response) {
-  <div class="response-box">
-    <h3>🧠 Antwoord van AI</h3>
-    <app-ai-console [response]="response"></app-ai-console>
-  </div>
-  }
+  <ng-container *ngIf="response">
+    <div class="response-box" #responseBox>
+      <h3>Antwoord</h3>
+      <app-ai-console [response]="response"></app-ai-console>
+    </div>
+  </ng-container>
 </div>
