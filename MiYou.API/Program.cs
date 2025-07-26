@@ -3,6 +3,9 @@ using MiYou.API.Services;
 using MiYou.Shared.Utilities;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Configuration
+    .AddUserSecrets<Program>()
+    .AddEnvironmentVariables();
 
 // Add services to the container.
 builder.Services.AddDatabaseContextFactoryConfiguration(builder.Configuration);
