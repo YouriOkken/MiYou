@@ -16,4 +16,11 @@ namespace MiYou.Shared.Exceptions
 
         public AlreadyExistsException(string message) : base(message) { }
     }
+
+    public class EmailDeliveryException : HttpException
+    {
+        public override int StatusCode => StatusCodes.Status400BadRequest;
+
+        public EmailDeliveryException(string message) : base(message) { }
+    }
 }
