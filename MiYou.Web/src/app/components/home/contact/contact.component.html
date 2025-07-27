@@ -5,7 +5,7 @@
     <form [formGroup]="contactForm" (ngSubmit)="sendContact()">
       <div class="form-group">
         <label for="name">{{'HOME.CONTACT.fullname-label' | translate }}*</label>
-        <input id="name" type="text" placeholder="Uw volledige naam" formControlName="name" />
+        <input id="name" type="text" placeholder="{{'HOME.CONTACT.fullname-placeholder' | translate }}" formControlName="name" />
         @if (contactForm.get('name')?.touched && contactForm.get('name')?.invalid) {
           @if (contactForm.get('name')?.errors?.['required']) {
             <small>{{'HOME.CONTACT.fullname-validation-null' | translate }}</small>
@@ -18,7 +18,7 @@
 
       <div class="form-group">
         <label for="companyName">{{'HOME.CONTACT.company.name-label' | translate }}</label>
-        <input id="companyName" type="text" placeholder="Uw bedrijfsnaam" formControlName="companyName" />
+        <input id="companyName" type="text" placeholder="{{'HOME.CONTACT.company.name-placeholder' | translate }}" formControlName="companyName" />
         @if (contactForm.get('companyName')?.touched && contactForm.get('companyName')?.invalid) {
           @if (contactForm.get('companyName')?.errors?.['maxlength']) {
             <small>{{'HOME.CONTACT.company.name-validation-maximum' | translate }}</small>
@@ -28,7 +28,7 @@
 
       <div class="form-group">
         <label for="email">{{'HOME.CONTACT.email-label' | translate }}*</label>
-        <input id="email" type="email" placeholder="Uw email" formControlName="email" />
+        <input id="email" type="email" placeholder="{{'HOME.CONTACT.email-placeholder' | translate }}" formControlName="email" />
         @if (contactForm.get('email')?.touched && contactForm.get('email')?.invalid) {
           @if (contactForm.get('email')?.errors?.['required']) {
             <small>{{'HOME.CONTACT.email-validation-null' | translate }}</small>
