@@ -3,11 +3,13 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { isPlatformBrowser } from '@angular/common';
+import { CookieConsentComponent } from "./components/cookies/popup/cookie-consent.component";
 
 declare const particlesJS: any;
 
 @Component({
   selector: 'app-root',
+  imports: [RouterOutlet, NavbarComponent, FooterComponent, CookieConsentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   imports: [RouterOutlet, NavbarComponent, FooterComponent],
@@ -129,15 +131,13 @@ export class AppComponent {
 
   getErrorMessage(error: any): string {
     if (!error?.error?.message) {
-      return "Er ging iets fout!";
+        return "Er ging iets fout!";
     }
 
     if (error.error.message === "failed to fetch") {
-      return "Op dit moment kan er geen verbinding gemaakt worden met ons systeem.";
+        return "Op dit moment kan er geen verbinding gemaakt worden met ons systeem.";
     }
 
     return error.error.message;
   }
-
-
 }
