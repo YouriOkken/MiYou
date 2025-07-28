@@ -1,12 +1,12 @@
 import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
     selector: 'nav-component',
     templateUrl: 'navbar.component.html',
     styleUrl: "navbar.component.scss",
-    imports: [RouterModule]
+    imports: [RouterModule, TranslateModule]
 })
 
 export class NavbarComponent {

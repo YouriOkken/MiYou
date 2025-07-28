@@ -1,9 +1,9 @@
 <div class="nav">
   <div class="left">
     <div class="nav-links">
-      <a href="#">Home</a>
-      <a href="#about-us">Over ons</a>
-      <a [routerLink]="['/pricing']">Prijzen en Templates</a>
+      <a href="#">{{ 'NAVBAR.home' | translate }}</a>
+      <a href="#about-us">{{ 'NAVBAR.about-us' | translate }}</a>
+      <a [routerLink]="['/pricing']">{{ 'NAVBAR.pricing-templates' | translate }}</a>
     </div>
   </div>
   <div class="middle">
@@ -14,25 +14,27 @@
     </div>
   </div>
   <div class="right">
-    <div class="nav-links">
-      <div class="language-switch-wrapper" (click)="toggleLanguageDropdown($event)">
-        <a class="language-switch" aria-label="Change language">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
-            <circle cx="12" cy="12" r="10" />
-            <line x1="2" y1="12" x2="22" y2="12" />
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-          </svg>
-        </a>
+    <div class="language-switch-wrapper" (click)="toggleLanguageDropdown($event)">
+      <a class="language-switch" aria-label="Change language">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="2" y1="12" x2="22" y2="12" />
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+        </svg>
+      </a>
 
-        <div class="language-dropdown" [class.active]="languageDropdownOpen">
-          <a href="#" (click)="setLanguage('en')">English</a>
-          <a href="#" (click)="setLanguage('nl')">Nederlands</a>
-        </div>
+      <div class="language-dropdown" [class.active]="languageDropdownOpen">
+        <a (click)="setLanguage('en'); $event.stopPropagation()">English</a>
+        <a (click)="setLanguage('nl'); $event.stopPropagation()">Nederlands</a>
       </div>
+    </div>
+    <div class="nav-links">
 
-      <a href="#">Login</a>
-      <a href="#contact">Contact</a>
+
+
+      <a href="#">{{ 'NAVBAR.login' | translate }}</a>
+      <a href="#contact">{{ 'NAVBAR.contact' | translate }}</a>
     </div>
   </div>
 

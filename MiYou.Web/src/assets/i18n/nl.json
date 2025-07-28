@@ -37,8 +37,86 @@
             "idea-placeholder": "Leg hier uw idee uit aan ons!",
             "idea-validation-null": "Uw idee is verplicht.",
             "idea-validation-minimum": "Minimaal 10 tekens.",
+            "idea-validation-maximum": "Maximaal 1000 tekens.",
             "additional.explanation-label": "Extra toelichting",
-            "additional.explanation-placeholder": "Heeft u nog wat extra toelichting?"
+            "additional.explanation-placeholder": "Heeft u nog wat extra toelichting?",
+            "additional.explanation-validation-maximum": "Maximaal 1000 characters",
+            "button.submit-text": "Versturen",
+            "text.loading": "Aan het verzenden...",
+            "error-message": "",
+            "button.retry-text": "Opnieuw proberen",
+            "text.success": "Het contactformulier is successvol verzonden! Wij reageren zo snel mogelijk!"
         }
+    },
+    "PRICESANDTEMPLATES": {
+        "title": "Prijzen en Sjablonen",
+        "PRICES": {
+            "standard-pricing-title": "Standaard prijzen",
+            "price-info-1": "Wij vragen <strong>€20 per uur</strong> + eenmalige administratie kosten.",
+            "price-info-2": "Voor elk project maken wij een <strong>duidelijke uurinschatting</strong> op basis van uw wensen. Elk onderdeel wordt apart ingeschat, zoals inlogsysteem of overzichtspagina.",
+            "price-info-3": "De totaalschatting bespreken wij met u samen, zodat u precies weet waar je aan toe bent. Pas na uw akkoord starten wij.",
+            "price-info-4": "Zijn wij sneller klaar? Dan betaald u alleen voor de daadwerkelijke uren.",
+            "price-info-5": "Loopt het iets uit? Dan nemen wij vantevoren contact met u op en hanteren wij een eerlijke regeling:",
+            "price-info-list-1": "<strong>Eerste 20% van de uren extra:</strong> €10 per uur",
+            "price-info-list-2": "<strong>Daarboven:</strong> gratis - wij nemen dat voor onze rekening",
+            "price-info-6": "<strong>Voorbeeld:</strong>",
+            "price-info-7": "<em>Wij hebben een schatting gemaakt van <strong>10 uur</strong> en rond uur <strong>8</strong> merken wij dat wij uitlopen, dan nemen wij contact met u op en bespreken wij samen de volgende stap.</em>",
+            "price-info-8": "<em> Als wij samen besloten hebben om door te gaan en wij komen op <strong>13 uur</strong> uit dan betaalt u de geschatte prijs volledig <strong>(€200)</strong> + 20% <strong>(2 uur)</strong> van de geschatte prijs <strong>(€20)</strong> en het overig uur krijgt u van ons.</em>",
+            "price-info-9": "Zo krijgt u altijd <strong>transparantie</strong>, <strong>duidelijkheid</strong> en een eerlijke prijs.",
+            "price-info-cta": "💡 <em>Benieuwd wat uw idee ongeveer zou kosten? <a href=\"/#contact\">Neem gerust contact op</a> voor een vrijblijvende inschatting.</em>"
+        },
+        "TEMPLATES": {
+            "title": "Sjablonen",
+            "website-setup": {
+                "name": "Website Opzet",
+                "description": "U wilt uw eigen website beginnen, maar geen idee hoe? Geen zorgen, wij helpen u ermee!",
+                "item-1": "Registratie van een domein",
+                "item-2": "Het opzetten van de hosting",
+                "item-3": "Uw ruimtepak klaarmaken",
+                "price": "€ 60"
+            },
+            "website-management": {
+                "name": "Website Beheer",
+                "description": "Geen zin om je website zelf te onderhouden? Geen zorgen wij kunnen dat voor u doen!",
+                "item-1": "Domein beheer",
+                "item-2": "Website hosting",
+                "item-3": "Website beveiliging",
+                "item-4": "Uw website op de maan bereikbaar maken",
+                "price": "€ 50 p/m"
+            },
+            "email-service": {
+                "name": "Email Service",
+                "description": "Stuur en ontvang e-mails met raketsnelheid — snel, makkelijk en betrouwbaar!",
+                "item-1": "5 standaard sjablonen",
+                "item-2": "Extra sjablonen mogelijk voor €5 p/u",
+                "item-3": "Kleuren en tekst gratis aanpasbaar",
+                "item-4": "Integratie in website",
+                "item-5": "Gratis email domein",
+                "item-6": "Uw email naar mars versturen",
+                "price": "€ 20"
+            },
+            "multi-language": {
+                "name": "Verschillende talen",
+                "description": "Uw website in meerdere talen? Dat kan!",
+                "item-1": "Minimaal 2 verschillende talen",
+                "item-2": "Snel en makkelijk wisselen",
+                "item-3": "Uw eigen website makkelijk vertalen voor extra talen (+€20)",
+                "item-4": "Uw website leesbaar maken voor marsmannetjes",
+                "price": "€ 40"
+            }
+        }
+    },
+    "NAVBAR": {
+        "home": "Home",
+        "about-us": "Over ons",
+        "pricing-templates": "Prijzen en Sjablonen",
+        "login": "Login",
+        "contact": "Contact"
+    },
+    "FOOTER": {
+        "copyright": "© 2025 MiYou. Alle rechten voorbehouden.",
+        "privacy-policy": "Privacybeleid",
+        "terms": "Algemene voorwaarden",
+        "contact": "Contact"
     }
 }

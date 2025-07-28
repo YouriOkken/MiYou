@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Localization;
 using MiYou.API.Models.Contact.Add;
 using MiYou.API.Services;
 using MiYou.DAL;
@@ -14,13 +15,14 @@ namespace MiYou.API.Features.Contacts.Add
     {
         private readonly IContextFactory _contextFactory;
         private readonly EmailService _emailService;
-        
-        public AddContactProcessor(IContextFactory contextFactory, EmailService emailService) 
+
+        public AddContactProcessor(IContextFactory contextFactory,
+            EmailService emailService) 
         {
             _contextFactory = contextFactory;
             _emailService = emailService;
         }
-        
+
         public async Task ProcessAsync(AddContactRequest request)
         {
             using DatabaseContext _context = _contextFactory.Create();
