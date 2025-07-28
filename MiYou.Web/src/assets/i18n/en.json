@@ -121,5 +121,27 @@
         "privacy-policy": "Privacy Policy",
         "terms": "Terms",
         "contact": "Contact"
+    },
+    "COOKIESTATEMENT": {
+        "title": "Cookie Statement",
+        "intro": "This website, MiYou, uses cookies to improve the user experience and collect anonymous statistics.",
+        "whatAreCookiesTitle": "What are cookies?",
+        "whatAreCookiesText": "Cookies are small text files stored on your device to keep track of information about your visit.",
+        "whichCookiesTitle": "Which cookies do we use?",
+        "essentialCookies": "Essential cookies: Necessary for the website to function properly. You cannot refuse these.",
+        "statisticalCookies": "Statistical cookies: Only placed with your consent. These help us measure how many visitors the website has (via Google Analytics).",
+        "whichDataTitle": "What data do we collect?",
+        "whichDataText": "With statistical cookies, we gain insight into visitor behavior. You are completely anonymous; the only thing we can see is that someone visited the website. We cannot see who, how, or what.",
+        "manageCookiesTitle": "Manage cookies",
+        "manageCookiesText": "You can always change your consent by",
+        "click-here": "clicking here."
+    },
+    "COOKIE_BANNER": {
+        "title": "Cookies",
+        "description": "We use cookies to make our site work properly (essential) and to collect statistics with your consent.",
+        "necessaryLabel": "Only necessary cookies",
+        "allLabel": "All cookies",
+        "saveButton": "Save",
+        "moreInfo": "More info"
     }
 }

@@ -118,5 +118,27 @@
         "privacy-policy": "Privacybeleid",
         "terms": "Algemene voorwaarden",
         "contact": "Contact"
+    },
+    "COOKIESTATEMENT": {
+        "title": "Cookiesverklaring",
+        "intro": "Deze website, MiYou, gebruikt cookies om de gebruikerservaring te verbeteren en anonieme statistieken te verzamelen.",
+        "whatAreCookiesTitle": "Wat zijn cookies?",
+        "whatAreCookiesText": "Cookies zijn kleine tekstbestanden die op uw apparaat worden opgeslagen om informatie over uw bezoek bij te houden.",
+        "whichCookiesTitle": "Welke cookies gebruiken wij?",
+        "essentialCookies": "Essentiële cookies: Nodig om de website goed te laten werken. Deze kunt u niet weigeren.",
+        "statisticalCookies": "Statistische cookies: Worden alleen geplaatst met uw toestemming. Hiermee meten wij bijvoorbeeld hoeveel bezoekers de website heeft (via Google Analytics).",
+        "whichDataTitle": "Welke gegevens verzamelen wij?",
+        "whichDataText": "Met statistische cookies krijgen wij inzicht in bezoekersgedrag. U bent volledig anoniem; het enige wat wij kunnen zien is dat iemand de website bezocht heeft. Wie, hoe en wat kunnen wij verder niet zien.",
+        "manageCookiesTitle": "Cookies beheren",
+        "manageCookiesText": "U kunt uw toestemming altijd wijzigen door",
+        "click-here": "hier te klikken"
+    },
+    "COOKIE_BANNER": {
+        "title": "Cookies",
+        "description": "Wij gebruiken cookies om onze site goed te laten werken (essentieel) en om statistieken te verzamelen met uw toestemming.",
+        "necessaryLabel": "Alleen noodzakelijke cookies",
+        "allLabel": "Alle cookies",
+        "saveButton": "Opslaan",
+        "moreInfo": "Meer info"
     }
 }
