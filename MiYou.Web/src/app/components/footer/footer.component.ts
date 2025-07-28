@@ -6,9 +6,7 @@ import { TranslateModule } from '@ngx-translate/core';
     selector: 'footer-component',
     templateUrl: 'footer.component.html',
     styleUrl: "footer.component.scss",
-    imports: [RouterModule]
-    styleUrl: "footer.component.scss",
-    imports: [TranslateModule]
+    imports: [RouterModule, TranslateModule]
 })
 
 export class FooterComponent implements OnInit {

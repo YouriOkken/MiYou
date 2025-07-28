@@ -12,7 +12,6 @@ declare const particlesJS: any;
   imports: [RouterOutlet, NavbarComponent, FooterComponent, CookieConsentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [RouterOutlet, NavbarComponent, FooterComponent],
 })
 
 export class AppComponent {
