@@ -1,0 +1,168 @@
+{
+    "HOME": {
+        "title": "MiYou",
+        "description": "Welcome to MiYou – Where we focus on your results!",
+        "ABOUT": {
+            "title": "Who are we?",
+            "intro": "We are Milana and Youri, the faces behind MiYou. We are currently both studying Software Development at an MBO level 4 program. Our goal is to turn our passion for technology and creativity into beautiful and functional websites.",
+            "mission": "With MiYou, we focus on supporting individuals and small businesses that want to grow online. Whether you need a simpler website or something more complex, we’ll think along with you and deliver a result you can be proud of!"
+        },
+        "PROCESS": {
+            "title": "Our approach?",
+            "STEP1": {
+                "title": "Send us a message",
+                "explanation": "Fill out the contact form below and we will contact you as soon as possible!"
+            },
+            "STEP2": {
+                "title": "We schedule an appointment",
+                "explanation": "Together, we look at what you need and set a time to review everything in detail"
+            },
+            "STEP3": {
+                "title": "Time to get to work",
+                "explanation": "We translate your ideas into a stylish, well-functioning website — exactly how you want it!"
+            }
+        },
+        "CONTACT": {
+            "title": "Contact",
+            "fullname-label": "Full name",
+            "fullname-placeholder": "Your full name",
+            "fullname-validation-null": "Your full name is required.",
+            "fullname-validation-maximum": "Maximum 150 characters",
+            "company.name-label": "Company name",
+            "company.name-placeholder": "Your company name",
+            "company.name-validation-maximum": "Maximum 50 chraracters",
+            "email-label": "Email",
+            "email-placeholder": "Your Email",
+            "email-validation-null": "Your Email is required.",
+            "email-validation-invalid": "Your Email is Invalid.",
+            "email-validation-maximum": "Maximum 100 characters.",
+            "idea-label": "Idea",
+            "idea-placeholder": "Explain your idea to us here",
+            "idea-validation-null": "Your Idea required.",
+            "idea-validation-minimum": "Minimum 10 characters.",
+            "idea-validation-maximum": "Maximum 1000 characters.",
+            "additional.explanation-label": "Additional explanation",
+            "additional.explanation-placeholder": "Got any extra thoughts?",
+            "additional.explanation-validation-maximum": "Maximum 1000 characters",
+            "button.submit-text": "Send",
+            "text.loading": "Sending...",
+            "error-message": "",
+            "button.retry-text": "Try again",
+            "text.success": "The contact form was sent successfully! We will respond as soon as possible!"
+        }
+    },
+    "PRICESANDTEMPLATES": {
+        "title": "Prices and Templates",
+        "PRICES": {
+            "standard-pricing-title": "Standard Prices",
+            "price-info-1": "We charge <strong>€20 per hour</strong> + a one-time administration fee.",
+            "price-info-2": "For each project, we create a <strong>clear time estimate</strong> based on your wishes. Each part is estimated separately, such as login system or overview page.",
+            "price-info-3": "We discuss the total estimate with you so that you know exactly what to expect. We only start after your approval.",
+            "price-info-4": "If we finish faster, you only pay for the actual hours.",
+            "price-info-5": "If it runs a little over, we will contact you in advance and apply a fair arrangement:",
+            "price-info-list-1": "<strong>First 20% of the extra hours:</strong> €10 per hour",
+            "price-info-list-2": "<strong>Above that:</strong> free - we cover that ourselves",
+            "price-info-6": "<strong>Example:</strong>",
+            "price-info-7": "<em>We estimated <strong>10 hours</strong> and around hour <strong>8</strong> we notice we are running over, then we contact you and discuss the next step together.</em>",
+            "price-info-8": "<em>If we decide together to continue and we end up at <strong>13 hours</strong>, you pay the full estimated price <strong>(€200)</strong> + 20% <strong>(2 hours)</strong> of the estimated price <strong>(€20)</strong> and the remaining hour is on us.</em>",
+            "price-info-9": "This way, you always get <strong>transparency</strong>, <strong>clarity</strong>, and a fair price.",
+            "price-info-cta": "💡 <em>Curious what your idea might cost? <a href=\"/#contact\">Feel free to contact us</a> for a free estimate.</em>"
+        },
+        "TEMPLATES": {
+            "title": "Templates",
+            "website-setup": {
+                "name": "Website Setup",
+                "description": "Want to start your own website but have no idea how? No worries, we’ll help you get started!",
+                "item-1": "Domain registration",
+                "item-2": "Setting up the hosting",
+                "item-3": "Preparing your spacesuit",
+                "price": "€ 60"
+            },
+            "website-management": {
+                "name": "Website Management",
+                "description": "Don’t feel like maintaining your website yourself? No worries, we can do it for you!",
+                "item-1": "Domain management",
+                "item-2": "Website hosting",
+                "item-3": "Website security",
+                "item-4": "Making your website accessible from the moon",
+                "price": "€ 50 p/m"
+            },
+            "email-service": {
+                "name": "Email Service",
+                "description": "Send and receive emails at rocket speed — fast, easy, and reliable!",
+                "item-1": "5 standard templates",
+                "item-2": "Extra templates available for €5/hr",
+                "item-3": "Colors and text freely customizable",
+                "item-4": "Website integration",
+                "item-5": "Free email domain",
+                "item-6": "Sending your email to Mars",
+                "price": "€ 20"
+            },
+            "multi-language": {
+                "name": "Multiple Languages",
+                "description": "Want your website in multiple languages? You got it!",
+                "item-1": "At least 2 different languages",
+                "item-2": "Switch quickly and easily",
+                "item-3": "Easily translate your site for extra languages (+€20)",
+                "item-4": "Making your website readable for Aliens",
+                "price": "€ 40"
+            }
+        }
+    },
+    "NAVBAR": {
+        "home": "Home",
+        "about-us": "About Us",
+        "pricing-templates": "Pricing and Templates",
+        "login": "Login",
+        "contact": "Contact"
+    },
+    "FOOTER": {
+        "copyright": "© 2025 MiYou. All rights reserved.",
+        "privacy-policy": "Privacy Policy",
+        "terms": "Terms",
+        "contact": "Contact"
+    },
+    "COOKIESTATEMENT": {
+        "title": "Cookie Statement",
+        "intro": "This website, MiYou, uses cookies to improve the user experience and collect anonymous statistics.",
+        "whatAreCookiesTitle": "What are cookies?",
+        "whatAreCookiesText": "Cookies are small text files stored on your device to keep track of information about your visit.",
+        "whichCookiesTitle": "Which cookies do we use?",
+        "essentialCookies": "Essential cookies: Necessary for the website to function properly. You cannot refuse these.",
+        "statisticalCookies": "Statistical cookies: Only placed with your consent. These help us measure how many visitors the website has (via Google Analytics).",
+        "whichDataTitle": "What data do we collect?",
+        "whichDataText": "With statistical cookies, we gain insight into visitor behavior. You are completely anonymous; the only thing we can see is that someone visited the website. We cannot see who, how, or what.",
+        "manageCookiesTitle": "Manage cookies",
+        "manageCookiesText": "You can always change your consent by",
+        "click-here": "clicking here."
+    },
+    "COOKIE_BANNER": {
+        "title": "Cookies",
+        "description": "We use cookies to make our site work properly (essential) and to collect statistics with your consent.",
+        "necessaryLabel": "Only necessary cookies",
+        "allLabel": "All cookies",
+        "saveButton": "Save",
+        "moreInfo": "More info"
+    },
+    "PRIVACY_POLICY": {
+        "title": "Privacy Policy",
+        "intro": "At MiYou, we highly value your privacy. This policy explains which personal data we process, why we do so, and what your rights are.",
+        "section1Title": "1. What personal data do we process?",
+        "section1Item1": "Name and contact details you share with us (such as email)",
+        "section1Item2": "Information about your use of our website (only anonymous via cookies)",
+        "section2Title": "2. Why do we process this data?",
+        "section2Item1": "To improve our website and services",
+        "section2Item2": "To comply with legal obligations",
+        "section3Title": "3. With whom do we share data?",
+        "section3Text": "We only share your data with third parties when necessary for our services (such as google analytics), and never without a valid legal basis or your consent.",
+        "section4Title": "4. Data retention",
+        "section4Text": "We do not keep your data longer than necessary for the purpose for which it was collected, unless we are legally obliged to retain it longer.",
+        "section5Title": "5. Cookies",
+        "section5Text": "Our website uses cookies to track statistics. You can find more information in our",
+        "section5LinkText": "cookie policy",
+        "section5Link": "/cookies",
+        "section6Title": "6. Your rights",
+        "section6Text": "You have the right to access, correct, delete, and transfer your data. You can also object to processing or withdraw your consent.",
+        "contactText": "💡 <em>Questions? Feel free to contact us at <a href=\"mailto:info@miyou.nl\">info&#64;miyou.nl</a></em>"
+    }
+}

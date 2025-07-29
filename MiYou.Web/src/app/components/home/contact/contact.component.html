@@ -1,88 +1,88 @@
 <section class="contact-section" id="contact">
-  <h2>Contact</h2>
+  <h2>{{'HOME.CONTACT.title' | translate }}</h2>
 
   @if (isSuccess === undefined && !isProcessing) {
     <form [formGroup]="contactForm" (ngSubmit)="sendContact()">
       <div class="form-group">
-        <label for="name">Uw volledige naam*</label>
-        <input id="name" type="text" placeholder="Uw volledige naam" formControlName="name" />
+        <label for="name">{{'HOME.CONTACT.fullname-label' | translate }}*</label>
+        <input id="name" type="text" placeholder="{{'HOME.CONTACT.fullname-placeholder' | translate }}" formControlName="name" />
         @if (contactForm.get('name')?.touched && contactForm.get('name')?.invalid) {
           @if (contactForm.get('name')?.errors?.['required']) {
-            <small>Naam is verplicht.</small>
+            <small>{{'HOME.CONTACT.fullname-validation-null' | translate }}</small>
           }
           @if (contactForm.get('name')?.errors?.['maxlength']) {
-            <small>Maximaal 150 tekens.</small>
+            <small>{{'HOME.CONTACT.fullname-validation-maximum' | translate }}</small>
           }
         }
       </div>
 
       <div class="form-group">
-        <label for="companyName">Bedrijfsnaam</label>
-        <input id="companyName" type="text" placeholder="Uw bedrijfsnaam" formControlName="companyName" />
+        <label for="companyName">{{'HOME.CONTACT.company.name-label' | translate }}</label>
+        <input id="companyName" type="text" placeholder="{{'HOME.CONTACT.company.name-placeholder' | translate }}" formControlName="companyName" />
         @if (contactForm.get('companyName')?.touched && contactForm.get('companyName')?.invalid) {
           @if (contactForm.get('companyName')?.errors?.['maxlength']) {
-            <small>Maximaal 50 tekens.</small>
+            <small>{{'HOME.CONTACT.company.name-validation-maximum' | translate }}</small>
           }
         }
       </div>
 
       <div class="form-group">
-        <label for="email">Email*</label>
-        <input id="email" type="email" placeholder="Uw email" formControlName="email" />
+        <label for="email">{{'HOME.CONTACT.email-label' | translate }}*</label>
+        <input id="email" type="email" placeholder="{{'HOME.CONTACT.email-placeholder' | translate }}" formControlName="email" />
         @if (contactForm.get('email')?.touched && contactForm.get('email')?.invalid) {
           @if (contactForm.get('email')?.errors?.['required']) {
-            <small>Email is verplicht.</small>
+            <small>{{'HOME.CONTACT.email-validation-null' | translate }}</small>
           }
           @if (contactForm.get('email')?.errors?.['email']) {
-            <small>Ongeldig emailadres.</small>
+            <small>{{'HOME.CONTACT.email-validation-invalid' | translate }}</small>
           }
           @if (contactForm.get('email')?.errors?.['maxlength']) {
-            <small>Maximaal 100 tekens.</small>
+            <small>{{'HOME.CONTACT.email-validation-maximum' | translate }}</small>
           }
         }
       </div>
 
       <div class="form-group">
-        <label for="idea">Idee*</label>
-        <textarea id="idea" rows="4" placeholder="Leg hier uw idee uit aan ons!" formControlName="idea"></textarea>
+        <label for="idea">{{'HOME.CONTACT.idea-label' | translate }}*</label>
+        <textarea id="idea" rows="4" placeholder="{{'HOME.CONTACT.idea-placeholder' | translate }}" formControlName="idea"></textarea>
         @if (contactForm.get('idea')?.touched && contactForm.get('idea')?.invalid) {
           @if (contactForm.get('idea')?.errors?.['required']) {
-            <small>Idee is verplicht.</small>
+            <small>{{'HOME.CONTACT.idea-validation-null' | translate }}</small>
           }
           @if (contactForm.get('idea')?.errors?.['minlength']) {
-            <small>Minimaal 10 tekens.</small>
+            <small>{{'HOME.CONTACT.idea-validation-minimum' | translate }}</small>
           }
           @if (contactForm.get('idea')?.errors?.['maxlength']) {
-            <small>Maximaal 1000 tekens.</small>
+            <small>{{'HOME.CONTACT.idea-validation-maximum' | translate }}</small>
           }
         }
       </div>
 
       <div class="form-group">
-        <label for="additionalInfo">Extra toelichting</label>
-        <textarea id="additionalInfo" rows="4" placeholder="Heeft u nog wat extra toelichting?" formControlName="additionalInfo"></textarea>
+        <label for="additionalInfo">{{'HOME.CONTACT.additional.explanation-label' | translate }}</label>
+        <textarea id="additionalInfo" rows="4" placeholder="{{'HOME.CONTACT.additional.explanation-placeholder' | translate }}" formControlName="additionalInfo"></textarea>
         @if (contactForm.get('additionalInfo')?.touched && contactForm.get('additionalInfo')?.invalid) {
           @if (contactForm.get('additionalInfo')?.errors?.['maxlength']) {
-            <small>Maximaal 1000 tekens.</small>
+            <small>{{'HOME.CONTACT.additional.validation-maximum' | translate }}</small>
           }
         }
       </div>
 
-      <button type="submit" [disabled]="contactForm.invalid">Versturen</button>
+      <button type="submit" [disabled]="contactForm.invalid">{{'HOME.CONTACT.button.submit-text' | translate }}</button>
     </form>
   }
   @else if (isProcessing) {
     <ng-lottie class="animation loading" [options]="loadingAnimation"></ng-lottie>
-    <p>Aan het verzenden...</p>
+    <p>{{'HOME.CONTACT.text.loading' | translate }}</p>
   }
   @else if (!isSuccess) {
     <ng-lottie class="animation" [options]="errorAnimation"></ng-lottie>
     <p>{{ errorMessage }}</p>
 
-    <button (click)="resetForm()">Opnieuw proberen</button>
+    <button (click)="resetForm()">{{'HOME.CONTACT.button.retry-text' | translate }}</button>
   }
   @else {
     <ng-lottie class="animation" [options]="successAnimation" (animationCreated)="handleAnimationCreated($event, 0.8)"></ng-lottie>
-    <p>Het contactformulier is succesvol verzonden! Wij reageren zo snel mogelijk!</p>
+    <p>{{'HOME.CONTACT.text.success' | translate }}</p>
   }
 </section>

@@ -16,7 +16,7 @@ namespace MiYou.API.Services
             _settings = settings.Value;
         }
 
-        public async Task SendEmailAsync(string to, string subject, string htmlContent)
+        public async Task<bool> SendEmailAsync(string to, string subject, string htmlContent)
         {
             var email = new MimeMessage();
 
@@ -25,11 +25,19 @@ namespace MiYou.API.Services
             email.Subject = subject;
             email.Body = new TextPart(TextFormat.Html) { Text = htmlContent };
 
-            using var smtp = new SmtpClient();
-            await smtp.ConnectAsync(_settings.SmtpServer, _settings.SmtpPort, SecureSocketOptions.SslOnConnect);
-            await smtp.AuthenticateAsync(_settings.Username, _settings.Password);
-            await smtp.SendAsync(email);
-            await smtp.DisconnectAsync(true);
+            try
+            {
+                using var smtp = new SmtpClient();
+                await smtp.ConnectAsync(_settings.SmtpServer, _settings.SmtpPort, SecureSocketOptions.SslOnConnect);
+                await smtp.AuthenticateAsync(_settings.Username, _settings.Password);
+                await smtp.SendAsync(email);
+                await smtp.DisconnectAsync(true);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
     }
 }

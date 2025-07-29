@@ -3,28 +3,27 @@
     <ng-lottie class="animation" [options]="cookiesAnimation"></ng-lottie>
   </div>
   <div class="right">
-    <div class="title">Cookiesverklaring</div>
+    <div class="title">{{ 'COOKIESTATEMENT.title' | translate }}</div>
 
-    <p>Deze website, MiYou, gebruikt cookies om de gebruikerservaring te verbeteren en anonieme statistieken te verzamelen.</p>
+    <p>{{ 'COOKIESTATEMENT.intro' | translate }}</p>
 
-    <h2>Wat zijn cookies?</h2>
-    <p>Cookies zijn kleine tekstbestanden die op uw apparaat worden opgeslagen om informatie over uw bezoek bij te houden.</p>
+    <h2>{{ 'COOKIESTATEMENT.whatAreCookiesTitle' | translate }}</h2>
+    <p>{{ 'COOKIESTATEMENT.whatAreCookiesText' | translate }}</p>
 
-    <h2>Welke cookies gebruiken wij?</h2>
+    <h2>{{ 'COOKIESTATEMENT.whichCookiesTitle' | translate }}</h2>
     <div class="cookie-type-list">
       <ul>
-        <li><strong>Essentiële cookies:</strong> Nodig om de website goed te laten werken. Deze kunt u niet weigeren.</li>
-        <li><strong>Statistische cookies:</strong> Worden alleen geplaatst met uw toestemming. Hiermee meten wij bijvoorbeeld hoeveel bezoekers de website heeft (via Google Analytics).</li>
+        <li><strong>{{ 'COOKIESTATEMENT.essentialCookies' | translate }}</strong></li>
+        <li><strong>{{ 'COOKIESTATEMENT.statisticalCookies' | translate }}</strong></li>
       </ul>
     </div>
 
-    <h2>Welke gegevens verzamelen wij?</h2>
-    <p>Met statistische cookies krijgen wij inzicht in bezoekersgedrag. U bent volledig anoniem; het enige wat wij kunnen zien is dat iemand de website bezocht heeft. Wie, hoe en wat kunnen wij verder niet zien.</p>
+    <h2>{{ 'COOKIESTATEMENT.whichDataTitle' | translate }}</h2>
+    <p>{{ 'COOKIESTATEMENT.whichDataText' | translate }}</p>
 
-    <h2>Cookies beheren</h2>
-    <p>U kunt uw toestemming altijd wijzigen door <a href="#" (click)="openManageModal($event)">hier te klikken</a>.</p>
+    <h2>{{ 'COOKIESTATEMENT.manageCookiesTitle' | translate }}</h2>
+    <p>{{ 'COOKIESTATEMENT.manageCookiesText' | translate }} <a href="#" (click)="openManageModal($event)">{{ 'COOKIESTATEMENT.click-here' | translate }}</a>.</p>
 
-    <!-- Gecomment omdat privacy nog niet bestaat, niet weghalen tho is zo gefixt -->
-    <!-- <p class="cta">💡 <em>Heeft u vragen? Bekijk gerust onze <a [routerLink]="['/privacy']">privacyverklaring</a></em></p> --> 
+    <p class="cta">💡 <em>{{'COOKIESTATEMENT.cookies.questions' | translate }} <a [routerLink]="['/privacy-policy']">{{ 'FOOTER.privacy-policy' | translate }}</a></em></p> 
   </div>
 </div>
