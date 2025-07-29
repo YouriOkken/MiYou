@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="wrapper">  
+        <h2 id="loginTitle" class="title">{{ 'NOT_FOUND.title' | translate }}</h2>
+    
+        <ng-lottie class="animation" [options]="notFoundAnimation"></ng-lottie>
+
+        <div class="content">
+            <p>{{ 'NOT_FOUND.description' | translate }}</p>
+        </div>
+        
+        <button class="action-btn" (click)="redirectToHome()">{{ 'NOT_FOUND.button' | translate }}</button>
+    </div>
+</div>
