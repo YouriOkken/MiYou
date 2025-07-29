@@ -9,8 +9,6 @@ export const routes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'pricing', component: PricingAndTemplatesComponent},
     {path: 'cookies', component: CookiesComponent},
-    {path: 'privacy-policy', component: PrivacyPolicyComponent}
-    {path: 'cookies', component: CookiesComponent},
-
-    { path: '**', component: NotFoundComponent } // MOET ALS LAATSTE
+    {path: 'privacy-policy', component: PrivacyPolicyComponent},
+    {path: '**', component: NotFoundComponent} // MOET ALS LAATSTE
 ];

@@ -49,7 +49,6 @@ export function getAnimation(type: animationTypes, loop: boolean, autoPlay: bool
                 loop: loop,
                 autoplay: autoPlay,
             }
-            };
 
         case animationTypes.notFound:
             return {
@@ -57,8 +56,5 @@ export function getAnimation(type: animationTypes, loop: boolean, autoPlay: bool
                 loop: loop,
                 autoplay: autoPlay
             };
-        
-        default:
-            throw new Error(`Unknown animation type: ${type}`);
     }
 }
