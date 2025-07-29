@@ -1,0 +1,110 @@
+.content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+
+    .left,
+    .right {
+      width: 50%;
+    }
+
+    .right {
+      .title {
+        display: flex;
+        font-family: 'Lora', serif;
+        font-size: 4rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+
+    .left,
+    .right {
+      flex: 1;
+      display: flex;
+    }
+  }
+
+  .left {
+    justify-content: center;
+  }
+
+  .right {
+    flex-direction: column;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    flex-direction: column;
+
+    .header {
+      .left {
+        width: 0;
+      }
+
+      .right {
+        width: 100%;
+
+        .title {
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    .container {
+      flex-direction: column;
+    }
+
+    .right{
+      padding: 1rem;
+    }
+  }
+
+  .title {
+    font-size: 2rem;
+    height: auto;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .animation {
+    width: 80%;
+    height: auto;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  body {
+    padding: 1rem 1rem;
+  }
+
+  .content {
+    flex-direction: row;
+
+    .left,
+    .right {
+      flex: 1;
+      flex-direction: column;
+    }
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .animation {
+    width: 70%;
+    height: auto;
+  }
+}

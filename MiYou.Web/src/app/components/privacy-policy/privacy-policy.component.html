@@ -1,0 +1,51 @@
+<div class="content">
+  <div class="header">
+    <div class="left"></div>
+    <div class="right">
+      <div class="title">{{ 'PRIVACY_POLICY.title' |translate}}</div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="left">
+      <ng-lottie class="animation" [options]="privacyPolicyAnimation"></ng-lottie>
+    </div>
+    <div class="right">
+      <p>
+        {{ 'PRIVACY_POLICY.intro' | translate}}
+      </p>
+
+      <h2>{{ 'PRIVACY_POLICY.section1Title' | translate}}</h2>
+      <ul>
+        <li>{{ 'PRIVACY_POLICY.section1Item1' | translate}}</li>
+        <li>{{ 'PRIVACY_POLICY.section1Item2' | translate}}</li>
+      </ul>
+
+      <h2>{{ 'PRIVACY_POLICY.section2Title' | translate}}</h2>
+      <ul>
+        <li>{{ 'PRIVACY_POLICY.section2Item1' | translate}}</li>
+        <li>{{ 'PRIVACY_POLICY.section2Item2' | translate}}</li>
+      </ul>
+
+      <h2>{{ 'PRIVACY_POLICY.section3Title' | translate}}</h2>
+      <p>
+        {{ 'PRIVACY_POLICY.section3Text' | translate}}
+      </p>
+
+      <h2>{{ 'PRIVACY_POLICY.section4Title' | translate}}</h2>
+      <p>
+        {{ 'PRIVACY_POLICY.section4Text' | translate}}
+      </p>
+
+      <h2>{{ 'PRIVACY_POLICY.section5Title' | translate}}</h2>
+      <p>
+        {{ 'PRIVACY_POLICY.section5Text' | translate}}
+        <a [routerLink]="['/cookies']">{{ 'PRIVACY_POLICY.section5LinkText' | translate}}</a>.
+      </p>
+
+      <h2>{{ 'PRIVACY_POLICY.section6Title' | translate}}</h2>
+      <p>{{ 'PRIVACY_POLICY.section6Text' | translate}}</p>
+
+      <p class="cta" [innerHTML]="'PRIVACY_POLICY.contactText' | translate"></p>
+    </div>
+  </div>
+</div>
