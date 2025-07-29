@@ -26,6 +26,8 @@ namespace MiYou.API.Features.Contacts.Add
         public async Task ProcessAsync(AddContactRequest request)
         {
             using DatabaseContext _context = _contextFactory.Create();
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("nl");
+            var message = Resources.UserNotFound;
 
             if (await _context.Contacts.AnyAsync(c => c.Email == request.Email))
                 throw new AlreadyExistsException("Er is helaas al contact gemaakt met ons via dit email adres.");
