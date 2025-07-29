@@ -1,36 +1,27 @@
 <div class="pricing-content">
-    <div class="title">Prijzen & Templates</div>
+    <div class="title">{{ 'PRICESANDTEMPLATES.title' | translate }}</div>
 
     <div class="standard-pricing">
-        <div class="standard-title">Standaard prijzen</div>
-
+        <div class="standard-title">{{ 'PRICESANDTEMPLATES.PRICES.standard-pricing-title' | translate }}</div>
         <div class="prices-info">
-            <p>Wij vragen <strong>€20 per uur</strong> + eenmalige administratie kosten.</p>
-
-            <p>Voor elk project maken wij een <strong>duidelijke uurinschatting</strong> op basis van uw wensen. Elk
-                onderdeel wordt apart ingeschat, zoals inlogsysteem of overzichtspagina.</p>
-
-            <p>De totaalschatting bespreken wij met u samen, zodat u precies weet waar je aan toe bent. Pas na uw
-                akkoord starten wij.</p>
-
-            <p>Zijn wij sneller klaar? Dan betaald u alleen voor de daadwerkelijke uren.</p>
-
-            <p>Loopt het iets uit? Dan nemen wij vantevoren contact met u op en hanteren wij een eerlijke regeling:</p>
+            <p [innerHTML]="'PRICESANDTEMPLATES.PRICES.price-info-1' | translate"></p>
+            <p [innerHTML]="'PRICESANDTEMPLATES.PRICES.price-info-2' | translate"></p>
+            <p [innerHTML]="'PRICESANDTEMPLATES.PRICES.price-info-3' | translate"></p>
+            <p [innerHTML]="'PRICESANDTEMPLATES.PRICES.price-info-4' | translate"></p>
+            <p [innerHTML]="'PRICESANDTEMPLATES.PRICES.price-info-5' | translate"></p>
 
             <ul class="custom-list">
-                <li><strong>Eerste 20% van de uren extra:</strong> €10 per uur</li>
-                <li><strong>Daarboven:</strong> gratis - wij nemen dat voor onze rekening</li>
+                <li [innerHTML]="'PRICESANDTEMPLATES.PRICES.price-info-list-1' | translate"></li>
+                <li [innerHTML]="'PRICESANDTEMPLATES.PRICES.price-info-list-2' | translate"></li>
             </ul>
 
-            <p><strong>Voorbeeld:</strong></p>
-            <em>Wij hebben een schatting gemaakt van <strong>10 uur</strong> en rond uur <strong>8</strong> merken wij dat wij uitlopen, dan nemen wij contact met u op en bespreken wij samen de volgende stap.</em>
-            <em> Als wij samen besloten hebben om door te gaan en wij komen op <strong>13 uur</strong> uit dan betaald u de geschatte prijs volledig <strong>(€200)</strong> + 20% <strong>(2 uur)</strong> van de geschatte prijs <strong>(€20)</strong> en het overig uur krijgt u van ons.</em>
+            <p [innerHTML]="'PRICESANDTEMPLATES.PRICES.price-info-6' | translate"></p>
+            <p [innerHTML]="'PRICESANDTEMPLATES.PRICES.price-info-7' | translate"></p>
+            <p [innerHTML]="'PRICESANDTEMPLATES.PRICES.price-info-8' | translate"></p>
+            <p [innerHTML]="'PRICESANDTEMPLATES.PRICES.price-info-9' | translate"></p>
 
-            <p>Zo krijgt u altijd <strong>transparantie</strong>, <strong>duidelijkheid</strong> en een eerlijke prijs.
-            </p>
+            <p class="cta" [innerHTML]="'PRICESANDTEMPLATES.PRICES.price-info-cta' | translate"></p>
 
-            <p class="cta">💡 <em>Benieuwd wat uw idee ongeveer zou kosten? <a href="/#contact">Neem gerust contact
-                        op</a> voor een vrijblijvende inschatting.</em></p>
         </div>
 
     </div>

@@ -5,12 +5,13 @@ import { RouterModule } from '@angular/router';
 import { environment } from '../../../../environments/environment';
 import { ModalComponent } from "../../../modal/modal.component";
 import { SwitchComponent } from "../../switch/switch.component";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'cookie-consent-component',
   templateUrl: './cookie-consent.component.html',
   styleUrls: ['./cookie-consent.component.scss'],
-  imports: [RouterModule, ModalComponent, SwitchComponent]
+  imports: [RouterModule, ModalComponent, SwitchComponent, TranslateModule]
 })
 export class CookieConsentComponent implements OnInit {
   showBanner = false;
