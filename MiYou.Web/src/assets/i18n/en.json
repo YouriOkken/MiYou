@@ -48,7 +48,8 @@
             "text.loading": "Sending...",
             "error-message": "",
             "button.retry-text": "Try again",
-            "text.success": "The contact form was sent successfully! We will respond as soon as possible!"
+            "text.success": "The contact form was sent successfully! We will respond as soon as possible!",
+            "success.check-spam": "You might want to check your spam or junk folder as well!"
         }
     },
     "PRICESANDTEMPLATES": {

@@ -45,7 +45,8 @@
             "text.loading": "Aan het verzenden...",
             "error-message": "",
             "button.retry-text": "Opnieuw proberen",
-            "text.success": "Het contactformulier is successvol verzonden! Wij reageren zo snel mogelijk!"
+            "text.success": "Het contactformulier is successvol verzonden! Wij reageren zo snel mogelijk!",
+            "success.check-spam": "Kijk ook even in uw spamfolder, voor het geval het bericht daar terecht is gekomen!"
         }
     },
     "PRICESANDTEMPLATES": {

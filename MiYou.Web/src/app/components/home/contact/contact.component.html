@@ -82,7 +82,10 @@
     <button (click)="resetForm()">{{'HOME.CONTACT.button.retry-text' | translate }}</button>
   }
   @else {
-    <ng-lottie class="animation" [options]="successAnimation" (animationCreated)="handleAnimationCreated($event, 0.8)"></ng-lottie>
-    <p>{{'HOME.CONTACT.text.success' | translate }}</p>
+    <div class="succes-container">
+      <ng-lottie class="animation" [options]="successAnimation" (animationCreated)="handleAnimationCreated($event, 0.8)"></ng-lottie>
+      <p>{{'HOME.CONTACT.text.success' | translate }}</p>
+       <small class="spam">{{ 'HOME.CONTACT.success.check-spam' | translate}}</small>
+    </div>
   }
 </section>
