@@ -143,5 +143,26 @@
         "allLabel": "All cookies",
         "saveButton": "Save",
         "moreInfo": "More info"
+    },
+    "PRIVACY_POLICY": {
+        "title": "Privacy Policy",
+        "intro": "At MiYou, we highly value your privacy. This policy explains which personal data we process, why we do so, and what your rights are.",
+        "section1Title": "1. What personal data do we process?",
+        "section1Item1": "Name and contact details you share with us (such as email)",
+        "section1Item2": "Information about your use of our website (only anonymous via cookies)",
+        "section2Title": "2. Why do we process this data?",
+        "section2Item1": "To improve our website and services",
+        "section2Item2": "To comply with legal obligations",
+        "section3Title": "3. With whom do we share data?",
+        "section3Text": "We only share your data with third parties when necessary for our services (such as google analytics), and never without a valid legal basis or your consent.",
+        "section4Title": "4. Data retention",
+        "section4Text": "We do not keep your data longer than necessary for the purpose for which it was collected, unless we are legally obliged to retain it longer.",
+        "section5Title": "5. Cookies",
+        "section5Text": "Our website uses cookies to track statistics. You can find more information in our",
+        "section5LinkText": "cookie policy",
+        "section5Link": "/cookies",
+        "section6Title": "6. Your rights",
+        "section6Text": "You have the right to access, correct, delete, and transfer your data. You can also object to processing or withdraw your consent.",
+        "contactText": "💡 <em>Questions? Feel free to contact us at <a href=\"mailto:info@miyou.nl\">info&#64;miyou.nl</a></em>"
     }
 }
