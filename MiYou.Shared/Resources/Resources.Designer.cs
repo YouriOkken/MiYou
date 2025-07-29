@@ -61,6 +61,69 @@ namespace MiYou.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bedankt voor uw bericht via ons contactformulier. Wij nemen zo snel mogelijk contact met u op..
+        /// </summary>
+        public static string Email_ContactConfirmation_Body {
+            get {
+                return ResourceManager.GetString("Email_ContactConfirmation_Body", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to © {0} MiYou - Alle rechten voorbehouden..
+        /// </summary>
+        public static string Email_ContactConfirmation_Footer {
+            get {
+                return ResourceManager.GetString("Email_ContactConfirmation_Footer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hallo {0},.
+        /// </summary>
+        public static string Email_ContactConfirmation_Greeting {
+            get {
+                return ResourceManager.GetString("Email_ContactConfirmation_Greeting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tot aan de rand van het universum - of gewoon uw inbox 😉!.
+        /// </summary>
+        public static string Email_ContactConfirmation_Signoff {
+            get {
+                return ResourceManager.GetString("Email_ContactConfirmation_Signoff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wij hebben uw bericht ontvangen.
+        /// </summary>
+        public static string Email_ContactConfirmation_Title {
+            get {
+                return ResourceManager.GetString("Email_ContactConfirmation_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact bevestiging.
+        /// </summary>
+        public static string Email_Title_ContactConfirm {
+            get {
+                return ResourceManager.GetString("Email_Title_ContactConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email kon niet worden bereikt. Heeft u het goede email adres ingevuld?.
+        /// </summary>
+        public static string Error_Contact_EmailDeliveryFailed {
+            get {
+                return ResourceManager.GetString("Error_Contact_EmailDeliveryFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Er is helaas al contact gemaakt met ons via dit email adres..
         /// </summary>
         public static string Error_Contact_EmailExists {

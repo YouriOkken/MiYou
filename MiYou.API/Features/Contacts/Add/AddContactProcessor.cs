@@ -49,7 +49,7 @@ namespace MiYou.API.Features.Contacts.Add
             _context.Contacts.Add(newContact);
 
             bool internalMailSent = await _emailService.SendEmailAsync("contact@miyou.nl", "Nieuw contact", EmailTemplates.GenerateContactEmailHtml(request.Name, request.CompanyName, request.Email, request.Idea, request.AdditionalInfo));
-            bool externalMailSent = await _emailService.SendEmailAsync(request.Email, "Contact bevestiging", EmailTemplates.ContactConfirmationTemplate(request.Name));
+            bool externalMailSent = await _emailService.SendEmailAsync(request.Email, Resources.Email_Title_ContactConfirm, EmailTemplates.ContactConfirmationTemplate(request.Name));
             if (internalMailSent && externalMailSent)
             {
                 await _context.SaveChangesAsync(); // sla de wijzigingen op binnen de transactie
@@ -57,7 +57,7 @@ namespace MiYou.API.Features.Contacts.Add
             } else
             {
                 await transaction.RollbackAsync();
-                throw new EmailDeliveryException("Email kon niet worden bereikt. Heeft u het goede email adres ingevuld?");
+                throw new EmailDeliveryException(Resources.Error_Contact_EmailDeliveryFailed);
             }
         }
     }

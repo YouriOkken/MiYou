@@ -117,6 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Email_ContactConfirmation_Body" xml:space="preserve">
+    <value>Bedankt voor uw bericht via ons contactformulier. Wij nemen zo snel mogelijk contact met u op.</value>
+  </data>
+  <data name="Email_ContactConfirmation_Footer" xml:space="preserve">
+    <value>© {0} MiYou - Alle rechten voorbehouden.</value>
+  </data>
+  <data name="Email_ContactConfirmation_Greeting" xml:space="preserve">
+    <value>Hallo {0},</value>
+  </data>
+  <data name="Email_ContactConfirmation_Signoff" xml:space="preserve">
+    <value>Tot aan de rand van het universum - of gewoon uw inbox 😉!</value>
+  </data>
+  <data name="Email_ContactConfirmation_Title" xml:space="preserve">
+    <value>Wij hebben uw bericht ontvangen</value>
+  </data>
+  <data name="Email_Title_ContactConfirm" xml:space="preserve">
+    <value>Contact bevestiging</value>
+  </data>
+  <data name="Error_Contact_EmailDeliveryFailed" xml:space="preserve">
+    <value>Email kon niet worden bereikt. Heeft u het goede email adres ingevuld?</value>
+  </data>
   <data name="Error_Contact_EmailExists" xml:space="preserve">
     <value>Er is helaas al contact gemaakt met ons via dit email adres.</value>
   </data>
