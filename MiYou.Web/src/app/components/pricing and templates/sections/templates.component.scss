@@ -115,10 +115,13 @@
 
         .templates {
             padding: 8%;
+            flex-direction: column;
+            align-items: center;
         }
 
         .template {
             padding: 2.5rem 2rem;
+            max-width: 75%;
         }
     }
 
@@ -133,6 +136,8 @@
 
         .template {
             padding: 2.5rem 2rem;
+            max-width: 40%;
+            min-width: 30%;
         }
     }
 }

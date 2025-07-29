@@ -6,12 +6,13 @@ import { AnimationOptions, LottieComponent } from 'ngx-lottie';
 import { getErrorMessage } from '../../../utilities/error/error.utilities';
 import { onAnimationCreated, getAnimation } from '../../../utilities/animations/animation.utilities';
 import { animationTypes } from '../../../utilities/enums/animationTypes.enum';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'contact-component',
   templateUrl: 'contact.component.html',
   styleUrl: 'contact.component.scss',
-  imports: [ReactiveFormsModule, LottieComponent]
+  imports: [ReactiveFormsModule, LottieComponent, TranslateModule]
 })
 export class ContactComponent implements OnInit {
   contactForm!: FormGroup;

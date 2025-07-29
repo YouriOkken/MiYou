@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+/* verberg app root tot ready */
+app-root {
+  visibility: hidden;
+}
+
+body.ready app-root {
+  visibility: visible;
+}
 
 html,
 body {

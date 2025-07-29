@@ -7,6 +7,7 @@ using MiYou.DAL.Entities;
 using MiYou.Shared.Exceptions;
 using MiYou.Shared.Interfaces;
 using MiYou.Shared.Utilities;
+using MiYou.Shared.Resources;
 
 namespace MiYou.API.Features.Contacts.Add
 {
@@ -14,20 +15,21 @@ namespace MiYou.API.Features.Contacts.Add
     {
         private readonly IContextFactory _contextFactory;
         private readonly EmailService _emailService;
-        
-        public AddContactProcessor(IContextFactory contextFactory, EmailService emailService) 
+
+        public AddContactProcessor(IContextFactory contextFactory,
+            EmailService emailService) 
         {
             _contextFactory = contextFactory;
             _emailService = emailService;
         }
-        
+
         public async Task ProcessAsync(AddContactRequest request)
         {
             using DatabaseContext _context = _contextFactory.Create();
             using var transaction = await _context.Database.BeginTransactionAsync(); // tijdelijke opslag van alle databaseacties tot commit of rollback
 
             if (await _context.Contacts.AnyAsync(c => c.Email == request.Email))
-                throw new AlreadyExistsException("Er is helaas al contact gemaakt met ons via dit email adres.");
+                throw new AlreadyExistsException(Resources.Error_Contact_EmailExists);
 
             if (string.IsNullOrWhiteSpace(request.AdditionalInfo))
                 request.AdditionalInfo = "-"; // om gelijkheid te maken, anders heeft de ene klant niks en de ander een -
