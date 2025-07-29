@@ -17,7 +17,7 @@ import { TranslateModule } from '@ngx-translate/core';
 export class ContactComponent implements OnInit {
   contactForm!: FormGroup;
 
-  isSuccess: boolean | undefined = true;
+  isSuccess: boolean | undefined;
   isProcessing: boolean = false;
   errorMessage: string = '';
 
