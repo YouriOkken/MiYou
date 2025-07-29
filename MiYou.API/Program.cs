@@ -1,4 +1,5 @@
 using MiYou.API.Extensions;
+using MiYou.API.Middleware;
 using MiYou.API.Services;
 using MiYou.Shared.Utilities;
 
@@ -43,6 +44,7 @@ if (app.Environment.IsDevelopment())
 
 app.AddGlobalExceptionHandling();
 app.UseCors("AllowLocalhost");
+app.UseMiddleware<LanguageMiddleware>(); // voor goede translation
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();

@@ -10,6 +10,9 @@ import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-transla
 import { HttpLoaderFactory } from './utilities/factories/http-loader.factory'; // pas pad aan indien nodig
 import { LanguageService } from './services/language/language.service';
 
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LanguageInterceptor } from './interceptors/language.interceptor';
+
 export function appInitializerFactory(languageService: LanguageService) {
   return () => languageService.initLanguage();
 }
@@ -38,6 +41,11 @@ export const appConfig: ApplicationConfig = {
       provide: APP_INITIALIZER,
       useFactory: appInitializerFactory,
       deps: [LanguageService],
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LanguageInterceptor,
       multi: true
     }
   ]
