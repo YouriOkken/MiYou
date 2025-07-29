@@ -27,7 +27,6 @@
 .nav .right {
     justify-content: flex-end;
     position: relative;
-
 }
 
 .nav-links {
@@ -166,7 +165,6 @@
     border-bottom: 0.1vh solid rgba(255, 255, 255, 0.4);
 }
 
-
 //responsive dat die kleiner / veranderd naar een hamburger wanneer het scherm kleiner is dan 768px
 @media (max-width: 768px) {
     .nav-links {
@@ -201,7 +199,6 @@
 
     }
 }
-
 
 //hele kleine schermen
 @media (max-width: 480px) {

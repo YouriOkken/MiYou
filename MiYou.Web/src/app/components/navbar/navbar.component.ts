@@ -39,7 +39,6 @@ export class NavbarComponent {
         }
     }
 
-
     toggleLanguageDropdown(event: Event) {
         event.stopPropagation(); //voorkomt dat de dropdown zich instant sluit
         this.languageDropdownOpen = !this.languageDropdownOpen;
