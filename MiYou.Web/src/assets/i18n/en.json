@@ -164,5 +164,10 @@
         "section6Title": "6. Your rights",
         "section6Text": "You have the right to access, correct, delete, and transfer your data. You can also object to processing or withdraw your consent.",
         "contactText": "💡 <em>Questions? Feel free to contact us at <a href=\"mailto:info@miyou.nl\">info&#64;miyou.nl</a></em>"
+    },
+    "NOT_FOUND": {
+        "title": "Page not found",
+        "description": "Oops! This page does not exist...",
+        "button": "Back to home"
     }
 }

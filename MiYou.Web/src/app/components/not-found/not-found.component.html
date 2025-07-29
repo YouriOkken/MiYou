@@ -1,13 +1,13 @@
 <div class="container">
     <div class="wrapper">  
-        <h2 id="loginTitle" class="title">Pagina niet gevonden</h2>
+        <h2 id="loginTitle" class="title">{{ 'NOT_FOUND.title' | translate }}</h2>
     
         <ng-lottie class="animation" [options]="notFoundAnimation"></ng-lottie>
 
         <div class="content">
-            <p>Oeps! Deze pagina bestaat helaas niet...</p>
+            <p>{{ 'NOT_FOUND.description' | translate }}</p>
         </div>
         
-        <button class="action-btn" (click)="redirectToHome()">Terug naar home</button>
+        <button class="action-btn" (click)="redirectToHome()">{{ 'NOT_FOUND.button' | translate }}</button>
     </div>
 </div>

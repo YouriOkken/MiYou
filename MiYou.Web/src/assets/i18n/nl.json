@@ -162,5 +162,10 @@
         "section6Title": "6. Uw rechten",
         "section6Text": "U hebt recht op inzage, correctie, verwijdering en overdracht van uw gegevens. Ook kunt u bezwaar maken tegen verwerking of uw toestemming intrekken.",
         "contactText": "💡 <em>Vragen? Neem gerust contact op via <a href=\"mailto:info@miyou.nl\">info&#64;miyou.nl</a></em>"
+    },
+    "NOT_FOUND": {
+        "title": "Pagina niet gevonden",
+        "description": "Oeps! Deze pagina bestaat helaas niet...",
+        "button": "Terug naar home"
     }
 }
