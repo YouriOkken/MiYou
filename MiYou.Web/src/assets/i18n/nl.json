@@ -131,7 +131,8 @@
         "whichDataText": "Met statistische cookies krijgen wij inzicht in bezoekersgedrag. U bent volledig anoniem; het enige wat wij kunnen zien is dat iemand de website bezocht heeft. Wie, hoe en wat kunnen wij verder niet zien.",
         "manageCookiesTitle": "Cookies beheren",
         "manageCookiesText": "U kunt uw toestemming altijd wijzigen door",
-        "click-here": "hier te klikken"
+        "click-here": "hier te klikken",
+        "cookies.questions": "Heeft u vragen? Bekijk gerust onze"
     },
     "COOKIE_BANNER": {
         "title": "Cookies",
@@ -140,5 +141,26 @@
         "allLabel": "Alle cookies",
         "saveButton": "Opslaan",
         "moreInfo": "Meer info"
+    },
+    "PRIVACY_POLICY": {
+        "title": "Privacyverklaring",
+        "intro": "Bij MiYou hechten wij veel waarde aan uw privacy. In deze verklaring leest u welke persoonsgegevens wij verwerken, waarom wij dat doen en wat uw rechten zijn.",
+        "section1Title": "1. Welke persoonsgegevens verwerken wij?",
+        "section1Item1": "Naam en contactgegevens die u met ons deelt (zoals e-mail)",
+        "section1Item2": "Informatie over uw gebruik van onze website (alleen anoniem via cookies)",
+        "section2Title": "2. Waarom verwerken wij deze gegevens?",
+        "section2Item1": "Om onze website en diensten te verbeteren",
+        "section2Item2": "Om te voldoen aan wettelijke verplichtingen",
+        "section3Title": "3. Met wie delen wij gegevens?",
+        "section3Text": "Wij delen uw gegevens alleen met derden wanneer dat nodig is voor onze dienstverlening (zoals analytics), en nooit zonder geldige grondslag of zonder uw toestemming.",
+        "section4Title": "4. Bewaartermijn",
+        "section4Text": "Wij bewaren uw gegevens niet langer dan noodzakelijk voor het doel waarvoor ze verzameld zijn, tenzij wij wettelijk verplicht zijn deze langer te bewaren.",
+        "section5Title": "5. Cookies",
+        "section5Text": "Onze website maakt gebruik van cookies om statistieken bij te houden. Meer informatie vind u in onze",
+        "section5LinkText": "cookiesverklaring",
+        "section5Link": "/cookies",
+        "section6Title": "6. Uw rechten",
+        "section6Text": "U hebt recht op inzage, correctie, verwijdering en overdracht van uw gegevens. Ook kunt u bezwaar maken tegen verwerking of uw toestemming intrekken.",
+        "contactText": "💡 <em>Vragen? Neem gerust contact op via <a href=\"mailto:info@miyou.nl\">info&#64;miyou.nl</a></em>"
     }
 }

@@ -23,7 +23,7 @@
 
     <h2>{{ 'COOKIESTATEMENT.manageCookiesTitle' | translate }}</h2>
     <p>{{ 'COOKIESTATEMENT.manageCookiesText' | translate }} <a href="#" (click)="openManageModal($event)">{{ 'COOKIESTATEMENT.click-here' | translate }}</a>.</p>
-    <!-- Gecomment omdat privacy nog niet bestaat, niet weghalen tho is zo gefixt -->
-    <!-- <p class="cta">💡 <em>Heeft u vragen? Bekijk gerust onze <a [routerLink]="['/privacy']">privacyverklaring</a></em></p> --> 
+
+    <p class="cta">💡 <em>{{'COOKIESTATEMENT.cookies.questions' | translate }} <a [routerLink]="['/privacy-policy']">{{ 'FOOTER.privacy-policy' | translate }}</a></em></p> 
   </div>
 </div>
