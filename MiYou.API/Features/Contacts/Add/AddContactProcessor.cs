@@ -26,6 +26,7 @@ namespace MiYou.API.Features.Contacts.Add
         public async Task ProcessAsync(AddContactRequest request)
         {
             using DatabaseContext _context = _contextFactory.Create();
+            using var transaction = await _context.Database.BeginTransactionAsync(); // tijdelijke opslag van alle databaseacties tot commit of rollback
 
             if (await _context.Contacts.AnyAsync(c => c.Email == request.Email))
                 throw new AlreadyExistsException(Resources.Error_Contact_EmailExists);
@@ -46,10 +47,18 @@ namespace MiYou.API.Features.Contacts.Add
             };
 
             _context.Contacts.Add(newContact);
-            await _context.SaveChangesAsync();
 
-            await _emailService.SendEmailAsync("contact@miyou.nl", "Nieuw contact", EmailTemplates.GenerateContactEmailHtml(request.Name, request.CompanyName, request.Email, request.Idea, request.AdditionalInfo));
-            await _emailService.SendEmailAsync(request.Email, "Contact bevestiging", EmailTemplates.ContactConfirmationTemplate(request.Name));
+            bool internalMailSent = await _emailService.SendEmailAsync("contact@miyou.nl", "Nieuw contact", EmailTemplates.GenerateContactEmailHtml(request.Name, request.CompanyName, request.Email, request.Idea, request.AdditionalInfo));
+            bool externalMailSent = await _emailService.SendEmailAsync(request.Email, "Contact bevestiging", EmailTemplates.ContactConfirmationTemplate(request.Name));
+            if (internalMailSent && externalMailSent)
+            {
+                await _context.SaveChangesAsync(); // sla de wijzigingen op binnen de transactie
+                await transaction.CommitAsync();   // commit alles definitief naar de database
+            } else
+            {
+                await transaction.RollbackAsync();
+                throw new EmailDeliveryException("Email kon niet worden bereikt. Heeft u het goede email adres ingevuld?");
+            }
         }
     }
 }
