@@ -52,18 +52,19 @@ export class CookieConsentComponent implements OnInit {
 
   acceptAll() {
     if (!this.isBrowser) return;
+    CookiesService.loadGoogleAnalytics(environment.googleAnalyticsId);
     localStorage.setItem('cookieConsent', 'all');
-    gtag('consent', 'update', {
-      'ad_storage': 'granted',
-      'analytics_storage': 'granted'
-    });
-    gtag('config', 'G-08YN1E27MX');
     this.showBanner = false;
     this.cookiesService.setShowBanner(false);
   }
 
   acceptNecessaryOnly() {
     if (!this.isBrowser) return;
+    if (document.querySelector(`script[src*="${environment.googleAnalyticsId}"]`)) {
+      // remove cookies
+      CookiesService.clearGoogleAnalytics();
+      window.location.reload(); // reload de pagina zodat het analytics script wordt weggehaald
+    }
     localStorage.setItem('cookieConsent', 'necessary');
     this.showBanner = false;
     this.cookiesService.setShowBanner(false);
