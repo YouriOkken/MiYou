@@ -135,7 +135,8 @@
         "whichDataText": "With statistical cookies, we gain insight into visitor behavior. You are completely anonymous; the only thing we can see is that someone visited the website. We cannot see who, how, or what.",
         "manageCookiesTitle": "Manage cookies",
         "manageCookiesText": "You can always change your consent by",
-        "click-here": "clicking here."
+        "click-here": "clicking here.",
+        "cookies.questions": "Do you have questions? Feel free to check our"
     },
     "COOKIE_BANNER": {
         "title": "Cookies",
