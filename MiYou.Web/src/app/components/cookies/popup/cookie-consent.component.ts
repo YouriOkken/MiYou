@@ -7,6 +7,7 @@ import { ModalComponent } from "../../../modal/modal.component";
 import { SwitchComponent } from "../../switch/switch.component";
 import { TranslateModule } from '@ngx-translate/core';
 
+declare var gtag: Function;
 @Component({
   selector: 'cookie-consent-component',
   templateUrl: './cookie-consent.component.html',
@@ -34,7 +35,7 @@ export class CookieConsentComponent implements OnInit {
 
       if (consent === 'all') {
         this.AllCookies = true;
-        this.loadAnalytics();
+        this.acceptAll();
       }
     }
   }
@@ -52,8 +53,11 @@ export class CookieConsentComponent implements OnInit {
   acceptAll() {
     if (!this.isBrowser) return;
     localStorage.setItem('cookieConsent', 'all');
-    (window as any).gtag?.('consent', 'update', { analytics_storage: 'granted' });
-    this.loadAnalytics();
+    gtag('consent', 'update', {
+      'ad_storage': 'granted',
+      'analytics_storage': 'granted'
+    });
+    gtag('config', 'G-08YN1E27MX');
     this.showBanner = false;
     this.cookiesService.setShowBanner(false);
   }
@@ -63,37 +67,5 @@ export class CookieConsentComponent implements OnInit {
     localStorage.setItem('cookieConsent', 'necessary');
     this.showBanner = false;
     this.cookiesService.setShowBanner(false);
-  }
-
-  loadAnalytics() {
-    if (!this.isBrowser) return;
-  
-    if (document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
-      this.initGtag(true);  // true = config direct uitvoeren
-      return;
-    }
-  
-    const script = document.createElement('script');
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${environment.googleAnalyticsId}`;
-    script.async = true;
-    document.head.appendChild(script);
-  
-    script.onload = () => {
-      this.initGtag(true); // config pas aanroepen ná load
-    };
-  }
-
-  initGtag(shouldConfig = false) {
-    (window as any).dataLayer = (window as any).dataLayer || [];
-    function gtag(...args: any[]) {
-      (window as any).dataLayer.push(args);
-    }
-    (window as any).gtag = gtag;
-
-    gtag('js', new Date());
-
-    if (shouldConfig) {
-      gtag('config', environment.googleAnalyticsId, { anonymize_ip: true });
-    }
   }
 }
