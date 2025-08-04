@@ -1,0 +1,64 @@
+.skills-section {
+    padding: 3rem 2rem;
+    text-align: center;
+
+    .container {
+        display: flex;
+        max-width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h2 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin-bottom: 1rem;
+        font-family: 'Lora', serif;
+    }
+
+    .expert-skills {
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .slider {
+        justify-content: center;
+        gap: 3%;
+        display: flex;
+        flex-direction: row;
+        max-width: 90%;
+    }
+
+    .other-skills {
+        display: flex;
+        flex-direction: row;
+    }
+
+    @media (max-width: 600px) {
+
+        .expert-skills {
+            overflow: hidden;
+        }
+
+        .slider img {
+            width: 60px;
+            height: auto;
+        }
+
+        .slider {
+            animation: scroll-right 5s linear infinite;
+        }
+
+        @keyframes scroll-right {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+
+        }
+    }
+}

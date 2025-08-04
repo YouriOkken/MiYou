@@ -22,6 +22,9 @@
                 "explanation": "We translate your ideas into a stylish, well-functioning website — exactly how you want it!"
             }
         },
+        "SKILLS": {
+            "title": "Our Skills"
+        },
         "CONTACT": {
             "title": "Contact",
             "fullname-label": "Full name",

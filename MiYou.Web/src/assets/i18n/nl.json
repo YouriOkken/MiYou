@@ -22,6 +22,9 @@
                 "explanation": "Wij vertalen uw ideeën naar een strakke, goed werkende website — precies zoals u het wilt!"
             }
         },
+        "SKILLS": {
+            "title": "Onze vaardigheden"
+        },
         "CONTACT": {
             "title": "Contact",
             "fullname-label": "Volledige naam",
