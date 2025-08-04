@@ -18,47 +18,66 @@
     .expert-skills {
         display: flex;
         justify-content: center;
-        width: 90%;
+        width: 80%;
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     }
 
     .slider {
-        justify-content: center;
-        gap: 3%;
-        display: flex;
-        flex-direction: row;
-        max-width: 90%;
+        max-width: 100%;
+        overflow: hidden;
+
+        .slide-track {
+            display: flex;
+            width: max-content;
+            animation: scroll 30s linear infinite;
+
+            img {
+                width: 80px;
+                margin-right: 2rem;
+                flex-shrink: 0;
+            }
+        }
     }
 
     .other-skills {
+        padding: 0.5rem;
         display: flex;
         flex-direction: row;
+        width: 79%;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        font-weight: bold;
+        color: rgb(102, 133, 236);
+        border-radius: 0 0 20px 20px;
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
     }
 
     @media (max-width: 600px) {
+        .slider .slide-track img {
+            width: 60px;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .slider .slide-track img {
+            width: 50px;
+        }
 
         .expert-skills {
-            overflow: hidden;
+            width: 95%;
         }
 
-        .slider img {
-            width: 60px;
-            height: auto;
-        }
-
-        .slider {
-            animation: scroll-right 5s linear infinite;
-        }
-
-        @keyframes scroll-right {
-            0% {
-                transform: translateX(0%);
-            }
-
-            100% {
-                transform: translateX(-50%);
-            }
-
+        .other-skills{
+            width: 90%;
         }
     }
 }

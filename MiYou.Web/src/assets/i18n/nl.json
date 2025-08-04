@@ -23,7 +23,8 @@
             }
         },
         "SKILLS": {
-            "title": "Onze vaardigheden"
+            "title": "Onze expertise",
+            "other.skills-text": "Voor talen of tools die niet hierboven vermeld staan, hebben we minder of geen ervaring. Het kan daarom wat meer tijd kosten om hetzelfde kwaliteitsniveau. We staan echter altijd open om nieuwe technologieën te leren en ons hierin te verdiepen, met het besef dat dit mogelijk invloed heeft op de doorlooptijd en kosten."
         },
         "CONTACT": {
             "title": "Contact",
