@@ -22,6 +22,10 @@
                 "explanation": "We translate your ideas into a stylish, well-functioning website — exactly how you want it!"
             }
         },
+        "SKILLS": {
+            "title": "Our expertise",
+            "other.skills-text": "For languages or tools not listed above, we have little to no experience. As a result, it may take a bit more time to achieve the same level of quality. That said, we’re always open to learning new technologies, as long as you're aware this might slightly affect the timeline and overall cost."
+        },
         "CONTACT": {
             "title": "Contact",
             "fullname-label": "Full name",

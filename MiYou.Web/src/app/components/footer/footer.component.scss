@@ -51,4 +51,20 @@
       white-space: nowrap;
     }
   }
+
+  @media (max-width: 400px) {
+    .footer {
+      font-size: 0.6rem;
+
+      .container {
+        gap: 0.3rem;
+      }
+
+      a {
+        font-size: 0.6rem;
+        margin-left: 0.5rem;
+        white-space: nowrap;
+      }
+    }
+  }
 }
