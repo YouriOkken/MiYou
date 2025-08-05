@@ -1,0 +1,172 @@
+{
+    "HOME": {
+        "title": "MiYou",
+        "description": "Welkom bij MiYou - Waar wij ons focussen op uw resultaten!",
+        "ABOUT": {
+            "title": "Wie zijn wij?",
+            "intro": "Wij zijn Milana en Youri, de gezichten achter MiYou. Op dit moment volgen wij samen de opleiding Software Developer op mbo4-niveau. Ons doel is om onze passie voor technologie en creativiteit om te zetten naar mooie en goedwerkende websites.",
+            "mission": "Met MiYou richten wij ons op het ondersteunen van mensen en kleine bedrijven die online willen groeien. Of u nou een wat eenvoudigere website nodig hebt of een wat complexere, wij denken met u mee en zorgen voor een goed resultaat waar u trots op zal zijn!"
+        },
+        "PROCESS": {
+            "title": "Hoe gaan wij te werk?",
+            "STEP1": {
+                "title": "Stuur ons een bericht",
+                "explanation": "Vul het formulier hieronder in en we nemen snel contact met u op!"
+            },
+            "STEP2": {
+                "title": "Wij plannen een afspraak",
+                "explanation": "Samen kijken we wat u nodig hebt en plannen een moment om alles door te nemen."
+            },
+            "STEP3": {
+                "title": "Aan de slag!",
+                "explanation": "Wij vertalen uw ideeën naar een strakke, goed werkende website — precies zoals u het wilt!"
+            }
+        },
+        "CONTACT": {
+            "title": "Contact",
+            "fullname-label": "Volledige naam",
+            "fullname-placeholder": "Uw volledige naam",
+            "fullname-validation-null": "Uw volledige naam is verplicht",
+            "company.name-label": "Bedrijfsnaam",
+            "company.name-placeholder": "Uw bedrijfsnaam",
+            "email-label": "Email",
+            "email-placeholder": "Uw email",
+            "email-validation-null": "Uw Email is verplicht",
+            "email-validation-invalid": "Ongeldig emailadres",
+            "idea-label": "Idee",
+            "idea-placeholder": "Leg hier uw idee uit aan ons!",
+            "idea-validation-null": "Uw idee is verplicht.",
+            "idea-validation-minimum": "Minimaal 10 tekens.",
+            "idea-validation-maximum": "Maximaal 1000 tekens.",
+            "additional.explanation-label": "Extra toelichting",
+            "additional.explanation-placeholder": "Heeft u nog wat extra toelichting?",
+            "additional.explanation-validation-maximum": "Maximaal 1000 characters",
+            "button.submit-text": "Versturen",
+            "text.loading": "Aan het verzenden...",
+            "error-message": "",
+            "button.retry-text": "Opnieuw proberen",
+            "text.success": "Het contactformulier is successvol verzonden! Wij reageren zo snel mogelijk!",
+            "success.check-spam": "Kijk ook even in uw spamfolder, voor het geval het bericht daar terecht is gekomen!"
+        }
+    },
+    "PRICESANDTEMPLATES": {
+        "title": "Prijzen en Sjablonen",
+        "PRICES": {
+            "standard-pricing-title": "Standaard prijzen",
+            "price-info-1": "Wij vragen <strong>€20 per uur</strong> + eenmalige administratie kosten.",
+            "price-info-2": "Voor elk project maken wij een <strong>duidelijke uurinschatting</strong> op basis van uw wensen. Elk onderdeel wordt apart ingeschat, zoals inlogsysteem of overzichtspagina.",
+            "price-info-3": "De totaalschatting bespreken wij met u samen, zodat u precies weet waar je aan toe bent. Pas na uw akkoord starten wij.",
+            "price-info-4": "Zijn wij sneller klaar? Dan betaald u alleen voor de daadwerkelijke uren.",
+            "price-info-5": "Loopt het iets uit? Dan nemen wij vantevoren contact met u op en hanteren wij een eerlijke regeling:",
+            "price-info-list-1": "<strong>Eerste 20% van de uren extra:</strong> €10 per uur",
+            "price-info-list-2": "<strong>Daarboven:</strong> gratis - wij nemen dat voor onze rekening",
+            "price-info-6": "<strong>Voorbeeld:</strong>",
+            "price-info-7": "<em>Wij hebben een schatting gemaakt van <strong>10 uur</strong> en rond uur <strong>8</strong> merken wij dat wij uitlopen, dan nemen wij contact met u op en bespreken wij samen de volgende stap.</em>",
+            "price-info-8": "<em> Als wij samen besloten hebben om door te gaan en wij komen op <strong>13 uur</strong> uit dan betaalt u de geschatte prijs volledig <strong>(€200)</strong> + 20% <strong>(2 uur)</strong> van de geschatte prijs <strong>(€20)</strong> en het overig uur krijgt u van ons.</em>",
+            "price-info-9": "Zo krijgt u altijd <strong>transparantie</strong>, <strong>duidelijkheid</strong> en een eerlijke prijs.",
+            "price-info-cta": "💡 <em>Benieuwd wat uw idee ongeveer zou kosten? <a href=\"/#contact\">Neem gerust contact op</a> voor een vrijblijvende inschatting.</em>"
+        },
+        "TEMPLATES": {
+            "title": "Sjablonen",
+            "website-setup": {
+                "name": "Website Opzet",
+                "description": "U wilt uw eigen website beginnen, maar geen idee hoe? Geen zorgen, wij helpen u ermee!",
+                "item-1": "Registratie van een domein",
+                "item-2": "Het opzetten van de hosting",
+                "item-3": "Uw ruimtepak klaarmaken",
+                "price": "€ 60"
+            },
+            "website-management": {
+                "name": "Website Beheer",
+                "description": "Geen zin om je website zelf te onderhouden? Geen zorgen wij kunnen dat voor u doen!",
+                "item-1": "Domein beheer",
+                "item-2": "Website hosting",
+                "item-3": "Website beveiliging",
+                "item-4": "Uw website op de maan bereikbaar maken",
+                "price": "€ 50 p/m"
+            },
+            "email-service": {
+                "name": "Email Service",
+                "description": "Stuur en ontvang e-mails met raketsnelheid — snel, makkelijk en betrouwbaar!",
+                "item-1": "5 standaard sjablonen",
+                "item-2": "Extra sjablonen mogelijk voor €5 p/u",
+                "item-3": "Kleuren en tekst gratis aanpasbaar",
+                "item-4": "Integratie in website",
+                "item-5": "Gratis email domein",
+                "item-6": "Uw email naar mars versturen",
+                "price": "€ 20"
+            },
+            "multi-language": {
+                "name": "Verschillende talen",
+                "description": "Uw website in meerdere talen? Dat kan!",
+                "item-1": "Minimaal 2 verschillende talen",
+                "item-2": "Snel en makkelijk wisselen",
+                "item-3": "Uw eigen website makkelijk vertalen voor extra talen (+€20)",
+                "item-4": "Uw website leesbaar maken voor marsmannetjes",
+                "price": "€ 40"
+            }
+        }
+    },
+    "NAVBAR": {
+        "home": "Home",
+        "about-us": "Over ons",
+        "pricing-templates": "Prijzen en Sjablonen",
+        "login": "Login",
+        "contact": "Contact"
+    },
+    "FOOTER": {
+        "copyright": "© 2025 MiYou. Alle rechten voorbehouden.",
+        "privacy-policy": "Privacybeleid",
+        "terms": "Algemene voorwaarden",
+        "contact": "Contact"
+    },
+    "COOKIESTATEMENT": {
+        "title": "Cookiesverklaring",
+        "intro": "Deze website, MiYou, gebruikt cookies om de gebruikerservaring te verbeteren en anonieme statistieken te verzamelen.",
+        "whatAreCookiesTitle": "Wat zijn cookies?",
+        "whatAreCookiesText": "Cookies zijn kleine tekstbestanden die op uw apparaat worden opgeslagen om informatie over uw bezoek bij te houden.",
+        "whichCookiesTitle": "Welke cookies gebruiken wij?",
+        "essentialCookies": "Essentiële cookies: Nodig om de website goed te laten werken. Deze kunt u niet weigeren.",
+        "statisticalCookies": "Statistische cookies: Worden alleen geplaatst met uw toestemming. Hiermee meten wij bijvoorbeeld hoeveel bezoekers de website heeft (via Google Analytics).",
+        "whichDataTitle": "Welke gegevens verzamelen wij?",
+        "whichDataText": "Met statistische cookies krijgen wij inzicht in bezoekersgedrag. U bent volledig anoniem; het enige wat wij kunnen zien is dat iemand de website bezocht heeft. Wie, hoe en wat kunnen wij verder niet zien.",
+        "manageCookiesTitle": "Cookies beheren",
+        "manageCookiesText": "U kunt uw toestemming altijd wijzigen door",
+        "click-here": "hier te klikken",
+        "cookies.questions": "Heeft u vragen? Bekijk gerust onze"
+    },
+    "COOKIE_BANNER": {
+        "title": "Cookies",
+        "description": "Wij gebruiken cookies om onze site goed te laten werken (essentieel) en om statistieken te verzamelen met uw toestemming.",
+        "necessaryLabel": "Alleen noodzakelijke cookies",
+        "allLabel": "Alle cookies",
+        "saveButton": "Opslaan",
+        "moreInfo": "Meer info"
+    },
+    "PRIVACY_POLICY": {
+        "title": "Privacyverklaring",
+        "intro": "Bij MiYou hechten wij veel waarde aan uw privacy. In deze verklaring leest u welke persoonsgegevens wij verwerken, waarom wij dat doen en wat uw rechten zijn.",
+        "section1Title": "1. Welke persoonsgegevens verwerken wij?",
+        "section1Item1": "Naam en contactgegevens die u met ons deelt (zoals e-mail)",
+        "section1Item2": "Informatie over uw gebruik van onze website (alleen anoniem via cookies)",
+        "section2Title": "2. Waarom verwerken wij deze gegevens?",
+        "section2Item1": "Om onze website en diensten te verbeteren",
+        "section2Item2": "Om te voldoen aan wettelijke verplichtingen",
+        "section3Title": "3. Met wie delen wij gegevens?",
+        "section3Text": "Wij delen uw gegevens alleen met derden wanneer dat nodig is voor onze dienstverlening (zoals analytics), en nooit zonder geldige grondslag of zonder uw toestemming.",
+        "section4Title": "4. Bewaartermijn",
+        "section4Text": "Wij bewaren uw gegevens niet langer dan noodzakelijk voor het doel waarvoor ze verzameld zijn, tenzij wij wettelijk verplicht zijn deze langer te bewaren.",
+        "section5Title": "5. Cookies",
+        "section5Text": "Onze website maakt gebruik van cookies om statistieken bij te houden. Meer informatie vind u in onze",
+        "section5LinkText": "cookiesverklaring",
+        "section5Link": "/cookies",
+        "section6Title": "6. Uw rechten",
+        "section6Text": "U hebt recht op inzage, correctie, verwijdering en overdracht van uw gegevens. Ook kunt u bezwaar maken tegen verwerking of uw toestemming intrekken.",
+        "contactText": "💡 <em>Vragen? Neem gerust contact op via <a href=\"mailto:info@miyou.nl\">info&#64;miyou.nl</a></em>"
+    },
+    "NOT_FOUND": {
+        "title": "Pagina niet gevonden",
+        "description": "Oeps! Deze pagina bestaat helaas niet...",
+        "button": "Terug naar home"
+    }
+}

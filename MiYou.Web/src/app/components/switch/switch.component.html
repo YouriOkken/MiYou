@@ -1,0 +1,8 @@
+<label class="switch">
+  @if (fixed) {
+    <input type="checkbox" [checked]="true" (change)="onToggle($event)" disabled>
+  } @else {
+    <input type="checkbox" [checked]="toggled" (change)="onToggle($event)">
+  }
+  <span class="slider round"></span>
+</label>

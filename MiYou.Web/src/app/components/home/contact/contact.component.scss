@@ -68,6 +68,13 @@ small {
   box-shadow: inset 0 0 2px rgba(255, 128, 128, 0.3);
 }
 
+.spam {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-weight: bold;
+  color: rgb(102, 133, 236)
+}
+
 p {
   font-weight: bold;
 }

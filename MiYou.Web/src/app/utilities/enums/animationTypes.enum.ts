@@ -1,5 +1,8 @@
 export enum animationTypes {
     loading,
     error,
-    contactSend
+    contactSend,
+    cookies,
+    privacy,
+    notFound
 }
