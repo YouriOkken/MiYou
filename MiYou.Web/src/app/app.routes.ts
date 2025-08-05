@@ -4,11 +4,13 @@ import { PricingAndTemplatesComponent } from './components/pricing and templates
 import { CookiesComponent } from './components/cookies/cookies.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'pricing', component: PricingAndTemplatesComponent},
     {path: 'cookies', component: CookiesComponent},
     {path: 'privacy-policy', component: PrivacyPolicyComponent},
+    {path: 'admin', component: AdminComponent},
     {path: '**', component: NotFoundComponent} // MOET ALS LAATSTE
 ];
