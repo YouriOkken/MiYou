@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
             this.isLoading = true;
             await this.authService.login(this.request);
             this.isLoading = false;
+            console.log("ingelogd!");
         } catch (error: any) {
             this.isLoading = false;
             console.log(getErrorMessage(error));

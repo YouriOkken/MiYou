@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginComponent } from "./login/login.component";
+import { AuthService } from '../../services/admin/auth/auth.service';
 
 @Component({
     selector: 'admin-component',
@@ -11,7 +12,11 @@ import { LoginComponent } from "./login/login.component";
 export class AdminComponent implements OnInit {
     loggedIn: boolean = false;
 
-    constructor() { }
+    constructor(private authService: AuthService) { }
 
-    ngOnInit() { }
+    async ngOnInit() { 
+        this.authService.currentUser$.subscribe((user) => {
+            this.loggedIn = user != null;
+        });
+    }
 }

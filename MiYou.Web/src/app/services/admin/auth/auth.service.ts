@@ -16,6 +16,7 @@ export class AuthService {
     constructor(private http: HttpClient) { }
 
     async loadUserFromServer() {
+        debugger;
         try {
             const user = await firstValueFrom(this.http.get<LoginResponse>(`${this.apiUrl}/getCurrentUser`, { withCredentials: true }));
             this.currentUserSubject.next(user);

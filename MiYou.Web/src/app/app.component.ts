@@ -128,6 +128,9 @@ export class AppComponent {
     }
   }
 
+  ngOnInit(): void {
+    this.authService.loadUserFromServer();
+  }
   getErrorMessage(error: any): string {
     if (!error?.error?.message) {
         return "Er ging iets fout!";
