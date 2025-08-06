@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using MiYou.DAL.Entities.Users;
+using MiYou.Shared.Utilities;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
@@ -10,14 +11,15 @@ namespace MiYou.API.Services.Auth
 {
     public class JwtTokenService
     {
+        private readonly JwtSettings _settings;
+
+        public JwtTokenService(IOptions<JwtSettings> settings)
+        {
+            _settings = settings.Value;
+        }
+
         public async Task<string> GenerateAccessToken(User user)
         {
-            // TODO: Deze tijdelijk vars weghalen
-            string jwtKey = "ThisIsASecretKeyForJwtThatIsLongEnough12345";
-            string jwtIssuer = "MiYou";
-            string jwtAudience = "MiYouUsers";
-            int AccessTokenExpiryMinutes = 3000;
-
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
@@ -25,14 +27,14 @@ namespace MiYou.API.Services.Auth
                 new Claim(ClaimTypes.Email, user.Email),
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_settings.Key));
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(
-                issuer: jwtIssuer,
-                audience: jwtAudience,
+                issuer: _settings.Issuer,
+                audience: _settings.Audience,
                 claims: claims,
-                expires: DateTime.UtcNow.AddMinutes(AccessTokenExpiryMinutes),
+                expires: DateTime.UtcNow.AddMinutes(_settings.AccessTokenExpiryMinutes),
                 signingCredentials: credentials
             );
 
