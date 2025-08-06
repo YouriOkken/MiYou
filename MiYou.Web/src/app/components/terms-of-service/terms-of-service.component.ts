@@ -16,7 +16,7 @@ export class TermsOfServiceComponent {
     
   constructor() 
   { 
-    this.termsOfServiceAnimation = getAnimation(animationTypes.privacy, true, true);
+    this.termsOfServiceAnimation = getAnimation(animationTypes.termsOfService, true, true);
   }
 
   ngOnInit() { }

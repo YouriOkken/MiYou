@@ -36,6 +36,7 @@
 
   .left {
     justify-content: center;
+    align-items: start;
   }
 
   .right {
@@ -66,7 +67,7 @@
       flex-direction: column;
     }
 
-    .right{
+    .right {
       padding: 1rem;
     }
   }
@@ -84,7 +85,7 @@
   }
 }
 
-@media (min-width: 601px) and (max-width: 1024px) {
+@media (max-width: 786) {
   body {
     padding: 1rem 1rem;
   }
