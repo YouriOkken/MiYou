@@ -1,29 +1,40 @@
 <div class="content">
-  <div class="left">
-    <ng-lottie class="animation" [options]="cookiesAnimation"></ng-lottie>
-  </div>
-  <div class="right">
-    <div class="title">{{ 'COOKIESTATEMENT.title' | translate }}</div>
-
-    <p>{{ 'COOKIESTATEMENT.intro' | translate }}</p>
-
-    <h2>{{ 'COOKIESTATEMENT.whatAreCookiesTitle' | translate }}</h2>
-    <p>{{ 'COOKIESTATEMENT.whatAreCookiesText' | translate }}</p>
-
-    <h2>{{ 'COOKIESTATEMENT.whichCookiesTitle' | translate }}</h2>
-    <div class="cookie-type-list">
-      <ul>
-        <li><strong>{{ 'COOKIESTATEMENT.essentialCookies' | translate }}</strong></li>
-        <li><strong>{{ 'COOKIESTATEMENT.statisticalCookies' | translate }}</strong></li>
-      </ul>
+  <div class="header">
+    <div class="left"></div>
+    <div class="right">
+      <div class="title">{{ 'COOKIESTATEMENT.title' | translate }}</div>
     </div>
-
-    <h2>{{ 'COOKIESTATEMENT.whichDataTitle' | translate }}</h2>
-    <p>{{ 'COOKIESTATEMENT.whichDataText' | translate }}</p>
-
-    <h2>{{ 'COOKIESTATEMENT.manageCookiesTitle' | translate }}</h2>
-    <p>{{ 'COOKIESTATEMENT.manageCookiesText' | translate }} <a href="#" (click)="openManageModal($event)">{{ 'COOKIESTATEMENT.click-here' | translate }}</a>.</p>
-
-    <p class="cta">💡 <em>{{'COOKIESTATEMENT.cookies.questions' | translate }} <a [routerLink]="['/privacy-policy']">{{ 'FOOTER.privacy-policy' | translate }}</a></em></p> 
   </div>
+  <div class="container">
+    <div class="left">
+      <ng-lottie class="animation" [options]="cookiesAnimation"></ng-lottie>
+    </div>
+    <div class="right">
+
+      <p>{{ 'COOKIESTATEMENT.intro' | translate }}</p>
+
+      <h2>{{ 'COOKIESTATEMENT.whatAreCookiesTitle' | translate }}</h2>
+      <p>{{ 'COOKIESTATEMENT.whatAreCookiesText' | translate }}</p>
+
+      <h2>{{ 'COOKIESTATEMENT.whichCookiesTitle' | translate }}</h2>
+      <div class="cookie-type-list">
+        <ul>
+          <li><strong>{{ 'COOKIESTATEMENT.essentialCookies' | translate }}</strong></li>
+          <li><strong>{{ 'COOKIESTATEMENT.statisticalCookies' | translate }}</strong></li>
+        </ul>
+      </div>
+
+      <h2>{{ 'COOKIESTATEMENT.whichDataTitle' | translate }}</h2>
+      <p>{{ 'COOKIESTATEMENT.whichDataText' | translate }}</p>
+
+      <h2>{{ 'COOKIESTATEMENT.manageCookiesTitle' | translate }}</h2>
+      <p>{{ 'COOKIESTATEMENT.manageCookiesText' | translate }} <a href="#" (click)="openManageModal($event)">{{
+          'COOKIESTATEMENT.click-here' | translate }}</a>.</p>
+
+      <p class="cta">💡 <em>{{'COOKIESTATEMENT.cookies.questions' | translate }} <a
+            [routerLink]="['/privacy-policy']">{{
+            'FOOTER.privacy-policy' | translate }}</a></em></p>
+    </div>
+  </div>
+
 </div>
