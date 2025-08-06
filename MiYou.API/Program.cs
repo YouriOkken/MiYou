@@ -25,6 +25,8 @@ builder.Services.AddContextServices();
 builder.Services.AddCustomServices();
 
 builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
+builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
+
 builder.Services.AddScoped<EmailService>();
 
 builder.Services.AddCors(options =>
