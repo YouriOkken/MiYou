@@ -4,6 +4,7 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { isPlatformBrowser } from '@angular/common';
 import { CookieConsentComponent } from "./components/cookies/popup/cookie-consent.component";
+import { AuthService } from './services/admin/auth/auth.service';
 
 declare const particlesJS: any;
 
@@ -14,9 +15,9 @@ declare const particlesJS: any;
   styleUrl: './app.component.scss',
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  constructor(private renderer: Renderer2,
+  constructor(private renderer: Renderer2, private readonly authService: AuthService,
     @Inject(PLATFORM_ID) private platformId: Object
 
   ) { }
@@ -26,6 +27,7 @@ export class AppComponent {
   }
 
   ngOnInit() {
+    this.authService.loadUserFromServer();
     if (isPlatformBrowser(this.platformId)) {
       this.renderer.addClass(document.body, 'ready');
     }
@@ -128,9 +130,6 @@ export class AppComponent {
     }
   }
 
-  ngOnInit(): void {
-    this.authService.loadUserFromServer();
-  }
   getErrorMessage(error: any): string {
     if (!error?.error?.message) {
         return "Er ging iets fout!";

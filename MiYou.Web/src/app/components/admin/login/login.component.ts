@@ -3,6 +3,7 @@ import { FormsModule } from "@angular/forms";
 import { LoginRequest } from '../../../models/admin/auth/login/login-request.model';
 import { AuthService } from '../../../services/admin/auth/auth.service';
 import { getErrorMessage } from '../../../utilities/error/error.utilities';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'login-component',
@@ -17,8 +18,9 @@ export class LoginComponent implements OnInit {
         password: ''
     }
     isLoading: boolean = false;
+    errorMessage!: string;
 
-    constructor(private authService: AuthService) { }
+    constructor(private authService: AuthService, private router: Router) { }
 
     ngOnInit() { }
 
@@ -27,10 +29,10 @@ export class LoginComponent implements OnInit {
             this.isLoading = true;
             await this.authService.login(this.request);
             this.isLoading = false;
-            console.log("ingelogd!");
+            this.router.navigate(['admin']);
         } catch (error: any) {
+            this.errorMessage = getErrorMessage(error);
             this.isLoading = false;
-            console.log(getErrorMessage(error));
         }
     }
 }

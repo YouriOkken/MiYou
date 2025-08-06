@@ -15,7 +15,11 @@
           </div>
       </div>
     </div>
+
+    @if (errorMessage) {
+      <small>{{ errorMessage }}</small>
+    }
   
-    <button class="action-btn">Inloggen</button>
+    <button class="action-btn" (click)="login()">Inloggen</button>
   </div>
 </div>
