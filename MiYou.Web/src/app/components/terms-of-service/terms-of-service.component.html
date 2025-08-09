@@ -1,0 +1,59 @@
+<div class="content">
+  <div class="header">
+    <div class="left"></div>
+    <div class="right">
+      <div class="title">{{ 'TERMS.title' | translate }}</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="left">
+      <ng-lottie class="animation" [options]="termsOfServiceAnimation"></ng-lottie>
+    </div>
+
+    <div class="right">
+      <p>{{ 'TERMS.lastUpdated' | translate }}</p>
+
+      <h2>{{ 'TERMS.sections.1.title' | translate }}</h2>
+      <ul>
+        <li [innerHTML]="'TERMS.sections.1.list.0' | translate"></li>
+        <li [innerHTML]="'TERMS.sections.1.list.1' | translate"></li>
+      </ul>
+
+      <h2>{{ 'TERMS.sections.2.title' | translate }}</h2>
+      <ul>
+        <li>{{ 'TERMS.sections.2.list.0' | translate }}</li>
+        <li>{{ 'TERMS.sections.2.list.1' | translate }}</li>
+      </ul>
+
+      <h2>{{ 'TERMS.sections.3.title' | translate }}</h2>
+      <p>{{ 'TERMS.sections.3.text' | translate }}</p>
+
+      <h2>{{ 'TERMS.sections.4.title' | translate }}</h2>
+      <p>{{ 'TERMS.sections.4.text' | translate }}</p>
+
+      <h2>{{ 'TERMS.sections.5.title' | translate }}</h2>
+      <p>{{ 'TERMS.sections.5.text' | translate }}</p>
+
+      <h2>{{ 'TERMS.sections.6.title' | translate }}</h2>
+      <p>{{ 'TERMS.sections.6.text' | translate }}</p>
+
+      <h2>{{ 'TERMS.sections.7.title' | translate }}</h2>
+      <p>{{ 'TERMS.sections.7.text' | translate }}</p>
+
+      <h2>{{ 'TERMS.sections.8.title' | translate }}</h2>
+      <p>{{ 'TERMS.sections.8.text' | translate }}</p>
+
+      <h2>{{ 'TERMS.sections.9.title' | translate }}</h2>
+      <p>{{ 'TERMS.sections.9.text' | translate }}</p>
+
+      <h2>{{ 'TERMS.sections.10.title' | translate }}</h2>
+      <p [innerHTML]="'TERMS.sections.10.text' | translate"></p>
+
+      <h2>{{ 'TERMS.sections.11.title' | translate }}</h2>
+      <p>{{ 'TERMS.sections.11.text' | translate }}</p>
+
+      <p class="cta" [innerHTML]="'TERMS.contactText' | translate"></p>
+    </div>
+  </div>
+</div>

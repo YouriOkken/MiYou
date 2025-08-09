@@ -4,5 +4,6 @@ export enum animationTypes {
     contactSend,
     cookies,
     privacy,
-    notFound
+    notFound,
+    termsOfService
 }
