@@ -4,6 +4,9 @@ import { PricingAndTemplatesComponent } from './components/pricing and templates
 import { CookiesComponent } from './components/cookies/cookies.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { LoginComponent } from './components/admin/login/login.component';
+import { AuthGuard } from './utilities/guards/auth.guard';
 import { TermsOfServiceComponent } from './components/terms-of-service/terms-of-service.component';
 
 export const routes: Routes = [
@@ -11,6 +14,8 @@ export const routes: Routes = [
     {path: 'pricing', component: PricingAndTemplatesComponent},
     {path: 'cookies', component: CookiesComponent},
     {path: 'privacy-policy', component: PrivacyPolicyComponent},
+    {path: 'admin/login', component: LoginComponent},
+    {path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
     {path: 'terms-of-service', component: TermsOfServiceComponent},
     {path: '**', component: NotFoundComponent} // MOET ALS LAATSTE
 ];

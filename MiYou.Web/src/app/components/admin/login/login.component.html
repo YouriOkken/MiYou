@@ -1,0 +1,22 @@
+<div class="content">
+  <div class="title">Inloggen</div>
+
+  <div class="login-container">
+    <div class="inputs">
+      <div class="input-container">
+        <label for="email">Email</label>
+        <input type="email" id="email" [(ngModel)]="request.email">
+      </div>
+
+      <div class="input-container">
+        <label for="password">Wachtwoord</label>
+        <input type="password" id="password" [(ngModel)]="request.password">
+      </div>
+
+      @if (errorMessage) {
+      <small>{{ errorMessage }}</small>
+      }
+    </div>
+    <button class="action-btn" (click)="login()">Inloggen</button>
+  </div>
+</div>

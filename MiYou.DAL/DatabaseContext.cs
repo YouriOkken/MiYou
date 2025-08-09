@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MiYou.DAL.Entities;
+using MiYou.DAL.Entities.Users;
 
 namespace MiYou.DAL
 {
@@ -8,5 +9,6 @@ namespace MiYou.DAL
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options) { }
 
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

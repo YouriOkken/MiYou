@@ -4,6 +4,7 @@ using MiYou.Shared.Interfaces;
 using MiYou.API.Services;
 using MiYou.Shared.Utilities;
 using System.Runtime.CompilerServices;
+using MiYou.API.Services.Auth;
 
 namespace MiYou.API.Extensions
 {
@@ -92,6 +93,9 @@ namespace MiYou.API.Extensions
 
         public static void AddCustomServices(this IServiceCollection services)
         {
+            services.AddScoped<JwtTokenService>();
+            services.AddScoped<AuthService>();
+            services.AddScoped<StartupService>();
         }
     }
 }
