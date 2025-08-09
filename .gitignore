@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Google Analytics credentials
+MiYou.Shared/Json/miyou-analytics-b35c0a6862ad.json

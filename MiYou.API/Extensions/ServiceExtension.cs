@@ -92,6 +92,7 @@ namespace MiYou.API.Extensions
 
         public static void AddCustomServices(this IServiceCollection services)
         {
+            services.AddScoped<AnalyticsService>();
         }
     }
 }

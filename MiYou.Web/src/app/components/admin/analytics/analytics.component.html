@@ -1,0 +1,16 @@
+<table style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif;">
+  <thead style="background-color: #000000;">
+    <tr>
+      <th *ngFor="let key of analyticsData[0] | keyvalue" style="padding: 8px; border: 1px solid #ccc; text-align: left;">
+        {{ key.key }}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of analyticsData">
+      <td *ngFor="let cell of row | keyvalue" style="padding: 8px; border: 1px solid #eee;">
+        {{ cell.value }}
+      </td>
+    </tr>
+  </tbody>
+</table>
