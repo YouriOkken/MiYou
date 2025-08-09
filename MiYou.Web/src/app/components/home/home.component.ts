@@ -5,6 +5,8 @@ import { ContactComponent } from "./contact/contact.component";
 import { AnimationOptions, LottieComponent } from 'ngx-lottie';
 import { TranslateModule } from '@ngx-translate/core';
 import { SkillsSectionComponent } from "./skills/skills-section.component";
+import { getAnimation } from '../../utilities/animations/animation.utilities';
+import { animationTypes } from '../../utilities/enums/animationTypes.enum';
 
 
 @Component({
@@ -16,13 +18,11 @@ import { SkillsSectionComponent } from "./skills/skills-section.component";
 
 export class HomeComponent implements OnInit {
 
-    constructor() { }
+    astronautFloatingAnimation: AnimationOptions;
+
+    constructor() {
+        this.astronautFloatingAnimation = getAnimation(animationTypes.astronautFloating, true, true);
+    }
 
     ngOnInit() { }
-
-    homePageAnimation: AnimationOptions = {
-        path: 'assets/animations/Animation-1751057494670.json',
-        loop: true,
-        autoplay: true,
-    };
 }
