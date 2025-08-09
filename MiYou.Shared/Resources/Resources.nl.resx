@@ -141,4 +141,7 @@
   <data name="Error_Contact_EmailExists" xml:space="preserve">
     <value>Er is helaas al contact gemaakt met ons via dit email adres.</value>
   </data>
+  <data name="Error_Login_WrongCredentials" xml:space="preserve">
+    <value>Foute inloggegevens!</value>
+  </data>
 </root>

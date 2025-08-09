@@ -3,7 +3,9 @@ using MiYou.API.Services.Auth;
 using MiYou.DAL;
 using MiYou.DAL.ContextFactory;
 using MiYou.DAL.Entities.Users;
+using MiYou.Shared.Exceptions;
 using MiYou.Shared.Interfaces;
+using MiYou.Shared.Resources;
 
 using LoginRequest = MiYou.API.Models.Auth.Login.LoginRequest;
 
@@ -32,7 +34,7 @@ namespace MiYou.API.Features.Auth.Login
 
             if (user == null)
             {
-                return null;
+                throw new WrongCredentials(Resources.Error_Login_WrongCredentials);
             }
 
             await _authService.AddJwtAndCookies(user);

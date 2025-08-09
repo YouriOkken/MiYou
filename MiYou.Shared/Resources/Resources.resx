@@ -149,4 +149,8 @@
     <value>Er is helaas al contact gemaakt met ons via dit email adres.</value>
     <comment>AddContactProcessor:32</comment>
   </data>
+  <data name="Error_Login_WrongCredentials" xml:space="preserve">
+    <value>Foute inloggegevens!</value>
+    <comment>AuthService:120</comment>
+  </data>
 </root>

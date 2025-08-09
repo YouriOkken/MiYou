@@ -4,6 +4,7 @@ using MiYou.DAL;
 using MiYou.DAL.ContextFactory;
 using MiYou.DAL.Entities.Users;
 using MiYou.Shared.Exceptions;
+using MiYou.Shared.Resources;
 
 using LoginRequest = MiYou.API.Models.Auth.Login.LoginRequest;
 
@@ -107,7 +108,7 @@ namespace MiYou.API.Services.Auth
 
             if (user == null || string.IsNullOrEmpty(user.Password))
             {
-                return null;
+                throw new WrongCredentials(Resources.Error_Login_WrongCredentials);
             }
 
             var result = hasher.VerifyHashedPassword(user, user.Password, request.Password);
@@ -117,7 +118,7 @@ namespace MiYou.API.Services.Auth
             }
             else
             {
-                throw new WrongCredentials("Foute inloggegevens!");
+                throw new WrongCredentials(Resources.Error_Login_WrongCredentials);
             }
         }
     }

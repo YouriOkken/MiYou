@@ -10,11 +10,6 @@ namespace MiYou.API.Extensions
     {
         public static void AddJwtAuthentication(this IServiceCollection services, IConfiguration configuration)
         {
-            // TODO: Deze tijdelijk vars weghalen
-            string jwtKey = "ThisIsASecretKeyForJwtThatIsLongEnough12345";
-            string jwtIssuer = "MiYou";
-            string jwtAudience = "MiYouUsers";
-
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -28,9 +23,9 @@ namespace MiYou.API.Extensions
                         ValidateAudience = true,
                         ValidateLifetime = true,
                         ValidateIssuerSigningKey = true,
-                        ValidIssuer = jwtIssuer,
-                        ValidAudience = jwtAudience,
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey)),
+                        ValidIssuer = configuration["JwtSettings:Issuer"],
+                        ValidAudience = configuration["JwtSettings:Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JwtSettings:Key"])),
                         ClockSkew = TimeSpan.FromMinutes(2),
                         NameClaimType = "name"
                     };
