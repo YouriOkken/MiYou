@@ -13,6 +13,10 @@ import { LanguageService } from './services/language/language.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LanguageInterceptor } from './interceptors/language.interceptor';
 
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { providePrimeNG } from 'primeng/config';
+import Aura from '@primeuix/themes/aura';
+
 export function appInitializerFactory(languageService: LanguageService) {
   return () => languageService.initLanguage();
 }
@@ -47,6 +51,12 @@ export const appConfig: ApplicationConfig = {
       provide: HTTP_INTERCEPTORS,
       useClass: LanguageInterceptor,
       multi: true
-    }
+    },
+    provideAnimationsAsync(),
+    providePrimeNG({
+        theme: {
+            preset: Aura
+        }
+    })
   ]
 };

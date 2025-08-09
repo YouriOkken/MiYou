@@ -1,16 +1,22 @@
-<table style="width: 100%; border-collapse: collapse; font-family: Arial, sans-serif;">
-  <thead style="background-color: #000000;">
-    <tr>
-      <th *ngFor="let key of analyticsData[0] | keyvalue" style="padding: 8px; border: 1px solid #ccc; text-align: left;">
-        {{ key.key }}
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let row of analyticsData">
-      <td *ngFor="let cell of row | keyvalue" style="padding: 8px; border: 1px solid #eee;">
-        {{ cell.value }}
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="container">
+  <header>
+    <h1>PrimeNG Chart Demo</h1>
+  </header>
+  <div class="controls">
+    <div class="button-group">
+      <select [(ngModel)]="selectedDataType" (ngModelChange)="onDataDropdownChange($event)">
+        <option *ngFor="let option of analyticsDataTypeOptions" [ngValue]="option.value">
+          {{ option.label }}
+        </option>
+      </select>
+      <select [(ngModel)]="chartType" (ngModelChange)="onDataDropdownChange($event)">
+        <option *ngFor="let option of chartTypes" [ngValue]="option">
+          {{ option }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="chart-container">
+    <p-chart [type]="chartType" [data]="chartData" [options]="chartOptions"></p-chart>
+  </div>
+</div>
