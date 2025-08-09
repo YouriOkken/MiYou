@@ -125,7 +125,8 @@
         "copyright": "© 2025 MiYou. All rights reserved.",
         "privacy-policy": "Privacy Policy",
         "terms": "Terms",
-        "contact": "Contact"
+        "contact": "Contact",
+        "terms-of-service": "Terms of service"
     },
     "COOKIESTATEMENT": {
         "title": "Cookie Statement",
@@ -169,6 +170,63 @@
         "section5Link": "/cookies",
         "section6Title": "6. Your rights",
         "section6Text": "You have the right to access, correct, delete, and transfer your data. You can also object to processing or withdraw your consent.",
+        "contactText": "💡 <em>Questions? Feel free to contact us at <a href=\"mailto:info@miyou.nl\">info&#64;miyou.nl</a></em>"
+    },
+    "TERMS": {
+        "title": "Terms and Conditions of Miyou.nl",
+        "lastUpdated": "Last updated: August 6, 2025",
+        "sections": {
+            "1": {
+                "title": "1. Definitions",
+                "list": [
+                    "<strong>Client</strong>: The individual or organization that commissions Miyou.nl to carry out work.",
+                    "<strong>Miyou.nl</strong>: The service provider responsible for developing and delivering websites."
+                ]
+            },
+            "2": {
+                "title": "2. Applicability",
+                "list": [
+                    "These terms and conditions apply to all quotations, assignments, and agreements between Miyou.nl and the client.",
+                    "Deviations are only valid if agreed upon in writing."
+                ]
+            },
+            "3": {
+                "title": "3. Quotations and Agreement",
+                "text": "All quotations are non-binding unless stated otherwise. An agreement is established once the client provides written approval of the quotation (e.g., via email or signed contract). Miyou.nl will only start the work after receiving this approval."
+            },
+            "4": {
+                "title": "4. Execution and Delivery Time",
+                "text": "We strive to carry out the work within the agreed timeframe. As the work is custom-made, delivery times may vary. If there are any delays, we will inform the client as soon as possible."
+            },
+            "5": {
+                "title": "5. Prices and Payment",
+                "text": "The prices stated in the quotation include VAT. Payment is made via invoice sent by email. The payment term is 14 days, unless otherwise agreed."
+            },
+            "6": {
+                "title": "6. Time Estimates and Exceeding Them",
+                "text": "A time estimate is provided in the quotation. If the actual working time exceeds this estimate by more than 20%, the client will only pay half the hourly rate for the additional hours beyond that 20%. The remaining time will be completed at no cost by Miyou.nl."
+            },
+            "7": {
+                "title": "7. Cancellation and Changes",
+                "text": "Cancellation before the start of the work is free of charge. After work has started, costs may be charged. Changes to the assignment may lead to adjustments in price or schedule."
+            },
+            "8": {
+                "title": "8. Liability",
+                "text": "Miyou.nl is not liable for indirect damages, consequential damages, or loss of profit. Liability is limited to the amount invoiced for the specific assignment."
+            },
+            "9": {
+                "title": "9. Intellectual Property",
+                "text": "All rights to delivered websites, apps, and content remain with Miyou.nl until full payment has been received. After payment, the rights transfer to the client unless otherwise agreed in writing."
+            },
+            "10": {
+                "title": "10. Privacy",
+                "text": "We process your personal data in accordance with our <a [routerLink]=\"['/privacy']\">privacy policy</a>. By accepting these terms and conditions, you consent to this processing."
+            },
+            "11": {
+                "title": "11. Changes",
+                "text": "Miyou.nl reserves the right to amend these terms and conditions. The most current version is always available on the website."
+            }
+        },
         "contactText": "💡 <em>Questions? Feel free to contact us at <a href=\"mailto:info@miyou.nl\">info&#64;miyou.nl</a></em>"
     },
     "NOT_FOUND": {
