@@ -131,5 +131,23 @@ namespace MiYou.Shared.Resources {
                 return ResourceManager.GetString("Error_Contact_EmailExists", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Foute inloggegevens!.
+        /// </summary>
+        public static string Error_Login_WrongCredentials {
+            get {
+                return ResourceManager.GetString("Error_Login_WrongCredentials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Er ging helaas wat fout! Probeer het a.u.b opnieuw.
+        /// </summary>
+        public static string Error_SomethingWentWrong {
+            get {
+                return ResourceManager.GetString("Error_SomethingWentWrong", resourceCulture);
+            }
+        }
     }
 }

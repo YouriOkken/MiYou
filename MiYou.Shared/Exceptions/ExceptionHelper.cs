@@ -30,4 +30,11 @@ namespace MiYou.Shared.Exceptions
 
         public EmailDeliveryException(string message) : base(message) { }
     }
+
+    public class UnexpectedException : HttpException
+    {
+        public override int StatusCode => StatusCodes.Status500InternalServerError;
+
+        public UnexpectedException(string message) : base(message) { }
+    }
 }
