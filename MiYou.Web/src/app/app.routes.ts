@@ -16,7 +16,6 @@ export const routes: Routes = [
     {path: 'privacy-policy', component: PrivacyPolicyComponent},
     {path: 'admin/login', component: LoginComponent},
     {path: 'admin/dashboard', component: AdminDashboardComponent, canActivate: [AuthGuard]},
-    {path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
     {path: 'terms-of-service', component: TermsOfServiceComponent},
     {path: '**', component: NotFoundComponent} // MOET ALS LAATSTE
 ];
