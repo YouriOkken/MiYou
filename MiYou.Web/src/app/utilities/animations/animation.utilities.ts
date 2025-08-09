@@ -64,6 +64,5 @@ export function getAnimation(type: animationTypes, loop: boolean, autoPlay: bool
                 loop: loop,
                 autoplay: autoPlay
             };
-
     }
 }

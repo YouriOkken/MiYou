@@ -14,8 +14,7 @@ import { TranslateModule } from '@ngx-translate/core';
 export class TermsOfServiceComponent {
   termsOfServiceAnimation: AnimationOptions;
     
-  constructor() 
-  { 
+  constructor() { 
     this.termsOfServiceAnimation = getAnimation(animationTypes.termsOfService, true, true);
   }
 
