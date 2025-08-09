@@ -1,0 +1,72 @@
+.content {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        height: 10%;
+        width: 100%;
+        font-family: 'Lora', serif;
+        font-size: 3rem;
+        padding: 0.5em 0;
+        text-align: center;
+
+        .welcome-text {
+            white-space: nowrap;
+        }
+
+        .animation {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            width: 4%;
+        }
+    }
+
+    .options {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 1.5rem;
+        width: 90%;
+        margin-top: 2rem;
+    }
+
+    .option {
+        display: flex;
+        flex-direction: column;
+        background: rgba(27, 12, 100, 0.5);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 0.3vh 1vh rgba(0, 0, 0, 0.7);
+        // padding: 1vh 1vw;
+        border-radius: 0.5rem;
+        border: 1px solid rgba(180, 180, 180, 0.5);
+        // padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.15rem;
+        font-weight: 500;
+        // color: #333;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            // background: #f0f8ff;
+        }
+
+        ng-lottie{
+            height: 60%;
+            width: 60%;
+        }
+    }
+}

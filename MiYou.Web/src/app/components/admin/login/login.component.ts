@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
             this.isLoading = true;
             await this.authService.login(this.request);
             this.isLoading = false;
-            this.router.navigate(['admin']);
+            this.router.navigate(['admin/dashboard']);
         } catch (error: any) {
             this.errorMessage = getErrorMessage(error);
             this.isLoading = false;
