@@ -70,7 +70,7 @@ namespace MiYou.API.Services.Auth
 
             if (user == null)
             {
-                return null;
+                throw new UnexpectedException(Resources.Error_SomethingWentWrong);
             }
 
             user.RefreshToken = updatedUser.RefreshToken;
@@ -87,7 +87,7 @@ namespace MiYou.API.Services.Auth
                 return user;
             }
 
-            return null;
+            throw new UnexpectedException(Resources.Error_SomethingWentWrong);
         }
 
         /// <summary>

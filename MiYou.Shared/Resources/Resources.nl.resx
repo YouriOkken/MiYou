@@ -144,4 +144,7 @@
   <data name="Error_Login_WrongCredentials" xml:space="preserve">
     <value>Foute inloggegevens!</value>
   </data>
+  <data name="Error_SomethingWentWrong" xml:space="preserve">
+    <value>Er ging helaas wat fout! Probeer het a.u.b opnieuw</value>
+  </data>
 </root>
