@@ -5,5 +5,19 @@ export enum animationTypes {
     cookies,
     privacy,
     notFound,
-    termsOfService
+    termsOfService,
+    astronautFloating,
+    astronautTyping,
+    astronautWavingPlanet,
+    astronautWavingSpaceship,
+    clock,
+    createDocument,
+    earnings,
+    employees,
+    expenses,
+    moneyStack,
+    schedule,
+    statistics,
+    clients,
+    allDocuments
 }

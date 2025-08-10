@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { LoginRequest } from '../../../models/admin/auth/login/login-request.model';
-import { environment } from '../../../../environments/environment';
+import { LoginRequest } from '../../models/auth/login/login-request.model';
+import { environment } from '../../../environments/environment';
 import { BehaviorSubject, firstValueFrom } from 'rxjs';
-import { LoginResponse } from '../../../models/admin/auth/login/login-response.model';
-import { LogoutRequest } from '../../../models/admin/auth/logout-request.model';
+import { LoginResponse } from '../../models/auth/login/login-response.model';
+import { LogoutRequest } from '../../models/auth/logout-request.model';
 
 @Injectable({providedIn: 'root'})
 export class AuthService {
