@@ -21,6 +21,9 @@ import moneyStackAnimationData from '../../../assets/animations/money-stack.anim
 import notFoundAnimationData from "../../../assets/animations/not-found.animation.json";
 import scheduleAnimationData from '../../../assets/animations/schedule.animation.json';
 import statisticsAnimationData from '../../../assets/animations/statistics.animation.json';
+import clientsAnimationData from '../../../assets/animations/clients.animation.json';
+import allDocumentsData from '../../../assets/animations/all-documents.json';
+
 
 export function onAnimationCreated(animationItem: AnimationItem, speed: number): void {
     animationItem.setSpeed(speed);
@@ -156,6 +159,20 @@ export function getAnimation(type: animationTypes, loop: boolean, autoPlay: bool
         case animationTypes.statistics:
             return {
                 animationData: statisticsAnimationData,
+                loop: loop,
+                autoplay: autoPlay,
+            };
+
+        case animationTypes.clients:
+            return {
+                animationData: clientsAnimationData,
+                loop: loop,
+                autoplay: autoPlay,
+            };
+
+        case animationTypes.allDocuments:
+            return {
+                animationData: allDocumentsData,
                 loop: loop,
                 autoplay: autoPlay,
             };

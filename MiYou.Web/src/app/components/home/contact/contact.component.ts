@@ -31,13 +31,7 @@ export class ContactComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private readonly contactService: ContactService
-  ) 
-  {
-    this.successAnimation = {
-      path: 'assets/animations/email_sent.json',
-      loop: true,
-      autoplay: true,
-    };
+  ){
     this.successAnimation = getAnimation(animationTypes.contactSend, true, true);
     this.loadingAnimation = getAnimation(animationTypes.loading, true, true);
     this.errorAnimation = getAnimation(animationTypes.error, false, true);

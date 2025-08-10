@@ -1,22 +1,12 @@
 <div class="content">
     <div class="header">
-        <span class="welcome-text">Welcome back Milana</span>
+        <span class="welcome-text">Welkom terug {{ accountInfo.firstName }} {{ accountInfo.lastName }}</span>
         <div class="animation">
             <ng-lottie [options]="astronautTypingAnimation"></ng-lottie>
         </div>
     </div>
 
     <div class="options">
-        <div class="option">
-            <div class="title">Documenten maken</div>
-            <ng-lottie [options]="createDocumentAnimation"></ng-lottie>
-        </div>
-
-        <div class="option">
-            <div class="title">Analytics</div>
-            <ng-lottie [options]="statisticsAnimation"></ng-lottie>
-        </div>
-
         <div class="option">
             <div class="title">Uren</div>
             <ng-lottie [options]="timeAnimation"></ng-lottie>
@@ -25,6 +15,26 @@
         <div class="option">
             <div class="title">Beschikbaarheid</div>
             <ng-lottie [options]="scheduleAnimation"></ng-lottie>
+        </div>
+
+        <div class="option">
+            <div class="title">Medewerkers</div>
+            <ng-lottie [options]="employeesAnimation"></ng-lottie>
+        </div>
+
+        <div class="option">
+            <div class="title">Clients</div>
+            <ng-lottie [options]="clientsAnimation"></ng-lottie>
+        </div>
+
+        <div class="option">
+            <div class="title">Documenten maken</div>
+            <ng-lottie [options]="createDocumentAnimation"></ng-lottie>
+        </div>
+
+        <div class="option">
+            <div class="title">Alle Documenten</div>
+            <ng-lottie [options]="allDocumentsAnimation"></ng-lottie>
         </div>
 
         <div class="option">
@@ -38,18 +48,8 @@
         </div>
 
         <div class="option">
-            <div class="title">Medewerkers</div>
-            <ng-lottie [options]="employeesAnimation"></ng-lottie>
-        </div>
-
-        <div class="option">
-            <div class="title">Documenten</div>
-            <ng-lottie [options]="createDocumentAnimation"></ng-lottie>
-        </div>
-
-        <div class="option">
-            <div class="title">Documenten</div>
-            <ng-lottie [options]="createDocumentAnimation"></ng-lottie>
+            <div class="title">Analytics</div>
+            <ng-lottie [options]="statisticsAnimation"></ng-lottie>
         </div>
     </div>
 </div>

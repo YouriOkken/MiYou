@@ -17,5 +17,7 @@ export enum animationTypes {
     expenses,
     moneyStack,
     schedule,
-    statistics
+    statistics,
+    clients,
+    allDocuments
 }

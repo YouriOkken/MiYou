@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from "@angular/forms";
-import { LoginRequest } from '../../../models/admin/auth/login/login-request.model';
-import { AuthService } from '../../../services/admin/auth/auth.service';
+import { LoginRequest } from '../../../models/auth/login/login-request.model';
+import { AuthService } from '../../../services/auth/auth.service';
 import { getErrorMessage } from '../../../utilities/error/error.utilities';
 import { Router } from '@angular/router';
 

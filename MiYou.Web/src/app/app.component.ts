@@ -4,7 +4,7 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { isPlatformBrowser } from '@angular/common';
 import { CookieConsentComponent } from "./components/cookies/popup/cookie-consent.component";
-import { AuthService } from './services/admin/auth/auth.service';
+import { AuthService } from './services/auth/auth.service';
 
 declare const particlesJS: any;
 
