@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using MiYou.API.Models.Admin.Dashboard;
 using MiYou.API.Services;
 
 namespace MiYou.API.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/admin")]
     public class AdminController : BaseController
@@ -14,9 +17,12 @@ namespace MiYou.API.Controllers
             _analyticsService = analyticsService;
         }
 
+        [HttpGet("getAccountInfo")]
+        public async Task<AccountInfoResponse> GetAccountInfo()
         [HttpGet("analytics")]
         public async Task<IActionResult> GetAnalytics()
         {
+            return await LoadAsync<AccountInfoResponse>();
             var analyticsData = await _analyticsService.GetAnalytics();
             return Ok(analyticsData);
         }

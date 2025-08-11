@@ -15,11 +15,5 @@ namespace MiYou.API.Controllers
             await ProcessAsync<AddContactRequest>(request);
             return Ok();
         }
-
-        [HttpGet("ping")]
-        public IActionResult Ping()
-        {
-            return Ok("pong");
-        }
     }
 }

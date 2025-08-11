@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { AnimationOptions, LottieComponent } from 'ngx-lottie';
+import { animationTypes } from '../../../utilities/enums/animationTypes.enum';
+import { getAnimation } from '../../../utilities/animations/animation.utilities';
 
 @Component({
     selector: 'process-component',
@@ -11,25 +13,17 @@ import { AnimationOptions, LottieComponent } from 'ngx-lottie';
 
 export class ProcessComponent implements OnInit {
 
-    constructor() { }
+    astronautWavingPlanetAnimation: AnimationOptions;
+    astronautTypingAnimation: AnimationOptions;
+    astronautWavingSpaceshipAnimation: AnimationOptions;
+
+    constructor() {
+
+        this.astronautWavingPlanetAnimation = getAnimation(animationTypes.astronautWavingPlanet, true, true);
+        this.astronautTypingAnimation = getAnimation(animationTypes.astronautTyping, true, true);
+        this.astronautWavingSpaceshipAnimation = getAnimation(animationTypes.astronautWavingSpaceship, true, true);
+    }
 
     ngOnInit() { }
 
-    step1Animation: AnimationOptions = {
-        path: 'assets/animations/Animation-1751043394845.json',
-        loop: true,
-        autoplay: true,
-    };
-
-    step2Animation: AnimationOptions = {
-        path: 'assets/animations/Animation-1751043542524.json',
-        loop: true,
-        autoplay: true,
-    };
-
-    step3Animation: AnimationOptions = {
-        path: 'assets/animations/Animation-1751044110812.json',
-        loop: true,
-        autoplay: true,
-    };
 }

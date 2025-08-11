@@ -17,10 +17,24 @@ namespace MiYou.Shared.Exceptions
         public AlreadyExistsException(string message) : base(message) { }
     }
 
+    public class WrongCredentials : HttpException
+    {
+        public override int StatusCode => StatusCodes.Status401Unauthorized;
+
+        public WrongCredentials(string message) : base(message) { }
+    }
+
     public class EmailDeliveryException : HttpException
     {
         public override int StatusCode => StatusCodes.Status400BadRequest;
 
         public EmailDeliveryException(string message) : base(message) { }
+    }
+
+    public class UnexpectedException : HttpException
+    {
+        public override int StatusCode => StatusCodes.Status500InternalServerError;
+
+        public UnexpectedException(string message) : base(message) { }
     }
 }

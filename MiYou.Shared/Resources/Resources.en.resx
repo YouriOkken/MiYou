@@ -141,4 +141,10 @@
   <data name="Error_Contact_EmailExists" xml:space="preserve">
     <value>Unfortunately, this email address has already been used to contact us.</value>
   </data>
+  <data name="Error_Login_WrongCredentials" xml:space="preserve">
+    <value>Wrong credentials!</value>
+  </data>
+  <data name="Error_SomethingWentWrong" xml:space="preserve">
+    <value>Something went wrong! Please try again</value>
+  </data>
 </root>

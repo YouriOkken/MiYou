@@ -122,7 +122,8 @@
         "copyright": "© 2025 MiYou. Alle rechten voorbehouden.",
         "privacy-policy": "Privacybeleid",
         "terms": "Algemene voorwaarden",
-        "contact": "Contact"
+        "contact": "Contact",
+        "terms-of-service": "Algemene voorwaarden"
     },
     "COOKIESTATEMENT": {
         "title": "Cookiesverklaring",
@@ -166,6 +167,63 @@
         "section5Link": "/cookies",
         "section6Title": "6. Uw rechten",
         "section6Text": "U hebt recht op inzage, correctie, verwijdering en overdracht van uw gegevens. Ook kunt u bezwaar maken tegen verwerking of uw toestemming intrekken.",
+        "contactText": "💡 <em>Vragen? Neem gerust contact op via <a href=\"mailto:info@miyou.nl\">info&#64;miyou.nl</a></em>"
+    },
+    "TERMS": {
+        "title": "Algemene Voorwaarden Miyou.nl",
+        "lastUpdated": "Laatst bijgewerkt: 6 augustus 2025",
+        "sections": {
+            "1": {
+                "title": "1. Definities",
+                "list": [
+                    "<strong>Opdrachtgever</strong>: De persoon of organisatie die Miyou.nl de opdracht geeft om werkzaamheden uit te voeren.",
+                    "<strong>Miyou.nl</strong>: De dienstverlener die verantwoordelijk is voor het ontwikkelen en leveren van websites."
+                ]
+            },
+            "2": {
+                "title": "2. Toepasselijkheid",
+                "list": [
+                    "Deze algemene voorwaarden zijn van toepassing op alle offertes, opdrachten en overeenkomsten tussen Miyou.nl en opdrachtgever.",
+                    "Afwijkingen zijn alleen geldig als deze schriftelijk zijn overeengekomen."
+                ]
+            },
+            "3": {
+                "title": "3. Offertes en overeenkomst",
+                "text": "Alle offertes zijn vrijblijvend, tenzij anders aangegeven. Een overeenkomst komt tot stand zodra de opdrachtgever schriftelijk akkoord gaat met de offerte (bijvoorbeeld per e-mail of onderschreven contract). Miyou.nl start pas met de werkzaamheden na ontvangst van het akkoord."
+            },
+            "4": {
+                "title": "4. Uitvoering en levertijd",
+                "text": "Wij doen ons best om de werkzaamheden binnen de afgesproken termijn uit te voeren. Omdat het om maatwerk gaat, kunnen de levertijden verschillen. Als er vertraging is, laten we dit zo snel mogelijk aan de opdrachtgever weten."
+            },
+            "5": {
+                "title": "5. Prijzen en betaling",
+                "text": "De in de offerte genoemde prijzen zijn inclusief btw. Betaling vindt plaats via een factuur per e-mail. Betalingstermijn is 14 dagen, tenzij anders afgesproken."
+            },
+            "6": {
+                "title": "6. Tijdsschatting en overschrijding",
+                "text": "In de offerte wordt een tijdsinschatting gedaan. Als de uiteindelijke werktijd meer dan 20% boven deze inschatting uitkomt, betaalt de opdrachtgever slechts de helft van de uurprijs. Van de meerkosten boven de 20% word de resterende tijd kosteloos uitgevoerd door Miyou.nl."
+            },
+            "7": {
+                "title": "7. Annulering en wijzigingen",
+                "text": "Annuleren vóór aanvang van de werkzaamheden is kosteloos. Na aanvang kunnen kosten in rekening worden gebracht. Wijzigingen in de opdracht kunnen leiden tot aanpassing van prijs of planning."
+            },
+            "8": {
+                "title": "8. Aansprakelijkheid",
+                "text": "Miyou.nl is niet aansprakelijk voor indirecte schade, gevolgschade of gederfde winst. De aansprakelijkheid is beperkt tot het bedrag dat voor de betreffende opdracht is gefactureerd."
+            },
+            "9": {
+                "title": "9. Intellectueel eigendom",
+                "text": "Alle rechten op opgeleverde websites, apps en content blijven bij Miyou.nl totdat volledige betaling is ontvangen. Na betaling gaan de rechten over op de opdrachtgever, tenzij anders schriftelijk overeengekomen."
+            },
+            "10": {
+                "title": "10. Privacy",
+                "text": "Wij verwerken uw persoonsgegevens volgens onze <a [routerLink]=\"['/privacy']\">privacyverklaring</a>. Door deze voorwaarden te accepteren, geeft u toestemming voor die verwerking."
+            },
+            "11": {
+                "title": "11. Wijzigingen",
+                "text": "Miyou.nl behoudt zich het recht voor deze voorwaarden te wijzigen. De actuele versie is altijd te vinden op de website."
+            }
+        },
         "contactText": "💡 <em>Vragen? Neem gerust contact op via <a href=\"mailto:info@miyou.nl\">info&#64;miyou.nl</a></em>"
     },
     "NOT_FOUND": {
