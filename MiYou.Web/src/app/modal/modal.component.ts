@@ -26,10 +26,8 @@ export class ModalComponent {
   @Input() showAllButton: boolean = false;
   @Input() showNecessaryButton: boolean = false;
 
-
   @Input() allButtonLabel: string = "Sla allemaal op";
   @Input() necessaryButtonLabel: string = "Alleen essentiële";
-
 
   isClosing = false;
   isVisible = false;
