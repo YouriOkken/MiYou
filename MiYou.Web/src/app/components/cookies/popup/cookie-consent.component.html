@@ -1,16 +1,7 @@
-<miyou-modal [visible]="showBanner" [title]="'Cookies'" [showCloseButton]=false [showOKButton]=true [OKButtonLabel]="'Opslaan'" (ok)="handleSave()" (close)="showBanner = false" >
+<miyou-modal [visible]="showBanner" [title]="'Cookies'" [showCloseButton]="false" [showAllButton]="true" [showNecessaryButton]="true" [allButtonLabel]="'COOKIE_BANNER.allButton' | translate"  [necessaryButtonLabel]="'COOKIE_BANNER.necessaryButton' | translate"
+ (okAll)="acceptAll()" (okNecessary)="acceptNecessaryOnly()" (close)="showBanner = false">
     <div class="cookie-banner">
     <p>{{ 'COOKIE_BANNER.description' | translate }}</p>
-    <div class="buttons">
-      <div class="switch-section">
-        <label for="necessaryCookies">{{ 'COOKIE_BANNER.necessaryLabel' | translate }}</label>
-        <miyou-switch id="necessaryCookies" [(toggled)]="necessaryCookies" [fixed]="true"></miyou-switch>
-      </div>
-      <div class="switch-section">
-        <label for="allCookies">{{ 'COOKIE_BANNER.allLabel' | translate }}</label>
-        <miyou-switch id="allCookies" [(toggled)]="AllCookies"></miyou-switch>
-      </div>
-    </div>
     <a [routerLink]="['/cookies']">{{ 'COOKIE_BANNER.moreInfo' | translate }}</a>
   </div>
 </miyou-modal>
