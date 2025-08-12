@@ -15,7 +15,7 @@ import { AccountInfoResponse } from '../../../models/admin/dashboard/account-inf
 
 export class AdminDashboardComponent implements OnInit {
     loggedIn!: boolean;
-    accountInfo!: AccountInfoResponse;
+    accountInfo: AccountInfoResponse = { firstName: '', lastName: '' };
 
     astronautTypingAnimation: AnimationOptions;
     createDocumentAnimation: AnimationOptions;
@@ -28,7 +28,7 @@ export class AdminDashboardComponent implements OnInit {
     clientsAnimation: AnimationOptions;
     allDocumentsAnimation: AnimationOptions;
 
-    constructor(private readonly adminService: AdminService){
+    constructor(private readonly adminService: AdminService) {
         this.astronautTypingAnimation = getAnimation(animationTypes.astronautTyping, true, true);
         this.createDocumentAnimation = getAnimation(animationTypes.createDocument, true, true);
         this.statisticsAnimation = getAnimation(animationTypes.statistics, true, true);

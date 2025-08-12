@@ -31,11 +31,11 @@
     }
 
     .templates {
-        display: flex;
-        padding: 2%;
-        gap: 2rem;
-        justify-content: center;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        width: 90%;
+        padding: 1rem;
     }
 
     .template {
@@ -47,11 +47,8 @@
         border: 1px solid rgba(255, 255, 255, 0.25);
         backdrop-filter: blur(20px);
         border-radius: 1.5rem;
-        width: 95%;
         box-shadow: 0 20px 50px rgba(160, 130, 255, 0.15);
         padding: 2rem 1.5rem;
-        flex: 1 1 19%;
-        max-width: 19%;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         display: flex;
         flex-direction: column;
@@ -114,14 +111,7 @@
         }
 
         .templates {
-            padding: 8%;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .template {
-            padding: 2.5rem 2rem;
-            max-width: 75%;
+            grid-template-columns: repeat(1, 1fr);
         }
     }
 
@@ -131,13 +121,7 @@
         }
 
         .templates {
-            padding: 8%;
-        }
-
-        .template {
-            padding: 2.5rem 2rem;
-            max-width: 40%;
-            min-width: 30%;
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 }
