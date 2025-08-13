@@ -19,10 +19,13 @@ namespace MiYou.API.Controllers
 
         [HttpGet("getAccountInfo")]
         public async Task<AccountInfoResponse> GetAccountInfo()
+        {
+            return await LoadAsync<AccountInfoResponse>();
+        }
+
         [HttpGet("analytics")]
         public async Task<IActionResult> GetAnalytics()
         {
-            return await LoadAsync<AccountInfoResponse>();
             var analyticsData = await _analyticsService.GetAnalytics();
             return Ok(analyticsData);
         }

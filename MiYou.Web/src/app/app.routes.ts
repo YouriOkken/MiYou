@@ -18,6 +18,6 @@ export const routes: Routes = [
     {path: 'admin/login', component: LoginComponent},
     {path: 'admin/dashboard', component: AdminDashboardComponent, canActivate: [AuthGuard]},
     {path: 'terms-of-service', component: TermsOfServiceComponent},
-    {path: 'analytics', component: AnalyticsComponent},
+    {path: 'admin/analytics', component: AnalyticsComponent, canActivate: [AuthGuard]},
     {path: '**', component: NotFoundComponent} // MOET ALS LAATSTE
 ];

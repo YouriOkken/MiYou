@@ -5,6 +5,7 @@ import { animationTypes } from '../../../utilities/enums/animationTypes.enum';
 import { getAnimation } from '../../../utilities/animations/animation.utilities';
 import { AdminService } from '../../../services/admin/admin.service';
 import { AccountInfoResponse } from '../../../models/admin/dashboard/account-info.response';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'admin-component',
@@ -28,7 +29,7 @@ export class AdminDashboardComponent implements OnInit {
     clientsAnimation: AnimationOptions;
     allDocumentsAnimation: AnimationOptions;
 
-    constructor(private readonly adminService: AdminService){
+    constructor(private readonly adminService: AdminService, private readonly router: Router){
         this.astronautTypingAnimation = getAnimation(animationTypes.astronautTyping, true, true);
         this.createDocumentAnimation = getAnimation(animationTypes.createDocument, true, true);
         this.statisticsAnimation = getAnimation(animationTypes.statistics, true, true);
@@ -43,5 +44,9 @@ export class AdminDashboardComponent implements OnInit {
 
     async ngOnInit() {
         this.accountInfo = await this.adminService.getAccountInfo();
+    }
+
+    redirect(url: string) {
+        this.router.navigate([url]);
     }
 }   

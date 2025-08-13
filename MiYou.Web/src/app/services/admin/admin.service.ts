@@ -13,8 +13,10 @@ export class AdminService {
     
     constructor (private readonly http: HttpClient) {}
 
-    async getAccountInfo(){
-        return await firstValueFrom(this.http.get<AccountInfoResponse>(`${this.apiUrl}/getAccountInfo`, {withCredentials: true}))
+    async getAccountInfo() {
+        return await firstValueFrom(this.http.get<AccountInfoResponse>(`${this.apiUrl}/getAccountInfo`, {withCredentials: true}));
+    }
+    
     async getAllAnalytics(): Promise<any[]> {
       return await firstValueFrom(this.http.get<any[]>(`${this.apiUrl}/analytics`, { withCredentials: true }));
     }
