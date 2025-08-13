@@ -145,7 +145,8 @@
         "description": "Wij gebruiken cookies om onze site goed te laten werken (essentieel) en om statistieken te verzamelen met uw toestemming.",
         "necessaryLabel": "Alleen noodzakelijke cookies",
         "allLabel": "Alle cookies",
-        "saveButton": "Opslaan",
+        "allButton": "Sla allemaal op",
+        "necessaryButton": "Alleen essentiële",
         "moreInfo": "Meer info"
     },
     "PRIVACY_POLICY": {

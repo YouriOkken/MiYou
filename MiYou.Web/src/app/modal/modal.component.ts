@@ -17,12 +17,17 @@ import { CommonModule } from '@angular/common';
 export class ModalComponent {
   @Output() close = new EventEmitter<void>();
   @Output() ok = new EventEmitter<void>();
+  @Output() okNecessary = new EventEmitter<void>();
+
   @Input() title: string = "MiYou";
   @Input() visible: boolean = false;
   @Input() showCloseButton: boolean = true;
   @Input() showCloseX: boolean = true;
-  @Input() showOKButton: boolean = false;
-  @Input() OKButtonLabel: string = "Oke";
+  @Input() showAllButton: boolean = false;
+  @Input() showNecessaryButton: boolean = false;
+
+  @Input() allButtonLabel: string = "Sla allemaal op";
+  @Input() necessaryButtonLabel: string = "Alleen essentiële";
 
   isClosing = false;
   isVisible = false;
@@ -46,12 +51,21 @@ export class ModalComponent {
     }, 500);
   }
 
-  onOk() {
+  onOkAll() {
     this.isClosing = true;
     setTimeout(() => {
       this.isVisible = false;
       this.isClosing = false;
       this.ok.emit();
+    }, 500);
+  }
+
+  onOkNecessary() {
+    this.isClosing = true;
+    setTimeout(() => {
+      this.isVisible = false;
+      this.isClosing = false;
+      this.okNecessary.emit();
     }, 500);
   }
 }

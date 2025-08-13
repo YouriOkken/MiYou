@@ -7,23 +7,25 @@ export class LanguageService {
   constructor(
     private translate: TranslateService,
     @Inject(PLATFORM_ID) private platformId: Object
-  ) {}
+  ) { }
 
   initLanguage(): Promise<void> {
     return new Promise((resolve) => {
-      const defaultLang = 'nl';
       this.translate.addLangs(['en', 'nl']);
-      this.translate.setDefaultLang(defaultLang);
+      this.translate.setDefaultLang('en');
 
-      let langToUse = defaultLang;
+      let langToUse = 'en';
+
       if (isPlatformBrowser(this.platformId)) {
         const savedLang = localStorage.getItem('selectedLang');
         if (savedLang) {
           langToUse = savedLang;
+        } else {
+          const browserLang = (navigator.language || '').slice(0, 2).toLowerCase();
+          langToUse = (browserLang === 'nl') ? 'nl' : 'en';
         }
       }
 
-      // use() returned Observable wordt pas afgerond als taal geladen is
       this.translate.use(langToUse).subscribe(() => {
         resolve();
       });

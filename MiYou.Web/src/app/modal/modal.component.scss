@@ -15,8 +15,8 @@
 .modal-content {
   animation: swipeUp 0.5s ease-out;
   background: linear-gradient(to bottom right,
-    rgba(255, 255, 255, 0.08),
-    rgba(255, 255, 255, 0.03));
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.03));
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -72,6 +72,24 @@
     font-size: 1rem;
     color: #eee;
   }
+
+  .modal-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 5%;
+  }
+}
+
+.necessary {
+  background-color: rgba(0, 48, 97, 0.85);
+  box-shadow: 0 4px 12px rgba(0, 48, 97, 0.35);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    background-color: rgba(0, 36, 73, 0.9);
+    background-color: rgba(0, 36, 73, 0.9);
+  }
 }
 
 @keyframes fadeInBackdrop {
@@ -119,7 +137,7 @@
 }
 
 @media (max-width: 480px) {
-    .modal-content {
-        max-width: 12rem;
-    }
+  .modal-content {
+    max-width: 12rem;
+  }
 }
