@@ -5,7 +5,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 @Component({
     selector: 'nav-component',
     templateUrl: 'navbar.component.html',
-    styleUrls: ['navbar.component.scss'],
+    styleUrl: 'navbar.component.scss',
     imports: [RouterModule, TranslateModule]
 })
 export class NavbarComponent {
