@@ -119,7 +119,8 @@
         "about-us": "About Us",
         "pricing-templates": "Pricing and Templates",
         "login": "Login",
-        "contact": "Contact"
+        "contact": "Contact",
+        "logout": "Logout"
     },
     "FOOTER": {
         "copyright": "© 2025 MiYou. All rights reserved.",

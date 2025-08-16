@@ -15,18 +15,18 @@ namespace MiYou.API.Services.Auth
         private readonly IContextFactory _contextFactory;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly JwtTokenService _jwtTokenService;
+        private readonly DatabaseContext _context;
 
-        public AuthService(IContextFactory contextFactory, IHttpContextAccessor httpContextAccessor, JwtTokenService jwtTokenService)
+        public AuthService(IContextFactory contextFactory, IHttpContextAccessor httpContextAccessor, JwtTokenService jwtTokenService, DatabaseContext context)
         {
             _contextFactory = contextFactory;
             _httpContextAccessor = httpContextAccessor;
             _jwtTokenService = jwtTokenService;
+            _context = context;
         }
 
         public async Task AddJwtAndCookies(User user)
         {
-            using DatabaseContext context = _contextFactory.Create();
-
             var accessToken = await _jwtTokenService.GenerateAccessToken(user);
             var refreshToken = _jwtTokenService.GenerateRefreshToken();
             var refreshTokenExpiry = DateTimeOffset.UtcNow.AddDays(30);
@@ -62,11 +62,15 @@ namespace MiYou.API.Services.Auth
             });
         }
 
+        public async Task<User?> GetUserOnRefreshToken(string refreshToken)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.RefreshToken == refreshToken);
+            return user;
+        }
+
         public async Task<User> UpdateAccountAsync(User updatedUser, bool jwtOnly)
         {
-            using DatabaseContext context = _contextFactory.Create();
-
-            var user = await context.Users.FirstOrDefaultAsync(u => u.Id == updatedUser.Id);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == updatedUser.Id);
 
             if (user == null)
             {
@@ -81,7 +85,7 @@ namespace MiYou.API.Services.Auth
                 user.Email = updatedUser.Email;
             }
 
-            var result = await context.SaveChangesAsync();
+            var result = await _context.SaveChangesAsync();
             if (result > 0)
             {
                 return user;
@@ -97,12 +101,9 @@ namespace MiYou.API.Services.Auth
         /// <returns>Returns a <see cref="User"/> object if a matching account is found; otherwise, <see langword="null" /></returns>
         public async Task<User> ValidateAccountAsync(LoginRequest request)
         {
-            //using DatabaseContext context = _contextFactory.Create();
-            DatabaseContext context = _contextFactory.Create();
-
             var hasher = new PasswordHasher<object>();
 
-            var user = await context.Users
+            var user = await _context.Users
                 .AsNoTracking()
                 .FirstOrDefaultAsync(u => u.Email == request.Email);
 
