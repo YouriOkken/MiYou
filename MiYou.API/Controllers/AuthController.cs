@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using MiYou.API.Models.Auth;
 using MiYou.API.Models.Auth.Login;
+using MiYou.API.Models.Auth.Refresh;
 using MiYou.API.Services.Auth;
+using MiYou.Shared.Interfaces;
 
 namespace MiYou.API.Controllers
 {
@@ -41,19 +43,13 @@ namespace MiYou.API.Controllers
         [HttpPost("refresh")]
         public async Task<IActionResult> Refresh()
         {
-            var refreshToken = Request.Cookies["refreshToken"];
-            if (!string.IsNullOrEmpty(refreshToken))
+            var refreshTokenFromCookies = Request.Cookies["refreshToken"];
+            RefreshRequest request = new RefreshRequest
             {
-                var user = await _authService.GetUserOnRefreshToken(refreshToken);
-                if (user != null)
-                {
-                    await _authService.AddJwtAndCookies(user);
-                    return Ok();
-                } else
-                {
-                    return Unauthorized();
-                }
-            }
+                refreshToken = refreshTokenFromCookies
+            };
+
+            await ProcessAsync<RefreshRequest, LoginResponse>(request);
             return Ok();
         }
     }

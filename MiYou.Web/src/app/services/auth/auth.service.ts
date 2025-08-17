@@ -22,11 +22,9 @@ export class AuthService {
         } catch (error: any) {
             if (error.status === 401) {
                 try {
-                    await firstValueFrom(this.http.post(`${this.apiUrl}/refresh`, {}, { withCredentials: true }));
-
-                    const user = await firstValueFrom(
-                        this.http.get<LoginResponse>(`${this.apiUrl}/getCurrentUser`, { withCredentials: true })
-                    );
+                    const user = await firstValueFrom(this.http.post<LoginResponse>(`${this.apiUrl}/refresh`, {}, { withCredentials: true }));
+                    debugger;
+                    // const user = await firstValueFrom(this.http.get<LoginResponse>(`${this.apiUrl}/getCurrentUser`, { withCredentials: true }));
 
                     this.currentUserSubject.next(user);
                 } catch (refreshError) {
