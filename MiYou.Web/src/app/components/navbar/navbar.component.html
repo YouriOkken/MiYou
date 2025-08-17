@@ -29,11 +29,12 @@
       </div>
     </div>
     <div class="nav-links">
-      @if (!loggedIn) {
+        <a href="#contact">{{ 'NAVBAR.contact' | translate }}</a>
+      <!-- @if (!loggedIn) {
         <a href="#contact">{{ 'NAVBAR.contact' | translate }}</a>
       } @else {
         <a href="" (click)="logout();">{{ 'NAVBAR.logout' | translate }}</a>
-      }
+      } -->
     </div>
   </div>
 
