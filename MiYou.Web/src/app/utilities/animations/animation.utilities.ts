@@ -23,7 +23,8 @@ import scheduleAnimationData from '../../../assets/animations/schedule.animation
 import statisticsAnimationData from '../../../assets/animations/statistics.animation.json';
 import clientsAnimationData from '../../../assets/animations/clients.animation.json';
 import allDocumentsData from '../../../assets/animations/all-documents.json';
-
+import cubeLoadingAnimationData from '../../../assets/animations/cube-loading.animation.json';
+import noDataAnimationData from '../../../assets/animations/no-data.animation.json';
 
 export function onAnimationCreated(animationItem: AnimationItem, speed: number): void {
     animationItem.setSpeed(speed);
@@ -173,6 +174,18 @@ export function getAnimation(type: animationTypes, loop: boolean, autoPlay: bool
         case animationTypes.allDocuments:
             return {
                 animationData: allDocumentsData,
+                loop: loop,
+                autoplay: autoPlay,
+            };
+        case animationTypes.cubeLoading:
+            return {
+                animationData: cubeLoadingAnimationData,
+                loop: loop,
+                autoplay: autoPlay,
+            };
+        case animationTypes.noData:
+            return {
+                animationData: noDataAnimationData,
                 loop: loop,
                 autoplay: autoPlay,
             };

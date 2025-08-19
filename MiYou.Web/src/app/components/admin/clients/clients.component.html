@@ -12,74 +12,46 @@
                         </path>
                     </g>
                 </svg>
-                <input placeholder="Search" type="search" class="input">
+                <input placeholder="Search" type="search" class="input" [(ngModel)]="searchInput">
             </div>
         </div>
         <div class="other-controls">
             <button>Add client</button>
-            <button>Export </button>
         </div>
     </div>
     <div class="table-area">
         <table class="table">
             <thead>
                 <tr>
-                    <th>Client</th>
-                    <th>ClientId</th>
-                    <th>Starting date</th>
+                    <th>Rij nummer</th>
+                    <th>Id</th>
+                    <th>Volledige naam</th>
+                    <th>Client sinds</th>
                     <th>Contact person</th>
-                    <th>Projects</th>
-                    <th>Active</th>
-                    <th>Payment status</th>
+                    <th>Projecten</th>
+                    <th>Actief</th>
+                    <th>Betaling status</th>
                 </tr>
             </thead>
             <tbody>
-                <tr [routerLink]="['/admin/clients/1']">
-                    <td>LuvIs</td>
-                    <td>3483</td>
-                    <td>15/08/2025</td>
-                    <td>Jan jansen</td>
-                    <td>3</td>
-                    <td>yes</td>
-                    <td>paid</td>
-                </tr>
-                <tr [routerLink]="['/admin/clients/1']">
-                    <td>LuvIs</td>
-                    <td>3483</td>
-                    <td>15/08/2025</td>
-                    <td>Jan jansen</td>
-                    <td>3</td>
-                    <td>yes</td>
-                    <td>paid</td>
-                </tr>
-                <tr [routerLink]="['/admin/clients/1']">
-                    <td>LuvIs</td>
-                    <td>3483</td>
-                    <td>15/08/2025</td>
-                    <td>Jan jansen</td>
-                    <td>3</td>
-                    <td>yes</td>
-                    <td>paid</td>
-                </tr>
-                <tr [routerLink]="['/admin/clients/1']">
-                    <td>LuvIs</td>
-                    <td>3483</td>
-                    <td>15/08/2025</td>
-                    <td>Jan jansen</td>
-                    <td>3</td>
-                    <td>yes</td>
-                    <td>paid</td>
-                </tr>
-                <tr [routerLink]="['/admin/clients/1']">
-                    <td>LuvIs</td>
-                    <td>3483</td>
-                    <td>15/08/2025</td>
-                    <td>Jan jansen</td>
-                    <td>3</td>
-                    <td>yes</td>
-                    <td>paid</td>
-                </tr>
-                
+                @for(client of filteredClients; track client; let i = $index){
+                    <tr [routerLink]="['/admin/clients/1']">
+                        <td>{{ i + 1}}</td>
+                        <td>{{ client.id }}</td>
+                        <td>{{ client.fullName }}</td>
+                        <td>{{ client.clientSince }}</td>
+                        <td>{{ client.contactPerson }}</td>
+                        <td>-</td>
+                        <td>{{ getActiveText(client.active) }}</td>
+                        <td> 
+                            <span class="status-badge" [ngClass]="getPaymentStatus(client).class">
+                                {{ getPaymentStatus(client).text }}
+                            </span>
+                        </td>
+                    </tr>
+                }@empty {
+                    <ng-lottie class="animation" [options]="noDataAnimation"></ng-lottie>
+                }
             </tbody>
         </table>
     </div>

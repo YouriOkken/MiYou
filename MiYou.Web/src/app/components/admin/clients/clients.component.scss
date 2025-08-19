@@ -122,3 +122,35 @@
         }
     }
 }
+
+.animation {
+    display: flex;
+    height: 90%;
+}
+
+//payment status badge om makkelijker te zien wat voor status 
+.status-badge {
+    padding: 0.4rem;
+    border-radius: 12px;
+    color: white;
+}
+
+.status-paid {
+    background-color: green;
+}
+
+.status-pending {
+    background-color: orange;
+}
+
+.status-overdue {
+    background-color: red;
+}
+
+.status-not-initiated {
+    background-color: gray;
+}
+
+.status-unkown{
+    background-color: #3B82F6;
+}
