@@ -17,7 +17,7 @@ namespace MiYou.API.Features.Auth.Refresh
             _loginMapper = loginMapper;
         }
 
-        public async Task<LoginResponse?> ProcessAsync(RefreshRequest request)
+        public async Task<LoginResponse> ProcessAsync(RefreshRequest request)
         {
             var user = await _authService.GetUserOnRefreshToken(request.RefreshToken);
             if (user != null)

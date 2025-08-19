@@ -1,7 +1,6 @@
-import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
     selector: 'nav-component',
@@ -9,25 +8,16 @@ import { AuthService } from '../../services/auth/auth.service';
     styleUrl: 'navbar.component.scss',
     imports: [RouterModule, TranslateModule]
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
     menuOpen = false;
     languageDropdownOpen = false;
     currentLanguage: string;
     loggedIn: boolean = false;
 
-    constructor(private eRef: ElementRef, private translate: TranslateService, private authService: AuthService) {
+    constructor(private eRef: ElementRef, private translate: TranslateService) {
         this.currentLanguage = this.translate.currentLang || 'en';
     }
 
-    ngOnInit() {
-        this.authService.currentUser$.subscribe(user => {
-            if (user) {
-                this.loggedIn = true;
-            } else {
-                this.loggedIn = false;
-            }
-        });
-    }
     toggleMenu() {
         this.menuOpen = !this.menuOpen;
     }
@@ -57,9 +47,5 @@ export class NavbarComponent implements OnInit {
             localStorage.setItem('selectedLang', lang);
         }
         this.languageDropdownOpen = false;
-    }
-
-    async logout() {
-        await this.authService.logout();
     }
 }

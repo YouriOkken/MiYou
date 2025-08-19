@@ -33,15 +33,8 @@ namespace MiYou.API.Controllers
             return await ProcessAsync<LoginRequest, LoginResponse>(request);
         }
 
-        [Authorize]
-        [HttpPost("logout")]
-        public async Task Logout(LogoutRequest request)
-        {
-            await ProcessAsync<LogoutRequest>(request);
-        }
-
         [HttpPost("refresh")]
-        public async Task<IActionResult> Refresh()
+        public async Task<LoginResponse> Refresh()
         {
             var refreshTokenFromCookies = Request.Cookies["refreshToken"];
             RefreshRequest request = new RefreshRequest
@@ -49,8 +42,7 @@ namespace MiYou.API.Controllers
                 refreshToken = refreshTokenFromCookies
             };
 
-            await ProcessAsync<RefreshRequest, LoginResponse>(request);
-            return Ok();
+            return await ProcessAsync<RefreshRequest, LoginResponse>(request);
         }
     }
 }

@@ -41,10 +41,4 @@ export class AuthService {
         this.currentUserSubject.next(user);
         return user;
     }
-
-    async logout() {
-        const request: LogoutRequest = {};
-        await firstValueFrom(this.http.post(`${this.apiUrl}/logout`, request, { withCredentials: true }));
-        this.currentUserSubject.next(null);
-    }
 }
