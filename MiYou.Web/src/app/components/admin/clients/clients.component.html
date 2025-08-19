@@ -35,7 +35,7 @@
             </thead>
             <tbody>
                 @for(client of filteredClients; track client; let i = $index){
-                    <tr [routerLink]="['/admin/clients/1']">
+                    <tr [routerLink]="['/admin/clients', client.id]">
                         <td>{{ i + 1}}</td>
                         <td>{{ client.id }}</td>
                         <td>{{ client.fullName }}</td>

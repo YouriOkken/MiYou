@@ -7,9 +7,9 @@ namespace MiYou.API.Controllers.Admin
     [Authorize]
     [ApiController]
     [Route("api/client")]
-    public class ClientControler : BaseController
+    public class ClientController : BaseController
     {
-        public ClientControler(IServiceProvider serviceProvider) : base(serviceProvider) { }
+        public ClientController(IServiceProvider serviceProvider) : base(serviceProvider) { }
 
         [HttpGet("getAllClients")]
         public async Task<ClientListResponse> GetAllClients()

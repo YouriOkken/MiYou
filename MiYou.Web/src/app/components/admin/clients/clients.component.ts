@@ -56,7 +56,7 @@ export class ClientsComponent implements OnInit {
             case PaymentStatus.notInitiated:
                 return { text: 'Niks verzonden', class: 'status-not-initiated' };
             default:
-                return { text: 'Onbekend', class: 'status-unkown' };
+                return { text: 'Onbekend', class: 'status-unknown' };
         }
     }
 
