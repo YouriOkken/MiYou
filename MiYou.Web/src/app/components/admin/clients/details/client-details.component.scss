@@ -1,0 +1,87 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 5%;
+
+    .row-1 {
+        display: grid;
+        height: 20rem;
+        gap: 3%;
+        grid-template-columns: repeat(3, 1fr);
+
+        .client-information {
+            .title {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 15%;
+                background: rgba(0, 0, 0, 0.3);
+                font-size: 1.15rem;
+                font-weight: 500;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .details {
+                flex: 1;
+                display: flex;
+                flex-direction: row;
+
+                .placeholder,
+                .info {
+                    flex: 1;
+                    padding: 1rem;
+                }
+
+            }
+        }
+
+
+        .cell {
+            display: grid;
+            gap: 3%;
+            grid-template-columns: repeat(1, 2fr);
+
+            .client-name {
+                align-items: center;
+                justify-content: center;
+                font-family: 'Lora', serif;
+                font-size: clamp(1.5rem, 4vw, 3rem);
+            }
+        }
+    }
+
+    .row-2 {
+        display: grid;
+        height: 20%;
+        gap: 3%;
+        grid-template-columns: repeat(7, 1fr);
+    }
+
+    .row-3 {
+        display: grid;
+        height: 40%;
+        gap: 3%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .row-4 {
+        display: grid;
+        height: 40%;
+        gap: 3%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+.block {
+    background: linear-gradient(to bottom right,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.03));
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: flex;
+    flex-direction: column;
+}
