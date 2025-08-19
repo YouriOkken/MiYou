@@ -39,7 +39,7 @@ namespace MiYou.API.Controllers
             var refreshTokenFromCookies = Request.Cookies["refreshToken"];
             RefreshRequest request = new RefreshRequest
             {
-                refreshToken = refreshTokenFromCookies
+                RefreshToken = refreshTokenFromCookies
             };
 
             return await ProcessAsync<RefreshRequest, LoginResponse>(request);

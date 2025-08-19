@@ -4,7 +4,6 @@ import { LoginRequest } from '../../models/auth/login/login-request.model';
 import { environment } from '../../../environments/environment';
 import { BehaviorSubject, firstValueFrom } from 'rxjs';
 import { LoginResponse } from '../../models/auth/login/login-response.model';
-import { LogoutRequest } from '../../models/auth/logout-request.model';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -23,8 +22,6 @@ export class AuthService {
             if (error.status === 401) {
                 try {
                     const user = await firstValueFrom(this.http.post<LoginResponse>(`${this.apiUrl}/refresh`, {}, { withCredentials: true }));
-                    debugger;
-                    // const user = await firstValueFrom(this.http.get<LoginResponse>(`${this.apiUrl}/getCurrentUser`, { withCredentials: true }));
 
                     this.currentUserSubject.next(user);
                 } catch (refreshError) {
