@@ -5,12 +5,13 @@ import { animationTypes } from '../../../utilities/enums/animationTypes.enum';
 import { getAnimation } from '../../../utilities/animations/animation.utilities';
 import { AdminService } from '../../../services/admin/admin.service';
 import { AccountInfoResponse } from '../../../models/admin/dashboard/account-info.response';
+import { RouterModule } from '@angular/router';
 
 @Component({
     selector: 'admin-component',
     templateUrl: 'admin-dashboard.component.html',
     styleUrl: 'admin-dashboard.component.scss',
-    imports: [CommonModule, LottieComponent]
+    imports: [CommonModule, LottieComponent, RouterModule]
 })
 
 export class AdminDashboardComponent implements OnInit {

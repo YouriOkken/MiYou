@@ -1,10 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using MiYou.API.Models.Auth;
 using MiYou.API.Models.Auth.Login;
 using MiYou.API.Models.Auth.Refresh;
 using MiYou.API.Services.Auth;
-using MiYou.Shared.Interfaces;
 
 namespace MiYou.API.Controllers
 {
@@ -12,12 +10,7 @@ namespace MiYou.API.Controllers
     [Route("api/auth")]
     public class AuthController : BaseController
     {
-        private readonly AuthService _authService;
-
-        public AuthController(IServiceProvider serviceProvider, AuthService authService) : base(serviceProvider) 
-        { 
-            _authService = authService;
-        }
+        public AuthController(IServiceProvider serviceProvider) : base(serviceProvider) { }
 
         [Authorize]
         [HttpGet("getCurrentUser")]

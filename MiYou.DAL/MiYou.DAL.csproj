@@ -23,4 +23,8 @@
 		<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="9.0.7" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\MiYou.Shared\MiYou.Shared.csproj" />
+	</ItemGroup>
+
 </Project>

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MiYou.API.Models.Admin.Dashboard;
 
-namespace MiYou.API.Controllers
+namespace MiYou.API.Controllers.Admin
 {
     [Authorize]
     [ApiController]

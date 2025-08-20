@@ -19,5 +19,7 @@ export enum animationTypes {
     schedule,
     statistics,
     clients,
-    allDocuments
+    allDocuments,
+    cubeLoading,
+    noData
 }
