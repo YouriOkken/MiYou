@@ -55,7 +55,7 @@ namespace MiYou.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Contacts");
+                    b.ToTable("Contacts", (string)null);
                 });
 
             modelBuilder.Entity("MiYou.DAL.Entities.Users.User", b =>
@@ -97,7 +97,7 @@ namespace MiYou.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 #pragma warning restore 612, 618
         }
