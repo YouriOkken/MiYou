@@ -20,7 +20,6 @@
         padding: 1rem 2.5rem;
 
         .search {
-
             .search-input {
                 position: relative;
                 display: flex;
@@ -151,6 +150,33 @@
     background-color: gray;
 }
 
-.status-unknown{
+.status-unknown {
     background-color: #3B82F6;
+}
+
+
+/* Small screen tweaks */
+@media (max-width: 768px) {
+    .content {
+        .header {
+            padding: 0;
+        }
+
+        .control-panel {
+            padding: 0rem 1rem;
+        }
+
+        .table-area {
+            .table {
+                display: block;
+                overflow-x: auto;
+
+                tbody {
+                    overflow-y: visible;
+                    overflow-x: visible;
+
+                }
+            }
+        }
+    }
 }
