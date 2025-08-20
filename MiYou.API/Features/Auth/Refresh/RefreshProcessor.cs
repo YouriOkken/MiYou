@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.Data;
-using MiYou.API.Models.Auth.Login;
+﻿using MiYou.API.Models.Auth.Login;
+using MiYou.API.Models.Auth.Refresh;
 using MiYou.API.Services.Auth;
 using MiYou.DAL.Entities.Users;
 using MiYou.Shared.Interfaces;
