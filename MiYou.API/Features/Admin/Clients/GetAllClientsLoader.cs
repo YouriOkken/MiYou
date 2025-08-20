@@ -18,9 +18,11 @@ namespace MiYou.API.Features.Admin.Clients
             _contextFactory = contextFactory;
             _clientMapper = clientMapper;
         }
+
         public async Task<ClientListResponse> LoadAsync()
         {
             using DatabaseContext context = _contextFactory.Create();
+            ClientListResponse response = new ClientListResponse();
 
             var clients = await context.Clients
                 .AsNoTracking()
@@ -30,10 +32,9 @@ namespace MiYou.API.Features.Admin.Clients
                 .Select(client => _clientMapper.Map(client))
                 .ToList();
 
-            return new ClientListResponse
-            {
-                ClientList = mappedClients
-            };
+            response.ClientList = mappedClients;
+
+            return response;
         }
     }
 }
