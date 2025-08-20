@@ -163,18 +163,26 @@
         }
 
         .control-panel {
-            padding: 0rem 1rem;
+            padding: 1rem 1rem;
         }
 
         .table-area {
             .table {
                 display: block;
                 overflow-x: auto;
-
+                
+                thead{
+                    th{
+                        width: 5rem;
+                    }
+                }
                 tbody {
                     overflow-y: visible;
                     overflow-x: visible;
 
+                    td{
+                        width: 5rem;
+                    }
                 }
             }
         }
