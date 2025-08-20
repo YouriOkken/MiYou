@@ -168,17 +168,18 @@
             .table {
                 display: block;
                 overflow-x: auto;
-                
-                thead{
-                    th{
+
+                thead {
+                    th {
                         width: 5rem;
                     }
                 }
+
                 tbody {
                     overflow-y: visible;
                     overflow-x: visible;
 
-                    td{
+                    td {
                         width: 5rem;
                     }
                 }
