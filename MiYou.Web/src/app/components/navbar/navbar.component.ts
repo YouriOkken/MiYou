@@ -12,6 +12,7 @@ export class NavbarComponent {
     menuOpen = false;
     languageDropdownOpen = false;
     currentLanguage: string;
+    loggedIn: boolean = false;
 
     constructor(private eRef: ElementRef, private translate: TranslateService) {
         this.currentLanguage = this.translate.currentLang || 'en';

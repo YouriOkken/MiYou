@@ -149,7 +149,7 @@
         "necessaryLabel": "Only necessary cookies",
         "allLabel": "All cookies",
         "allButton": "Accept all",
-        "necessaryButton": "Accept only essential",
+        "necessaryButton": "Only essential",
         "moreInfo": "More info"
     },
     "PRIVACY_POLICY": {
