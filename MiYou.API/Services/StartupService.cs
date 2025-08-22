@@ -22,13 +22,17 @@ namespace MiYou.API.Services
 
             var adminEmail = "admin@admin.com";
             var adminPassword = "Password123!";
+            var adminFirstName = "MiYou";
+            var adminLastName = "Admin";
 
             var user = await context.Users.FirstOrDefaultAsync(u => u.Email == adminEmail);
             if (user == null)
             {
                 var newUser = new User
                 {
-                    Email = adminEmail
+                    Email = adminEmail,
+                    FirstName = adminFirstName,
+                    LastName = adminLastName,
                 };
 
                 newUser.Password = hasher.HashPassword(newUser, adminPassword);

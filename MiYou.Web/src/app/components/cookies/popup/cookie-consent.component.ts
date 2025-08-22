@@ -4,7 +4,6 @@ import { CookiesService } from '../../../services/cookies/cookies.service';
 import { RouterModule } from '@angular/router';
 import { environment } from '../../../../environments/environment';
 import { ModalComponent } from "../../../modal/modal.component";
-import { SwitchComponent } from "../../switch/switch.component";
 import { TranslateModule } from '@ngx-translate/core';
 
 declare var gtag: Function;
@@ -12,7 +11,7 @@ declare var gtag: Function;
   selector: 'cookie-consent-component',
   templateUrl: './cookie-consent.component.html',
   styleUrls: ['./cookie-consent.component.scss'],
-  imports: [RouterModule, ModalComponent, SwitchComponent, TranslateModule]
+  imports: [RouterModule, ModalComponent, TranslateModule]
 })
 export class CookieConsentComponent implements OnInit {
   showBanner = false;

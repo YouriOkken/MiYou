@@ -148,7 +148,8 @@
         "description": "We use cookies to make our site work properly (essential) and to collect statistics with your consent.",
         "necessaryLabel": "Only necessary cookies",
         "allLabel": "All cookies",
-        "saveButton": "Save",
+        "allButton": "Accept all",
+        "necessaryButton": "Only essential",
         "moreInfo": "More info"
     },
     "PRIVACY_POLICY": {

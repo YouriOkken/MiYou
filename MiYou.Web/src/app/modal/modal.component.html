@@ -1,21 +1,27 @@
 @if (isVisible) {
   <div class="modal-backdrop" [ngClass]="{ closing: isClosing }" (click)="onClose()"></div>
   <div class="modal-content template" [ngClass]="{ closing: isClosing }" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
-    @if (showCloseX) {
+      @if (showCloseX) {
       <button class="close-btn" (click)="onClose()" aria-label="Close modal">&times;</button>
-    }
-  
-    <h2 id="modalTitle" class="modal-title">{{title}}</h2>
-    
-    <div class="modal-body">
-      <ng-content class="content"></ng-content>
-    </div>
-    
-    @if (showCloseButton) {
-      <button class="action-btn" (click)="onClose()">Sluiten</button>
-    }
-    @if (showOKButton) {
-      <button class="action-btn" (click)="onOk()">{{OKButtonLabel}}</button>
-    }
+      }
+
+      <div id="modalTitle" class="modal-title">{{title}}</div>
+
+      <div class="modal-body">
+        <ng-content class="content"></ng-content>
+      </div>
+
+      @if (showCloseButton) {
+        <button class="action-btn" (click)="onClose()">Sluiten</button>
+      }
+      
+      <div class="modal-footer">
+        @if (showNecessaryButton) {
+        <button class="action-btn necessary" (click)="onOkNecessary()">{{necessaryButtonLabel}}</button>
+        }
+        @if (showAllButton) {
+        <button class="action-btn" (click)="onOkAll()">{{allButtonLabel}}</button>
+        }
+      </div>
   </div>
 }

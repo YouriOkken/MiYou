@@ -6,7 +6,7 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
 import { provideLottieOptions } from 'ngx-lottie';
 import { provideHttpClient, withFetch, HttpClient, HttpClientModule } from '@angular/common/http';
 
-import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpLoaderFactory } from './utilities/factories/http-loader.factory'; // pas pad aan indien nodig
 import { LanguageService } from './services/language/language.service';
 
@@ -27,7 +27,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
     provideLottieOptions({
-      player: () => import('lottie-web'),
+      player: () => import('lottie-web/build/player/lottie_light'),
     }),
     provideHttpClient(withFetch()),
     importProvidersFrom(

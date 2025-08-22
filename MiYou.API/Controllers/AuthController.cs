@@ -1,17 +1,18 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using MiYou.API.Models.Auth;
 using MiYou.API.Models.Auth.Login;
+using MiYou.API.Models.Auth.Refresh;
+using MiYou.API.Services.Auth;
 
 namespace MiYou.API.Controllers
 {
-    [Authorize]
     [ApiController]
     [Route("api/auth")]
     public class AuthController : BaseController
     {
         public AuthController(IServiceProvider serviceProvider) : base(serviceProvider) { }
 
+        [Authorize]
         [HttpGet("getCurrentUser")]
         public async Task<LoginResponse> GetCurrentUser()
         {
@@ -25,10 +26,16 @@ namespace MiYou.API.Controllers
             return await ProcessAsync<LoginRequest, LoginResponse>(request);
         }
 
-        [HttpPost("logout")]
-        public async Task Logout(LogoutRequest request)
+        [HttpPost("refresh")]
+        public async Task<LoginResponse> Refresh()
         {
-            await ProcessAsync<LogoutRequest>(request);
+            var refreshTokenFromCookies = Request.Cookies["refreshToken"];
+            RefreshRequest request = new RefreshRequest
+            {
+                RefreshToken = refreshTokenFromCookies
+            };
+
+            return await ProcessAsync<RefreshRequest, LoginResponse>(request);
         }
     }
 }

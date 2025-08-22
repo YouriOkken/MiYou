@@ -9,6 +9,7 @@ import { AuthGuard } from './utilities/guards/auth.guard';
 import { TermsOfServiceComponent } from './components/terms-of-service/terms-of-service.component';
 import { AdminDashboardComponent } from './components/admin/dashboard/admin-dashboard.component';
 import { AnalyticsComponent } from './components/admin/analytics/analytics.component';
+import { ClientsComponent } from './components/admin/clients/clients.component';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
@@ -18,6 +19,7 @@ export const routes: Routes = [
     {path: 'admin/login', component: LoginComponent},
     {path: 'admin/dashboard', component: AdminDashboardComponent, canActivate: [AuthGuard]},
     {path: 'terms-of-service', component: TermsOfServiceComponent},
+    {path: 'admin/clients', component: ClientsComponent, canActivate: [AuthGuard]},
     {path: 'admin/analytics', component: AnalyticsComponent, canActivate: [AuthGuard]},
     {path: '**', component: NotFoundComponent} // MOET ALS LAATSTE
 ];

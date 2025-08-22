@@ -14,8 +14,8 @@
         height: 10%;
         width: 100%;
         font-family: 'Lora', serif;
-        font-size: 3rem;
-        padding: 0.5em 0;
+        font-size: clamp(1.5rem, 4vw, 3rem);
+        padding-bottom: 1rem;
         text-align: center;
 
         .welcome-text {
@@ -35,7 +35,6 @@
         grid-template-columns: repeat(6, 1fr);
         gap: 1.5rem;
         width: 90%;
-        margin-top: 2rem;
     }
 
     .option {
@@ -60,9 +59,28 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
-        ng-lottie{
+        .title {
+            text-align: center;
+        }
+
+        ng-lottie {
             height: 60%;
             width: 60%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .header {
+            .animation {
+                width: 10%;
+            }
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            width: 90%;
         }
     }
 }

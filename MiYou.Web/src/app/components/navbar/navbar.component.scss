@@ -142,6 +142,15 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.dropdown-arrow {
+    transition: transform 0.3s ease;
+    transform-origin: center;
+}
+
+.language-switch-wrapper.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
 .language-dropdown.active {
     display: flex;
 }
