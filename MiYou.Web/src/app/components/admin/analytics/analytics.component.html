@@ -1,22 +1,33 @@
-<div class="container">
-  <header>
-    <h1>PrimeNG Chart Demo</h1>
-  </header>
-  <div class="controls">
-    <div class="button-group">
-      <select [(ngModel)]="selectedDataType" (ngModelChange)="onDataDropdownChange($event)">
-        <option *ngFor="let option of analyticsDataTypeOptions" [ngValue]="option.value">
-          {{ option.label }}
-        </option>
-      </select>
-      <select [(ngModel)]="chartType" (ngModelChange)="onDataDropdownChange($event)">
-        <option *ngFor="let option of chartTypes" [ngValue]="option">
-          {{ option }}
-        </option>
-      </select>
+<div class="analytics-page">
+  <div class="grid">
+    <div class="card stat-card" *ngFor="let stat of statsCards">
+      <div class="card-content">
+        <h2>{{ stat.title }}</h2>
+        <div class="stat-value">{{ stat.value }}</div>
+        <small>{{ stat.small }}</small>
+      </div>
     </div>
   </div>
-  <div class="chart-container">
-    <p-chart [type]="chartType" [data]="chartData" [options]="chartOptions"></p-chart>
+  
+  <br />
+
+  <div class="big-charts">
+    <div class="card big-card">
+      <div class="card-content">
+        <p-chart [type]="chartType" [data]="chartDataCountry" [options]="chartOptionsCountry"></p-chart>
+      </div>
+    </div>
+
+    <div class="card big-card">
+      <div class="card-content">
+        <p-chart [type]="chartType" [data]="chartDataBrowser" [options]="chartOptionsBrowser"></p-chart>
+      </div>
+    </div>
+
+    <div class="card big-card">
+      <div class="card-content">
+        <p-chart [type]="chartType" [data]="chartDataPage" [options]="chartOptionsPage"></p-chart>
+      </div>
+    </div>
   </div>
 </div>

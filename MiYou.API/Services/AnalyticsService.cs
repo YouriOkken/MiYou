@@ -1,5 +1,6 @@
 ﻿using Google.Analytics.Data.V1Beta;
 using Microsoft.Extensions.Configuration;
+using MiYou.API.Models.Admin.Analytics;
 using System.Globalization;
 using System.Text;
 
@@ -14,11 +15,10 @@ namespace MiYou.API.Services
             _configuration = configuration;
         }
 
-        public async Task<List<Dictionary<string, string>>> GetAnalytics()
+        public async Task<AnalyticsResponse> GetAnalytics()
         {
             string propertyId = "496562096";
 
-            // Haal credentials JSON op uit user secrets
             var credentialsJson = _configuration["GoogleAnalytics:Credentials"];
             if (string.IsNullOrEmpty(credentialsJson))
                 throw new InvalidOperationException("Google Analytics credentials not configured.");
@@ -30,50 +30,39 @@ namespace MiYou.API.Services
                 Credential = Google.Apis.Auth.OAuth2.GoogleCredential.FromStream(credentialStream)
             }.Build();
 
-            var request = new RunReportRequest
+            var reportRequest = new RunReportRequest
             {
                 Property = $"properties/{propertyId}",
                 Dimensions =
                 {
                     new Dimension { Name = "country" },
-                    new Dimension { Name = "city" },
                     new Dimension { Name = "browser" },
-                    new Dimension { Name = "deviceCategory" },
-                    new Dimension { Name = "language" },
-                    new Dimension { Name = "pagePath" },
-                    new Dimension { Name = "sessionSource" },
-                    new Dimension { Name = "date" },
-                    new Dimension { Name = "operatingSystem" }
+                    new Dimension { Name = "pagePath" }
                 },
                 Metrics =
                 {
                     new Metric { Name = "totalUsers" },
-                    new Metric { Name = "activeUsers" },
-                    new Metric { Name = "newUsers" },
                     new Metric { Name = "sessions" },
                     new Metric { Name = "screenPageViews" },
                     new Metric { Name = "bounceRate" },
-                    new Metric { Name = "averageSessionDuration" },
-                    new Metric { Name = "engagedSessions" },
-                    new Metric { Name = "engagementRate" },
-                    new Metric { Name = "eventCount" }
+                    new Metric { Name = "activeUsers" }
                 },
                 DateRanges = { new DateRange { StartDate = "2025-07-01", EndDate = "today" } },
             };
 
-            var response = await client.RunReportAsync(request);
-            var result = new List<Dictionary<string, string>>();
+            var reportResponse = await client.RunReportAsync(reportRequest);
 
-            foreach (var row in response.Rows)
+            var reportResult = new List<Dictionary<string, string>>();
+            foreach (var row in reportResponse.Rows)
             {
                 var rowDict = new Dictionary<string, string>();
 
-                for (int i = 0; i < response.DimensionHeaders.Count; i++)
-                    rowDict[response.DimensionHeaders[i].Name] = row.DimensionValues[i].Value;
+                for (int i = 0; i < reportResponse.DimensionHeaders.Count; i++)
+                    rowDict[reportResponse.DimensionHeaders[i].Name] = row.DimensionValues[i].Value;
 
-                for (int i = 0; i < response.MetricHeaders.Count; i++)
+                for (int i = 0; i < reportResponse.MetricHeaders.Count; i++)
                 {
-                    string metricName = response.MetricHeaders[i].Name;
+                    string metricName = reportResponse.MetricHeaders[i].Name;
                     string metricValue = row.MetricValues[i].Value;
 
                     if (metricName == "averageSessionDuration" &&
@@ -88,10 +77,34 @@ namespace MiYou.API.Services
                     }
                 }
 
-                result.Add(rowDict);
+                reportResult.Add(rowDict);
             }
 
-            return result;
+            var realtimeRequest = new RunRealtimeReportRequest
+            {
+                Property = $"properties/{propertyId}",
+                Metrics =
+                {
+                    new Metric { Name = "activeUsers" }
+                }
+            };
+
+            var realtimeResponse = await client.RunRealtimeReportAsync(realtimeRequest);
+            int realtimeActiveUsers = 0;
+            if (realtimeResponse.Rows.Count > 0 && realtimeResponse.Rows[0].MetricValues.Count > 0)
+            {
+                int.TryParse(realtimeResponse.Rows[0].MetricValues[0].Value, out realtimeActiveUsers);
+            }
+
+            // ja ik heb nagedacht over een mapper maar ik zou echt geen idee hebben
+            // wat mijn ModelIn dan wordt haha
+            // Als je ideeën lmk :)
+
+            return new AnalyticsResponse
+            {
+                ReportData = reportResult,
+                RealtimeActiveUsers = realtimeActiveUsers
+            };
         }
     }
 }
