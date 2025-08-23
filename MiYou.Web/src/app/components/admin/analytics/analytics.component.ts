@@ -2,12 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChartModule } from 'primeng/chart';
 import { AdminService } from '../../../services/admin/admin.service';
+import { AnimationOptions, LottieComponent } from 'ngx-lottie';
+import { getAnimation } from '../../../utilities/animations/animation.utilities';
+import { animationTypes } from '../../../utilities/enums/animationTypes.enum';
 
 @Component({
   selector: 'app-my-chart',
   templateUrl: './analytics.component.html',
   styleUrls: ['./analytics.component.scss'],
-  imports: [CommonModule, ChartModule]
+  imports: [CommonModule, ChartModule, LottieComponent]
 })
 export class AnalyticsComponent implements OnInit {
   analyticsData: any[] = [];
@@ -26,9 +29,15 @@ export class AnalyticsComponent implements OnInit {
 
   statsCards: { title: string; value: string, small: string }[] = [];
 
-  constructor(private adminService: AdminService) { }
+  isLoading: boolean = false;
+  cubeLoadingAnimation: AnimationOptions;
+
+  constructor(private adminService: AdminService) {
+    this.cubeLoadingAnimation = getAnimation(animationTypes.cubeLoading, true, true);
+  }
 
   async ngOnInit() {
+    this.isLoading = true
     const analytics = await this.adminService.getAllAnalytics();
     this.analyticsData = analytics.reportData;
     this.realtimeActiveUsers = analytics.realtimeActiveUsers;
@@ -37,6 +46,8 @@ export class AnalyticsComponent implements OnInit {
       this.loadAllCharts();
       this.loadStatsCards();
     }
+
+    this.isLoading = false;
   }
 
   loadAllCharts() {
@@ -84,10 +95,10 @@ export class AnalyticsComponent implements OnInit {
         return "Aantal actieve gebruikers";
 
       case 4:
-        return "Percentage van gebruikers die weggegaan zijn zonder ergens op te klikken (hoe lager hoe beter)";
+        return "Hoelang duurt een bezoek gemiddeld?";
 
       case 5:
-        return "Hoelang duurt een bezoek gemiddeld?";
+        return "Percentage van gebruikers die weggegaan zijn zonder ergens op te klikken (hoe lager hoe beter)";
     }
     return "";
   }

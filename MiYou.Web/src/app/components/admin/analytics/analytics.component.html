@@ -8,25 +8,37 @@
       </div>
     </div>
   </div>
-  
+
   <br />
 
   <div class="big-charts">
     <div class="card big-card">
       <div class="card-content">
-        <p-chart [type]="chartType" [data]="chartDataCountry" [options]="chartOptionsCountry"></p-chart>
+        @if (isLoading) {
+          <ng-lottie class="animation" [options]="cubeLoadingAnimation"></ng-lottie>
+        } @else {
+          <p-chart [type]="chartType" [data]="chartDataCountry" [options]="chartOptionsCountry"></p-chart>
+        }
       </div>
     </div>
 
     <div class="card big-card">
       <div class="card-content">
-        <p-chart [type]="chartType" [data]="chartDataBrowser" [options]="chartOptionsBrowser"></p-chart>
+        @if (isLoading) {
+          <ng-lottie class="animation" [options]="cubeLoadingAnimation"></ng-lottie>
+        } @else {
+          <p-chart [type]="chartType" [data]="chartDataBrowser" [options]="chartOptionsBrowser"></p-chart>
+        }
       </div>
     </div>
 
     <div class="card big-card">
       <div class="card-content">
-        <p-chart [type]="chartType" [data]="chartDataPage" [options]="chartOptionsPage"></p-chart>
+        @if (isLoading) {
+          <ng-lottie class="animation" [options]="cubeLoadingAnimation"></ng-lottie>
+        } @else {
+          <p-chart [type]="chartType" [data]="chartDataPage" [options]="chartOptionsPage"></p-chart>
+        }
       </div>
     </div>
   </div>
