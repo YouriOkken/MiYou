@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MiYou.API.Models.Auth;
 using MiYou.API.Models.Auth.Login;
 using MiYou.API.Models.Auth.Refresh;
 using MiYou.API.Services.Auth;
@@ -36,6 +37,13 @@ namespace MiYou.API.Controllers
             };
 
             return await ProcessAsync<RefreshRequest, LoginResponse>(request);
+        }
+
+        [Authorize]
+        [HttpPost("logout")]
+        public async Task Logout(LogoutRequest request)
+        {
+            await ProcessAsync<LogoutRequest>(request);
         }
     }
 }

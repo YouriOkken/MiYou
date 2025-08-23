@@ -86,12 +86,8 @@ namespace MiYou.API.Services.Auth
             }
 
             var result = await _context.SaveChangesAsync();
-            if (result > 0)
-            {
-                return user;
-            }
+            return user;
 
-            throw new UnexpectedException(Resources.Error_SomethingWentWrong);
         }
 
         /// <summary>

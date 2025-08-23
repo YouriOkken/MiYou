@@ -4,6 +4,7 @@ import { LoginRequest } from '../../models/auth/login/login-request.model';
 import { environment } from '../../../environments/environment';
 import { BehaviorSubject, firstValueFrom } from 'rxjs';
 import { LoginResponse } from '../../models/auth/login/login-response.model';
+import { LogoutRequest } from '../../models/auth/logout-request.model';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -37,5 +38,11 @@ export class AuthService {
         const user = await firstValueFrom(this.http.post<LoginResponse>(`${this.apiUrl}/login`, request, { withCredentials: true }));
         this.currentUserSubject.next(user);
         return user;
+    }
+
+    async logout() {
+        const request: LogoutRequest = {};
+        await firstValueFrom(this.http.post(`${this.apiUrl}/logout`, request, { withCredentials: true }));
+        this.currentUserSubject.next(null);
     }
 }

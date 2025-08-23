@@ -28,8 +28,15 @@
         <a (click)="setLanguage('nl'); $event.stopPropagation()">Nederlands</a>
       </div>
     </div>
-    <div class="nav-links">
+    <!-- <div class="nav-links">
         <a href="#contact">{{ 'NAVBAR.contact' | translate }}</a>
+    </div> -->
+    <div class="nav-links">
+      @if (!loggedIn) {
+        <a href="#contact">{{ 'NAVBAR.contact' | translate }}</a>
+      } @else {
+        <a href="" (click)="logout();">{{ 'NAVBAR.logout' | translate }}</a>
+      }
     </div>
   </div>
 
